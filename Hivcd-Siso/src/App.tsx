@@ -1,5 +1,5 @@
 function App() {
-  return <>ddkkdjld</>;
+  return <></>;
 }
 
 export default App;
