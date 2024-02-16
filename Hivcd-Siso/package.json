@@ -12,7 +12,9 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^6.1.8"
+    "react-router-dom": "^6.22.0",
+    "styled-components": "^6.1.8",
+    "vite-plugin-svgr": "^4.2.0"
   },
   "devDependencies": {
     "@stylelint/postcss-css-in-js": "^0.38.0",
@@ -32,10 +34,13 @@
     "postcss": "^8.4.33",
     "postcss-syntax": "^0.36.2",
     "prettier": "^3.2.4",
+    "stylelint": "^16.2.1",
     "stylelint-config-concentric-order": "^5.2.0",
     "stylelint-config-prettier": "^9.0.5",
     "stylelint-config-recommended": "^14.0.0",
+    "stylelint-config-standard": "^36.0.0",
     "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0",
     "typescript": "^5.2.2",
     "vite": "^5.0.8"
   }
