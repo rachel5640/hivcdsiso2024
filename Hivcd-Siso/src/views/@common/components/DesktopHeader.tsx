@@ -1,35 +1,27 @@
-import { ArchiveBtn, ExhibitionBtn, LectureBtn, OurIndexLogo } from '../../../assets';
+import { ArchiveBtn, ExhibitionBtn, LectureBtn, OurIndexLogo } from '../assets/index';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const DesktopHeader = () => {
   const navigate = useNavigate();
 
-  const handleExhibitionClick = () => {
-    navigate('/Exhibition');
-  };
-
-  const handleLectureClick = () => {
-    navigate('/Lecture');
-  };
-
-  const handleArchiveClick = () => {
-    navigate('/Archive');
-  };
+  const buttons = [
+    { icon: <ExhibitionBtn />, onClick: () => navigate('/Exhibition') },
+    { icon: <LectureBtn />, onClick: () => navigate('/Lecture') },
+    { icon: <ArchiveBtn />, onClick: () => navigate('/Archive') },
+  ];
 
   return (
     <HeaderBox>
-      <OurIndexLogo />
+      <LogoBtn>
+        <OurIndexLogo />
+      </LogoBtn>
       <div>
-        <HeaderBtn onClick={handleExhibitionClick}>
-          <ExhibitionBtn />
-        </HeaderBtn>
-        <HeaderBtn onClick={handleLectureClick}>
-          <LectureBtn />
-        </HeaderBtn>
-        <HeaderBtn onClick={handleArchiveClick}>
-          <ArchiveBtn />
-        </HeaderBtn>
+        {buttons.map((button, index) => (
+          <HeaderBtn key={index} onClick={button.onClick}>
+            {button.icon}
+          </HeaderBtn>
+        ))}
       </div>
     </HeaderBox>
   );
@@ -39,18 +31,29 @@ const HeaderBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  position: fixed;
+  top: 0;
+  z-index: 100;
 
   width: 100vw;
   height: 8.8rem;
-  margin: 2.67rem 0;
-  padding: 0 8.2rem;
+  margin: 0 auto;
+
+  background-color: ${({ theme }) => theme.colors.white};
 
   & > div {
     /* stylelint-disable-next-line declaration-empty-line-before */
     display: flex;
     align-items: center;
+
+    margin-right: 8.2rem;
   }
+`;
+
+const LogoBtn = styled.button`
+  margin-left: 8.2rem;
+
+  cursor: pointer;
 `;
 
 const HeaderBtn = styled.button`

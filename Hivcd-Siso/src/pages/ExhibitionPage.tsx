@@ -12,6 +12,7 @@ import {
   HangulggolBtn,
   HipsBtn,
 } from '../views/ExhibitionPage/assets';
+import Footer from '../views/@common/components/Footer';
 
 const ExhibitionPage = () => {
   const navigate = useNavigate();
@@ -38,6 +39,7 @@ const ExhibitionPage = () => {
           </GridItem>
         ))}
       </BtnGrid>
+      <Footer />
     </>
   );
 };
@@ -55,18 +57,19 @@ const GridItem = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  aspect-ratio: auto 1 / 1;
+  z-index: 1;
 
   width: 100%;
 
   cursor: pointer;
+  aspect-ratio: auto 1 / 1;
 
   & > svg {
     /* stylelint-disable-next-line declaration-empty-line-before */
     width: 100%;
     height: 100%;
 
-    transition: transform 0.2s;
+    transition: transform 0.4s;
   }
 
   &:hover > svg {
