@@ -9,14 +9,7 @@ const CommitteeSection = () => {
         {COMMITTEE_DATA.map((item, index) => (
           <TextList key={index}>
             <h1>{item.category}</h1>
-            <MemberList>
-              {item.members.map((member, idx) => (
-                <p key={idx}>
-                  {member}
-                  {idx !== item.members.length - 1 && ','}
-                </p>
-              ))}
-            </MemberList>
+            <MemberList>{item.members}</MemberList>
           </TextList>
         ))}
       </TextBox>
@@ -58,12 +51,12 @@ const TextList = styled.div`
 `;
 
 const MemberList = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  ${({ theme }) => theme.fonts.body1_2};
 
-  & > p {
-    ${({ theme }) => theme.fonts.body1_2};
-  }
+  display: flex;
+
+  width: 99%;
+  word-break: keep-all;
 `;
 
 export default CommitteeSection;
