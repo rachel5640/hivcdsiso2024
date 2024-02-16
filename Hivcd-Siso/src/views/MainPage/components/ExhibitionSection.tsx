@@ -99,6 +99,7 @@ const ExhibitionInfoList = styled.div`
 
   padding: 1rem 0;
   border-top: 2px solid black;
+  border-bottom: 2px solid black;
 
   & > ul > li > p {
     ${({ theme }) => theme.fonts.body1};

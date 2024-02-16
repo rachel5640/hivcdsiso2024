@@ -78,7 +78,7 @@ const fonts = {
   `,
   body1_1: css`
     font-family: 'ABC_ROM_Condensed', 'Noto Sans KR', sans-serif;
-    font-weight: 600;
+    font-weight: 500;
     font-style: normal;
     font-size: 2.5rem;
     line-height: 145%;

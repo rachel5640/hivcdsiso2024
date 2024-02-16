@@ -5,6 +5,7 @@ import ExhibitionSection from '../views/MainPage/components/ExhibitionSection';
 import MapSection from '../views/MainPage/components/MapSection';
 import EventSection from '../views/MainPage/components/EventSection';
 import GoodsSection from '../views/MainPage/components/GoodsSection';
+import CommitteeSectionSection from '../views/MainPage/components/CommitteeSection';
 
 const MainPage = () => {
   return (
@@ -15,6 +16,7 @@ const MainPage = () => {
         <MapSection />
         <GoodsSection />
         <EventSection />
+        <CommitteeSectionSection />
       </MainPageBox>
       <Footer />
     </>
