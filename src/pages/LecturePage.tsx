@@ -67,6 +67,7 @@ const TextArea = styled.section`
   grid-column: span 6;
 
   & > div {
+    /* stylelint-disable-next-line declaration-empty-line-before */
     display: block;
 
     height: 10rem;
