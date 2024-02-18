@@ -132,8 +132,8 @@ const DetailInfo = styled.div`
     border-radius: 21px;
     color: black;
     &: hover {
-      background-color: black;
-      color: white;
+      background-color: white;
+      color: black;
     }
   }
 `;
