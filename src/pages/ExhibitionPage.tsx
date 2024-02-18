@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import DesktopHeader from '../views/@common/components/DesktopHeader';
+
 import {
   DromapicBtn,
   GreenbeeBtn,
@@ -14,17 +16,17 @@ import {
 } from '../views/ExhibitionPage/assets';
 import Footer from '../views/@common/components/Footer';
 
-interface ExhibitionPageProps {
-  onButtonClick: (index: number) => void;
-}
-
-const ExhibitionPage = ({ onButtonClick }: ExhibitionPageProps) => {
+const ExhibitionPage = () => {
   const navigate = useNavigate();
 
   const handleOnClick = (index: number) => {
-    onButtonClick(index);
-    navigate(`/Exhibition/Projects`);
+    console.log(index);
+    navigate(`/Exhibition/Projects`, { state: index });
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const buttons = [
     { icon: <GreenbeeBtn /> },

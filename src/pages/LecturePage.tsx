@@ -1,29 +1,34 @@
 import styled from 'styled-components';
 import DesktopHeader from '../views/@common/components/DesktopHeader';
 import Footer from '../views/@common/components/Footer';
+import { useEffect } from 'react';
+import Lecturebox from '../views/LecturePage/components/LectureBox';
+import { LECTURE_DATA } from '../views/LecturePage/constant/text';
 
 const LecturePage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <DesktopHeader />
       <LecturePageBox>
         <TimeTable>시간표</TimeTable>
+        <LineBox>
+          <Line />
+        </LineBox>
         <TextArea>
-          <div>dlsdjfsldkf</div>
-          <div>dlsdjfsldkf</div>
-          <div>dlsdjfsldkf</div>
-          <div>dlsdjfsldkf</div>
-          <div>dlsdjfsldkf</div>
-          <div>dlsdjfsldkf</div>
-          <div>dlsdjfsldkf</div>
-          <div>dlsdjfsldkf</div>
-          <div>dlsdjfsldkf</div>
-          <div>dlsdjfsldkf</div>
-          <div>dlsdjfsldkf</div>
-          <div>dlsdjfsldkf</div>
-          <div>dlsdjfsldkf</div>
-          <div>dlsdjfsldkf</div>
-          <div>dlsdjfsldkf</div>
+          {LECTURE_DATA.map((content, index) => (
+            <Lecturebox
+              key={index}
+              number={content.number}
+              title={content.title}
+              date={content.date}
+              description={content.description}
+              instagram={content.instagram}
+              website={content.website}
+            />
+          ))}
         </TextArea>
       </LecturePageBox>
       <Footer />
@@ -36,44 +41,46 @@ const LecturePageBox = styled.section`
   position: relative;
 
   width: 100vw;
-  height: 70rem;
-  margin-top: 16.9rem;
+  height: 80dvh;
+  margin-top: 14rem;
   margin-bottom: 4.1rem;
   padding: 0 8.2rem;
 
-  background-color: red;
-
   grid-column-gap: 1rem;
-  grid-template-columns: repeat(16, 1fr);
+  grid-template-columns: repeat(36, 1fr);
 `;
 
 const TimeTable = styled.section`
   overflow-y: auto;
 
-  min-height: 60dvh;
+  height: 100;
   border-top: 3px solid;
 
-  background-color: pink;
-  grid-column: span 10;
+  grid-column: span 20;
 `;
 
+const LineBox = styled.div`
+  display: flex;
+  justify-content: center;
+
+  height: 80dvh;
+
+  grid-column: span 1;
+`;
+
+const Line = styled.div`
+  width: 3px;
+  height: 80dvh;
+
+  background-color: black;
+`;
 const TextArea = styled.section`
   overflow-y: auto;
 
   height: auto;
   border-top: 3px solid;
 
-  background-color: green;
-  grid-column: span 6;
-
-  & > div {
-    /* stylelint-disable-next-line declaration-empty-line-before */
-    display: block;
-
-    height: 10rem;
-
-    background-color: white;
-  }
+  grid-column: span 15;
 `;
 
 export default LecturePage;
