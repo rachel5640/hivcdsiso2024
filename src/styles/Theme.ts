@@ -11,7 +11,7 @@ const colors = {
   teal: '#00837a',
   purple: '#a31aa3',
   white: '#ffffff',
-  grey: '#c7c7c7#',
+  grey: '#c7c7c7',
 };
 
 const fonts = {

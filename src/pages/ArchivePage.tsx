@@ -10,14 +10,22 @@ const ArchivePage = () => {
   return (
     <>
       <DesktopHeader />
-      <ArchivePageBox />
+      <ArchivePageBox>Comming Soon!</ArchivePageBox>
       <Footer />
     </>
   );
 };
 const ArchivePageBox = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 100vw;
   height: 90vh;
+
+  color: ${({ theme }) => theme.colors.grey};
+
+  ${({ theme }) => theme.fonts.title1};
 
   /* stylelint-disable-next-line order/properties-order */
   padding: 0 8.2rem;
