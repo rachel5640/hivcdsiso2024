@@ -4,6 +4,7 @@ import Footer from '../views/@common/components/Footer';
 import { useEffect } from 'react';
 import Lecturebox from '../views/LecturePage/components/LectureBox';
 import { LECTURE_DATA } from '../views/LecturePage/constant/text';
+import { Trial } from '../views/@common/assets';
 
 const LecturePage = () => {
   useEffect(() => {
@@ -13,7 +14,9 @@ const LecturePage = () => {
     <>
       <DesktopHeader />
       <LecturePageBox>
-        <TimeTable>시간표</TimeTable>
+        <TimeTable>
+          <Trial />
+        </TimeTable>
         <LineBox>
           <Line />
         </LineBox>
@@ -57,6 +60,11 @@ const TimeTable = styled.section`
   border-top: 3px solid;
 
   grid-column: span 20;
+
+  & > svg {
+    /* stylelint-disable-next-line declaration-empty-line-before */
+    width: 100%;
+  }
 `;
 
 const LineBox = styled.div`
