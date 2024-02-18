@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Poster from '../assets/SISO_Poster_A1.png';
+import HivcdSisoPoster from '../assets/SISO_Poster_A1.png';
 import { EXHIBITION_TEXT } from '../constant/text';
 
 const ExhibitionSection = () => {
@@ -43,7 +43,7 @@ const ExhibitionSection = () => {
 
   return (
     <ExhibitionSectionBox>
-      <PosterImg src={Poster} />
+      <PosterImg src={HivcdSisoPoster} />
       <ExhibitionInfoBox>
         <ExhibitionInfo>
           <h1>《OUR INDEX》</h1>
