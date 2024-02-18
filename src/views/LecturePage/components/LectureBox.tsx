@@ -113,13 +113,13 @@ const DetailInfo = styled.div`
   & > p {
     ${({ theme }) => theme.fonts.body5};
 
-    margin: 0 0 2.2rem 4.8rem;
+    margin: 0 0 1.8rem 4.8rem;
   }
 
   & > div {
     display: flex;
 
-    margin-bottom: 3.5rem;
+    margin-bottom: 3rem;
     margin-left: 4.8rem;
   }
 
