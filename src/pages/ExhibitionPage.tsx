@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import DesktopHeader from '../views/@common/components/DesktopHeader';
+
 import {
   DromapicBtn,
   GreenbeeBtn,
@@ -17,16 +19,25 @@ import Footer from '../views/@common/components/Footer';
 const ExhibitionPage = () => {
   const navigate = useNavigate();
 
+  const handleOnClick = (index: number) => {
+    console.log(index);
+    navigate(`/Exhibition/Projects`, { state: index });
+  };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const buttons = [
-    { icon: <GreenbeeBtn />, onClick: () => navigate('/Exhibition/Greenbee') },
-    { icon: <DromapicBtn />, onClick: () => navigate('/Exhibition/Dromapic') },
-    { icon: <IrayBtn />, onClick: () => navigate('/Exhibition/Iray') },
-    { icon: <YadzBtn />, onClick: () => navigate('/Exhibition/Yadz') },
-    { icon: <AdrenalinBtn />, onClick: () => navigate('/Exhibition/Adrenalin') },
-    { icon: <ProtoBtn />, onClick: () => navigate('/Exhibition/Proto') },
-    { icon: <HyphenBtn />, onClick: () => navigate('/Exhibition/Hyphen') },
-    { icon: <HangulggolBtn />, onClick: () => navigate('/Exhibition/Hangulggol') },
-    { icon: <HipsBtn />, onClick: () => navigate('/Exhibition/Hips') },
+    { icon: <GreenbeeBtn /> },
+    { icon: <DromapicBtn /> },
+    { icon: <IrayBtn /> },
+    { icon: <YadzBtn /> },
+    { icon: <AdrenalinBtn /> },
+    { icon: <ProtoBtn /> },
+    { icon: <HyphenBtn /> },
+    { icon: <HangulggolBtn /> },
+    { icon: <HipsBtn /> },
   ];
 
   return (
@@ -34,7 +45,7 @@ const ExhibitionPage = () => {
       <DesktopHeader />
       <BtnGrid>
         {buttons.map((button, index) => (
-          <GridItem key={index} onClick={button.onClick}>
+          <GridItem key={index} onClick={() => handleOnClick(index)}>
             {button.icon}
           </GridItem>
         ))}

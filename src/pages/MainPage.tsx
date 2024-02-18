@@ -6,8 +6,12 @@ import MapSection from '../views/MainPage/components/MapSection';
 import EventSection from '../views/MainPage/components/EventSection';
 import GoodsSection from '../views/MainPage/components/GoodsSection';
 import CommitteeSectionSection from '../views/MainPage/components/CommitteeSection';
+import { useEffect } from 'react';
 
 const MainPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <DesktopHeader />

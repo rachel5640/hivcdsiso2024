@@ -32,7 +32,7 @@ const Title = styled.h1`
 
 const TextBox = styled.div`
   display: grid;
-  gap: 1rem;
+  gap: 1.3rem;
 
   width: 100%;
   grid-template-columns: repeat(2, 1fr);
@@ -42,7 +42,7 @@ const TextList = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
-  padding-bottom: 0.8rem;
+  padding-bottom: 0.5rem;
   border-bottom: 2px solid;
 
   & > h1 {

@@ -91,13 +91,13 @@ const PlaceText = styled.div`
         case '5':
           return '#4ABFEA';
         case '6':
-          return '#00837A';
-        case '7':
-          return '#FA538F';
-        case '8':
           return '#FED302';
-        case '9':
+        case '7':
           return '#E30629';
+        case '8':
+          return '#00837A';
+        case '9':
+          return '#FA538F';
         default:
           return 'black';
       }
