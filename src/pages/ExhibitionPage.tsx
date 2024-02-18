@@ -14,19 +14,28 @@ import {
 } from '../views/ExhibitionPage/assets';
 import Footer from '../views/@common/components/Footer';
 
-const ExhibitionPage = () => {
+interface ExhibitionPageProps {
+  onButtonClick: (index: number) => void;
+}
+
+const ExhibitionPage = ({ onButtonClick }: ExhibitionPageProps) => {
   const navigate = useNavigate();
 
+  const handleOnClick = (index: number) => {
+    onButtonClick(index);
+    navigate(`/Exhibition/Projects`);
+  };
+
   const buttons = [
-    { icon: <GreenbeeBtn />, onClick: () => navigate('/Exhibition/Greenbee') },
-    { icon: <DromapicBtn />, onClick: () => navigate('/Exhibition/Dromapic') },
-    { icon: <IrayBtn />, onClick: () => navigate('/Exhibition/Iray') },
-    { icon: <YadzBtn />, onClick: () => navigate('/Exhibition/Yadz') },
-    { icon: <AdrenalinBtn />, onClick: () => navigate('/Exhibition/Adrenalin') },
-    { icon: <ProtoBtn />, onClick: () => navigate('/Exhibition/Proto') },
-    { icon: <HyphenBtn />, onClick: () => navigate('/Exhibition/Hyphen') },
-    { icon: <HangulggolBtn />, onClick: () => navigate('/Exhibition/Hangulggol') },
-    { icon: <HipsBtn />, onClick: () => navigate('/Exhibition/Hips') },
+    { icon: <GreenbeeBtn /> },
+    { icon: <DromapicBtn /> },
+    { icon: <IrayBtn /> },
+    { icon: <YadzBtn /> },
+    { icon: <AdrenalinBtn /> },
+    { icon: <ProtoBtn /> },
+    { icon: <HyphenBtn /> },
+    { icon: <HangulggolBtn /> },
+    { icon: <HipsBtn /> },
   ];
 
   return (
@@ -34,7 +43,7 @@ const ExhibitionPage = () => {
       <DesktopHeader />
       <BtnGrid>
         {buttons.map((button, index) => (
-          <GridItem key={index} onClick={button.onClick}>
+          <GridItem key={index} onClick={() => handleOnClick(index)}>
             {button.icon}
           </GridItem>
         ))}

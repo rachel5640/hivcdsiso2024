@@ -71,7 +71,9 @@ const ExhibitionSectionBox = styled.div`
 `;
 
 const PosterImg = styled.img`
-  display: flex;
+  align-self: flex-start;
+
+  height: auto;
 `;
 
 const ExhibitionInfoBox = styled.div`

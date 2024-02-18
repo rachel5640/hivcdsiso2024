@@ -7,8 +7,8 @@ export const RF1_PLACES = [
 
 export const SBF_PLACES = [
   { id: '5', number: '❺', name: '한글꼴연구회 | Hangulggol' },
-  { id: '6', number: '❻', name: '프로토 | PROTO' },
-  { id: '7', number: '❼', name: '그린비 | Greenbee' },
-  { id: '8', number: '❽', name: '아이레이 | I-ray' },
-  { id: '9', number: '❾', name: '드로마픽 | Dromapic' },
+  { id: '6', number: '❻', name: '아이레이 | I-ray' },
+  { id: '7', number: '❼', name: '드로마픽 | Dromapic' },
+  { id: '8', number: '❽', name: '프로토 | PROTO' },
+  { id: '9', number: '❾', name: '그린비 | Greenbee' },
 ];

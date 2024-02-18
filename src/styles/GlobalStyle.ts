@@ -115,6 +115,9 @@ export const reset = css`
 
   html {
     background: ${({ theme }) => theme.colors.white};
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smooth: never;
   }
 
   #root {
