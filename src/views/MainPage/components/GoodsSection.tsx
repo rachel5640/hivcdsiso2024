@@ -35,7 +35,6 @@ const ImgBox = styled.div`
   grid-template-columns: repeat(2, 1fr);
 
   & > img {
-    /* stylelint-disable-next-line declaration-empty-line-before */
     width: 100%;
   }
 `;

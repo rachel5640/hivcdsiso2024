@@ -54,7 +54,6 @@ const Lecturebox = ({ number, title, date, description, instagram, website }: Le
 
 const LectureBoxWrapper = styled.div<LectureBoxWrapperProps>`
   width: 100%;
-
   border-bottom: 2px solid;
   cursor: pointer;
   word-break: keep-all;
@@ -85,13 +84,17 @@ const LectureBoxWrapper = styled.div<LectureBoxWrapperProps>`
       }
     }};
   }
+
+  &:last-child {
+    border-style: none;
+  }
 `;
 
 const TitleBox = styled.div`
   display: flex;
 
   padding: 1.6rem 0 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 `;
 
 const LectureNumber = styled.p`

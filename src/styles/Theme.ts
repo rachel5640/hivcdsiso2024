@@ -12,6 +12,7 @@ const colors = {
   purple: '#a31aa3',
   white: '#ffffff',
   grey: '#c7c7c7',
+  darkgrey: '#4d4d4d',
 };
 
 const fonts = {

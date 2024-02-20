@@ -28,9 +28,7 @@ const MainPage = () => {
 };
 
 const MainPageBox = styled.section`
-  width: 100vw;
-
-  /* stylelint-disable-next-line order/properties-order */
+  max-width: 100vw;
   padding: 0 8.2rem;
 `;
 

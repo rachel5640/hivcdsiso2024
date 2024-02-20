@@ -61,7 +61,8 @@ const EventSubText = styled.div`
   & > p {
     ${({ theme }) => theme.fonts.body1};
 
-    margin-top: 2.3rem;
+    margin: 2.2rem 1rem 0 0;
+    word-break: keep-all;
   }
 `;
 

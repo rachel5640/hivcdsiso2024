@@ -11,7 +11,7 @@ const ArchivePage = () => {
     <>
       <DesktopHeader />
       <ArchivePageBox>Comming Soon!</ArchivePageBox>
-      <Footer />
+      <Footer isfixed={true} />
     </>
   );
 };
@@ -21,14 +21,12 @@ const ArchivePageBox = styled.section`
   align-items: center;
 
   width: 100vw;
-  height: 90vh;
+  height: 80dvh;
+  padding: 0 8.2rem;
 
   color: ${({ theme }) => theme.colors.grey};
 
   ${({ theme }) => theme.fonts.title1};
-
-  /* stylelint-disable-next-line order/properties-order */
-  padding: 0 8.2rem;
 `;
 
 export default ArchivePage;

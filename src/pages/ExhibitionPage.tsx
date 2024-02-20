@@ -76,7 +76,6 @@ const GridItem = styled.div`
   aspect-ratio: auto 1 / 1;
 
   & > svg {
-    /* stylelint-disable-next-line declaration-empty-line-before */
     width: 100%;
     height: 100%;
 
@@ -84,7 +83,6 @@ const GridItem = styled.div`
   }
 
   &:hover > svg {
-    /* stylelint-disable-next-line declaration-empty-line-before */
     transform: translateY(-7px); /* 마우스를 올렸을 때 약간 위로 이동 */
   }
 `;

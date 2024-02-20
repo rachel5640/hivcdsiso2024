@@ -12,11 +12,11 @@
       "/^border/": ["px"],
       "font-size": ["rem", "%"]
     },
-    "unit-allowed-list": ["%", "deg", "px", "rem", "ms", "vw", "s", "dvh", "vh", "turn", "fr"],
+    "unit-allowed-list": ["%", "deg", "px", "rem", "ms", "vw", "s", "dvh", "turn", "fr", "vh"],
     "declaration-empty-line-before": [
       "always",
       {
-        "ignore": ["after-comment", "after-declaration", "inside-single-line-block"]
+        "ignore": ["first-nested", "after-comment", "after-declaration", "inside-single-line-block"]
       }
     ],
     "order/properties-order": [

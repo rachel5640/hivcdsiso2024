@@ -52,7 +52,6 @@ const HeaderBox = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
 
   & > div {
-    /* stylelint-disable-next-line declaration-empty-line-before */
     display: flex;
     align-items: center;
 

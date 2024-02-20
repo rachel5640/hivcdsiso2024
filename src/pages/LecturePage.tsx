@@ -4,7 +4,8 @@ import Footer from '../views/@common/components/Footer';
 import { useEffect } from 'react';
 import Lecturebox from '../views/LecturePage/components/LectureBox';
 import { LECTURE_DATA } from '../views/LecturePage/constant/text';
-import { Trial } from '../views/@common/assets';
+import TimeLine from '../views/LecturePage/components/TimeLine';
+import ScrollBarBox from '../views/@common/components/ScrollBar';
 
 const LecturePage = () => {
   useEffect(() => {
@@ -15,80 +16,69 @@ const LecturePage = () => {
       <DesktopHeader />
       <LecturePageBox>
         <TimeTable>
-          <Trial />
+          <TimeLine />
         </TimeTable>
         <LineBox>
           <Line />
         </LineBox>
         <TextArea>
-          {LECTURE_DATA.map((content, index) => (
-            <Lecturebox
-              key={index}
-              number={content.number}
-              title={content.title}
-              date={content.date}
-              description={content.description}
-              instagram={content.instagram}
-              website={content.website}
-            />
-          ))}
+          <ScrollBarBox>
+            {LECTURE_DATA.map((content, index) => (
+              <Lecturebox
+                key={index}
+                number={content.number}
+                title={content.title}
+                date={content.date}
+                description={content.description}
+                instagram={content.instagram}
+                website={content.website}
+              />
+            ))}
+          </ScrollBarBox>
         </TextArea>
       </LecturePageBox>
-      <Footer />
+      <Footer isfixed={true} />
     </>
   );
 };
 const LecturePageBox = styled.section`
   display: grid;
-  overflow-y: hidden;
-  position: relative;
 
-  width: 100vw;
-  height: 80dvh;
-  margin-top: 14rem;
-  margin-bottom: 4.1rem;
+  max-width: 100vw;
+  max-height: 100vh;
   padding: 0 8.2rem;
+  padding-top: 14rem;
+  padding-bottom: 8.8rem;
 
   grid-column-gap: 1rem;
   grid-template-columns: repeat(36, 1fr);
 `;
 
 const TimeTable = styled.section`
-  overflow-y: auto;
-
-  height: 100;
   border-top: 3px solid;
-
-  grid-column: span 20;
-
-  & > svg {
-    /* stylelint-disable-next-line declaration-empty-line-before */
-    width: 100%;
-  }
+  grid-column: span 22;
 `;
 
 const LineBox = styled.div`
   display: flex;
   justify-content: center;
 
-  height: 80dvh;
-
   grid-column: span 1;
 `;
 
 const Line = styled.div`
   width: 3px;
-  height: 80dvh;
+  height: calc(100vh - 24rem);
 
   background-color: black;
 `;
 const TextArea = styled.section`
   overflow-y: auto;
 
-  height: auto;
+  height: 100%;
   border-top: 3px solid;
 
-  grid-column: span 15;
+  grid-column: span 13;
 `;
 
 export default LecturePage;

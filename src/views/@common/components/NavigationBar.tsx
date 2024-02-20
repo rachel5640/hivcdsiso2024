@@ -70,7 +70,6 @@ const TeamButton = styled.button<TeamButtonProps>`
   background-color: ${({ isactive, color, theme }) => (isactive ? theme.colors[color] : 'transparent')};
 
   &:hover {
-    /* stylelint-disable-next-line declaration-empty-line-before */
     background-color: ${({ color, theme }) => theme.colors[color]};
   }
 `;

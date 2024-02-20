@@ -67,17 +67,18 @@ const ExhibitionSectionBox = styled.div`
   display: flex;
   gap: 3rem;
 
+  width: 100%;
   margin: 21.2rem 0 13rem;
 `;
 
 const PosterImg = styled.img`
   align-self: flex-start;
-
-  height: auto;
 `;
 
 const ExhibitionInfoBox = styled.div`
   display: block;
+
+  width: 100%;
 `;
 const ExhibitionInfo = styled.div`
   padding: 1rem 0;
@@ -108,13 +109,11 @@ const ExhibitionInfoList = styled.div`
   }
 
   & > ul > li {
-    /* stylelint-disable-next-line declaration-empty-line-before */
     display: flex;
     align-items: center;
   }
 
   & > ul:nth-child(2) {
-    /* stylelint-disable-next-line declaration-empty-line-before */
     margin-left: 9.3rem;
   }
 `;
@@ -123,8 +122,8 @@ const Circle = styled.div`
   width: 1.6rem;
   height: 1.6rem;
   margin-right: 2.1rem;
-  /* stylelint-disable-next-line declaration-property-unit-allowed-list */
-  border-radius: 50%;
+  border-radius: 8px;
+  aspect-ratio: 1 / 1;
 
   background-color: ${({ id }) => {
     switch (id) {
