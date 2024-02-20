@@ -1,17 +1,15 @@
 import styled from 'styled-components';
 import ScrollBarBox from '../../@common/components/ScrollBar';
-const days = ['월', '화', '수', '목', '금', '토'];
-const engDays = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
-const times = ['2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm'];
+import { DAYS, ENG_DAYS, TIMES } from '../constant/timeline';
 
 const TimeLine = () => {
   const cells = Array(98)
     .fill(null)
     .map((_, index) => <div key={index}></div>);
 
-  const dayBoxes = days.map((day, index) => <DaySlot key={index}>{day}</DaySlot>);
+  const dayBoxes = DAYS.map((day, index) => <DaySlot key={index}>{day}</DaySlot>);
 
-  const engDayBoxes = engDays.map((engDay, index) => <DaySlot key={index}>{engDay}</DaySlot>);
+  const engDayBoxes = ENG_DAYS.map((engDay, index) => <DaySlot key={index}>{engDay}</DaySlot>);
 
   return (
     <ScrollBarBox>
@@ -21,7 +19,7 @@ const TimeLine = () => {
       </DayBoxWrapper>
       <TimeLineBox>
         <TimeBox>
-          {times.map((time, index) => (
+          {TIMES.map((time, index) => (
             <div key={index}>{time}</div>
           ))}
         </TimeBox>
@@ -46,6 +44,10 @@ const TimeBox = styled.div`
     ${({ theme }) => theme.fonts.label3};
 
     height: 8rem;
+
+    &:last-child {
+      height: 0;
+    }
   }
 `;
 const TimeLineSheet = styled.div`
@@ -59,7 +61,7 @@ const TimeLineSheet = styled.div`
 
   & > div {
     height: 4rem;
-    border-top: 3px solid;
+    border-top: 2.5px solid;
     border-color: ${({ theme }) => theme.colors.darkgrey};
   }
 

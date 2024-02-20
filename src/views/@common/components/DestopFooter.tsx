@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import { IcHivcd } from '../assets';
 import { IcInstagram } from '../assets';
 
-interface FooterProps {
+interface DesktopFooterProps {
   isfixed?: boolean;
 }
 
-const Footer = ({ isfixed }: FooterProps) => {
+const DesktopFooter = ({ isfixed }: DesktopFooterProps) => {
   return (
     <FooterBox isfixed={isfixed}>
       <FooterText>
@@ -25,7 +25,7 @@ const Footer = ({ isfixed }: FooterProps) => {
   );
 };
 
-const FooterBox = styled.section<FooterProps>`
+const FooterBox = styled.section<DesktopFooterProps>`
   display: flex;
   justify-content: space-between;
   position: ${({ isfixed }) => (isfixed ? 'fixed' : 'static')};
@@ -64,4 +64,4 @@ const ButtonBox = styled.div`
     cursor: pointer;
   }
 `;
-export default Footer;
+export default DesktopFooter;
