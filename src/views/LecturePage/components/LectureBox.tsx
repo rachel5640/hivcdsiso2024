@@ -106,13 +106,17 @@ const LectureBoxWrapper = styled.div<LectureBoxWrapperProps>`
       }
     }};
   }
+
+  &:last-child {
+    border-bottom: none;
+  }
 `;
 
 const TitleBox = styled.div<{ isMobile?: boolean }>`
   display: flex;
 
   margin-bottom: ${({ isMobile }) => (isMobile ? '0' : '0.7rem')};
-  padding: ${({ isMobile }) => (isMobile ? '1rem 0 1rem' : '1.6rem 0 1rem')};
+  padding: ${({ isMobile }) => (isMobile ? '1rem 0 1rem' : '1.4rem 0 0.8rem')};
 `;
 
 const LectureNumber = styled.p<{ isMobile?: boolean }>`
@@ -139,7 +143,7 @@ const DetailInfo = styled.div<{ isMobile?: boolean }>`
   & > p {
     ${({ isMobile, theme }) => (isMobile ? theme.fonts.label5 : theme.fonts.body5)};
 
-    margin: ${({ isMobile }) => (isMobile ? '0rem 0 0 3rem' : '0 0 1.8rem 4.8rem')};
+    margin: ${({ isMobile }) => (isMobile ? '0rem 0 0 3rem' : '0 0 0.5rem 4.8rem')};
   }
 
   & > div {

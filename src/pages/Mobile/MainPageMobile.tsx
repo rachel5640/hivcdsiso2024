@@ -6,11 +6,13 @@ import styled from 'styled-components';
 import SisoGoodsSectionMobile from '../../views/MainPage/components/Mobile/SisoGoodsSectionMobile';
 import EventSectionMobile from '../../views/MainPage/components/Mobile/EventSectionMobile';
 import ExhibitionCommitteeMobile from '../../views/MainPage/components/Mobile/ExhibitionCommitteeMobile';
+import SplashMobile from '../../views/MainPage/components/Mobile/SplashMobile';
 
 const MainPageMobile = () => {
   return (
     <>
-      <MobileHeader />
+      <SplashMobile />
+      <MobileHeader isSticky={true} />
       <MainPageSection>
         <ExhibitionSectionMobile />
         <MapSectionMobile />

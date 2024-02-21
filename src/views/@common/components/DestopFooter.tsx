@@ -35,7 +35,7 @@ const FooterBox = styled.section<DesktopFooterProps>`
   width: calc(100vw - 16.4rem);
   height: 8.8rem;
   margin: auto;
-  padding: 2.61rem 0 2.1rem;
+  padding: 1.3rem 0;
   border-top: 3px solid;
 
   background-color: ${({ theme }) => theme.colors.white};
