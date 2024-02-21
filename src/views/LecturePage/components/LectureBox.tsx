@@ -14,9 +14,19 @@ interface LectureboxProps {
   instagram: string;
   website: string;
   clickedNumber: number | null;
+  isMobile?: boolean;
 }
 
-const Lecturebox = ({ number, title, date, description, instagram, website, clickedNumber }: LectureboxProps) => {
+const Lecturebox = ({
+  number,
+  title,
+  date,
+  description,
+  instagram,
+  website,
+  clickedNumber,
+  isMobile,
+}: LectureboxProps) => {
   const [expanded, setExpanded] = useState(false);
   const lectureRef = useRef<HTMLDivElement>(null);
 
@@ -35,15 +45,15 @@ const Lecturebox = ({ number, title, date, description, instagram, website, clic
 
   return (
     <LectureBoxWrapper onClick={toggleExpand} expanded={expanded} number={number}>
-      <TitleBox>
-        <LectureNumber>{number}</LectureNumber>
-        <LectureInfo>
+      <TitleBox isMobile={isMobile}>
+        <LectureNumber isMobile={isMobile}>{number}</LectureNumber>
+        <LectureInfo isMobile={isMobile}>
           <h1>{title}</h1>
           <h1>{date} </h1>
         </LectureInfo>
       </TitleBox>
       {expanded && (
-        <DetailInfo>
+        <DetailInfo isMobile={isMobile}>
           <p>{description}</p>
           <div>
             {instagram !== '' && (
@@ -65,8 +75,8 @@ const Lecturebox = ({ number, title, date, description, instagram, website, clic
 
 const LectureBoxWrapper = styled.div<LectureBoxWrapperProps>`
   width: 100%;
-
   border-bottom: 2px solid;
+
   cursor: pointer;
   word-break: keep-all;
 
@@ -98,52 +108,61 @@ const LectureBoxWrapper = styled.div<LectureBoxWrapperProps>`
   }
 `;
 
-const TitleBox = styled.div`
+const TitleBox = styled.div<{ isMobile?: boolean }>`
   display: flex;
 
-  padding: 1.6rem 0 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: ${({ isMobile }) => (isMobile ? '0' : '0.7rem')};
+  padding: ${({ isMobile }) => (isMobile ? '1rem 0 1rem' : '1.6rem 0 1rem')};
 `;
 
-const LectureNumber = styled.p`
-  ${({ theme }) => theme.fonts.title5};
+const LectureNumber = styled.p<{ isMobile?: boolean }>`
+  width: ${({ isMobile }) => (isMobile ? '1rem' : '3rem')};
+  ${({ isMobile, theme }) => (isMobile ? theme.fonts.title7 : theme.fonts.title5)};
 
-  margin-right: 4rem;
+  margin-right: ${({ isMobile }) => (isMobile ? '2rem' : '2rem')};
 `;
 
-const LectureInfo = styled.p`
+const LectureInfo = styled.div<{ isMobile?: boolean }>`
   & > h1 {
-    ${({ theme }) => theme.fonts.title5};
+    ${({ isMobile, theme }) => (isMobile ? theme.fonts.title8 : theme.fonts.title5)};
+  }
+
+  & > h2 {
+    ${({ isMobile, theme }) => (isMobile ? theme.fonts.title7 : theme.fonts.title5)};
   }
 `;
 
-const DetailInfo = styled.div`
+const DetailInfo = styled.div<{ isMobile?: boolean }>`
   width: 100%;
   padding-right: 1rem;
 
   & > p {
-    ${({ theme }) => theme.fonts.body5};
+    ${({ isMobile, theme }) => (isMobile ? theme.fonts.label5 : theme.fonts.body5)};
 
-    margin: 0 0 1.8rem 4.8rem;
+    margin: ${({ isMobile }) => (isMobile ? '0rem 0 0 3rem' : '0 0 1.8rem 4.8rem')};
   }
 
   & > div {
     display: flex;
 
-    margin-bottom: 3rem;
-    margin-left: 4.8rem;
+    margin: ${({ isMobile }) => (isMobile ? '0.6rem 2rem 1.3rem 3rem ' : '0 4.8rem 3rem 4.5rem')};
   }
 
   & > div > a {
-    ${({ theme }) => theme.fonts.label2};
+    ${({ isMobile, theme }) => (isMobile ? theme.fonts.body10 : theme.fonts.label2)};
 
-    margin-right: 0.7rem;
+    margin-right: ${({ isMobile }) => (isMobile ? '0.3rem' : '0.7rem')};
+    padding: ${({ isMobile }) => (isMobile ? '0.3rem' : '0.1rem 1.2rem;')};
     padding: 0.1rem 1.2rem;
+    border: ${({ isMobile }) => (isMobile ? '0.8px solid black' : '2.3px solid black')};
     border: 2.3px solid black;
     border-radius: 21px;
+
     color: black;
-    &: hover {
+
+    &:hover {
       background-color: white;
+
       color: black;
     }
   }
