@@ -8,7 +8,7 @@ import GoodsSection from '../../views/MainPage/components/GoodsSection';
 import CommitteeSection from '../../views/MainPage/components/CommitteeSection';
 import { useEffect } from 'react';
 
-const MainPage = () => {
+const MainPageDesktop = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -32,4 +32,4 @@ const MainPageBox = styled.section`
   padding: 0 8.2rem;
 `;
 
-export default MainPage;
+export default MainPageDesktop;

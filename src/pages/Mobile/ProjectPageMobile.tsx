@@ -1,7 +1,7 @@
 import MobileHeader from '../../views/@common/components/MobileHeader';
 import MobileFooter from '../../views/@common/components/MobileFooter';
 
-const LecturePageMobile = () => {
+const ProjectPageMobile = () => {
   return (
     <>
       <MobileHeader />
@@ -10,4 +10,4 @@ const LecturePageMobile = () => {
   );
 };
 
-export default LecturePageMobile;
+export default ProjectPageMobile;

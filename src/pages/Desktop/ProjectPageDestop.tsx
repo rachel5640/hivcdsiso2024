@@ -1,13 +1,13 @@
-import DesktopHeader from '../views/@common/components/DesktopHeader';
-import NavigationBar from '../views/@common/components/NavigationBar';
+import DesktopHeader from '../../views/@common/components/DesktopHeader';
+import NavigationBar from '../../views/@common/components/NavigationBar';
 import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
-import TeamInfo from '../views/ProjectPage/components/TeamInfo';
+import TeamInfo from '../../views/ProjectPage/components/TeamInfo';
 import { useEffect } from 'react';
 
 import { useState } from 'react';
 
-const ProjectPage = () => {
+const ProjectPageDesktop = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -35,4 +35,4 @@ const ProjectPageBox = styled.section`
   padding: 0 8.2rem;
 `;
 
-export default ProjectPage;
+export default ProjectPageDesktop;

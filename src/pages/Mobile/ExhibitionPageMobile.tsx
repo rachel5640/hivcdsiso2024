@@ -1,6 +1,6 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 import {
   DromapicBtn,
   GreenbeeBtn,
@@ -11,38 +11,64 @@ import {
   HyphenBtn,
   HangulggolBtn,
   HipsBtn,
+  HivcdGreyLogo,
 } from '../../views/ExhibitionPage/assets/index';
+import MobileHeader from '../../views/@common/components/MobileHeader';
+import MobileFooter from '../../views/@common/components/MobileFooter';
+
+interface ExhibitionPageMobileProps {
+  islast: boolean;
+  ishovered: boolean;
+}
 
 const ExhibitionPageMobile = () => {
+  const [hoveredIndex, setHoveredIndex] = useState(-1);
+  const handleMouseEnter = (index: number) => {
+    setHoveredIndex(index);
+  };
+  const handleMouseLeave = () => {
+    setHoveredIndex(-1);
+  };
+
   const navigate = useNavigate();
   const handleOnClick = (index: number) => {
-    navigate(`/Exhibition/Projects`, { state: index });
+    if (!buttons[index].islast) {
+      navigate(`/Exhibition/Projects`, { state: index });
+    }
   };
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   const buttons = [
-    { icon: <GreenbeeBtn /> },
-    { icon: <DromapicBtn /> },
-    { icon: <IrayBtn /> },
-    { icon: <YadzBtn /> },
-    { icon: <AdrenalinBtn /> },
-    { icon: <ProtoBtn /> },
-    { icon: <HyphenBtn /> },
-    { icon: <HangulggolBtn /> },
-    { icon: <HipsBtn /> },
+    { icon: <GreenbeeBtn />, islast: false },
+    { icon: <DromapicBtn />, islast: false },
+    { icon: <IrayBtn />, islast: false },
+    { icon: <YadzBtn />, islast: false },
+    { icon: <AdrenalinBtn />, islast: false },
+    { icon: <ProtoBtn />, islast: false },
+    { icon: <HyphenBtn />, islast: false },
+    { icon: <HangulggolBtn />, islast: false },
+    { icon: <HipsBtn />, islast: false },
+    { icon: <HivcdGreyLogo />, islast: true },
   ];
   return (
-    <ExhibitionPageBox>
-      <BtnGrid>
-        {buttons.map((button, index) => (
-          <GridItem key={index} onClick={() => handleOnClick(index)}>
-            {button.icon}
-          </GridItem>
-        ))}
-      </BtnGrid>
-    </ExhibitionPageBox>
+    <>
+      <MobileHeader />
+      <ExhibitionPageBox>
+        <BtnGrid>
+          {buttons.map((button, index) => (
+            <GridItem
+              key={index}
+              onClick={() => handleOnClick(index)}
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={handleMouseLeave}
+              islast={button.islast}
+              ishovered={hoveredIndex === index}>
+              {button.icon}
+            </GridItem>
+          ))}
+        </BtnGrid>
+      </ExhibitionPageBox>
+      <MobileFooter />
+    </>
   );
 };
 
@@ -50,6 +76,7 @@ export default ExhibitionPageMobile;
 
 const ExhibitionPageBox = styled.section`
   width: 100vw;
+  margin: 7.3rem 0 5rem;
   padding: 0 1.6rem;
 `;
 const BtnGrid = styled.section`
@@ -60,7 +87,7 @@ const BtnGrid = styled.section`
   grid-template-columns: repeat(2, 1fr);
 `;
 
-const GridItem = styled.div`
+const GridItem = styled.div<ExhibitionPageMobileProps>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,7 +95,7 @@ const GridItem = styled.div`
 
   width: 100%;
 
-  cursor: pointer;
+  cursor: ${({ islast }) => (islast ? 'auto' : 'pointer')};
   aspect-ratio: auto 1 / 1;
 
   & > svg {
@@ -79,6 +106,7 @@ const GridItem = styled.div`
   }
 
   &:hover > svg {
-    transform: translateY(-3px);
+    transition: transform 0.4s;
+    transform: ${({ islast, ishovered }) => (islast && ishovered ? 'none' : 'translateY(-3px)')};
   }
 `;

@@ -7,6 +7,7 @@ import HyphenBtn from './hyphen_btn.svg?react';
 import IrayBtn from './iray_btn.svg?react';
 import ProtoBtn from './proto_btn.svg?react';
 import YadzBtn from './yadz_btn.svg?react';
+import HivcdGreyLogo from './hivcd_grey_logo.svg?react';
 
 export { AdrenalinBtn };
 export { DromapicBtn };
@@ -17,3 +18,4 @@ export { HyphenBtn };
 export { IrayBtn };
 export { ProtoBtn };
 export { YadzBtn };
+export { HivcdGreyLogo };
