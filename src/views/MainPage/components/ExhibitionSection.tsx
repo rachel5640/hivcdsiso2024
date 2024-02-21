@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import SisoPoster from '../assets/Siso_Poster_Web.jpg';
+import SisoPoster from '../assets/siso_poster_web.jpg';
 import { EXHIBITION_TEXT } from '../constant/text';
 import { RenderCircles } from './RenderCircles';
 
 const ExhibitionSection = () => {
   return (
     <ExhibitionSectionBox>
-      <PosterImg src={SisoPoster} />
+      <PosterImg src={SisoPoster} alt="siso poster Our index" />
       <ExhibitionInfoBox>
         <ExhibitionInfo>
           <h1>《OUR INDEX》</h1>
