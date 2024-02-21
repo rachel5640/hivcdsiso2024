@@ -38,7 +38,8 @@ const MapSectionMobileBox = styled.section`
   & > h1 {
     ${({ theme }) => theme.fonts.title2};
 
-    margin-bottom: 2.4rem;
+    margin-top: 2rem;
+    margin-bottom: 1.8rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid black;
     border-style: dashed;

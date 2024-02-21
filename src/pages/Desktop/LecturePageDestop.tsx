@@ -53,9 +53,9 @@ const LecturePageBox = styled.section`
   display: grid;
 
   max-width: 100vw;
-  max-height: 100vh;
+  height: 100vh;
   padding: 0 8.2rem;
-  padding-top: 12rem;
+  padding-top: 10rem;
   padding-bottom: 8.8rem;
 
   grid-column-gap: 1rem;
@@ -76,7 +76,7 @@ const LineBox = styled.div`
 
 const Line = styled.div`
   width: 3px;
-  height: calc(100vh - 24rem);
+  height: calc(100vh - 21rem);
 
   background-color: black;
 `;

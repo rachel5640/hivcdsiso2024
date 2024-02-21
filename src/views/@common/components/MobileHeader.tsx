@@ -4,10 +4,11 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 interface MobileHeaderProps {
-  isopen: boolean;
+  isopen?: boolean;
+  isSticky?: boolean;
 }
 
-const MobileHeader = () => {
+const MobileHeader = ({ isSticky }: MobileHeaderProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
   const handleClickLogo = () => navigate('/');
@@ -20,7 +21,7 @@ const MobileHeader = () => {
   };
 
   return (
-    <HeaderWrapper>
+    <HeaderWrapper isSticky={isSticky}>
       <MobileHeaderBox>
         <OurIndexLogoBox onClick={handleClickLogo}>
           <OurIndexLogo />
@@ -44,8 +45,8 @@ const MobileHeader = () => {
   );
 };
 
-const HeaderWrapper = styled.div`
-  position: fixed;
+const HeaderWrapper = styled.div<MobileHeaderProps>`
+  position: ${({ isSticky }) => (isSticky ? 'sticky' : 'fixed')};
   top: 0;
   z-index: 100;
 `;

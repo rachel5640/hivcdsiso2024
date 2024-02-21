@@ -7,6 +7,7 @@ import EventSection from '../../views/MainPage/components/EventSection';
 import GoodsSection from '../../views/MainPage/components/GoodsSection';
 import CommitteeSection from '../../views/MainPage/components/CommitteeSection';
 import { useEffect } from 'react';
+import Splash from '../../views/MainPage/components/Splash';
 
 const MainPageDesktop = () => {
   useEffect(() => {
@@ -14,22 +15,31 @@ const MainPageDesktop = () => {
   }, []);
   return (
     <>
-      <DesktopHeader />
-      <MainPageBox>
-        <ExhibitionSection />
-        <MapSection />
-        <GoodsSection />
-        <EventSection />
-        <CommitteeSection />
-      </MainPageBox>
-      <DesktopFooter />
+      <Splash />
+      <MainPageDesktopBox>
+        <DesktopHeader isSticky={true} />
+        <MainPageBox>
+          <ExhibitionSection />
+          <MapSection />
+          <GoodsSection />
+          <EventSection />
+          <CommitteeSection />
+        </MainPageBox>
+        <DesktopFooter />
+      </MainPageDesktopBox>
     </>
   );
 };
 
+const MainPageDesktopBox = styled.section`
+  width: 100vw;
+  scroll-snap-align: start;
+`;
+
 const MainPageBox = styled.section`
   max-width: 100vw;
   padding: 0 8.2rem;
+  scroll-snap-type: y mandatory;
 `;
 
 export default MainPageDesktop;

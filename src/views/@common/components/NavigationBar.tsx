@@ -69,6 +69,8 @@ const TeamButton = styled.button<TeamButtonProps>`
 
   background-color: ${({ isactive, color, theme }) => (isactive ? theme.colors[color] : 'transparent')};
 
+  color: black;
+
   &:hover {
     background-color: ${({ color, theme }) => theme.colors[color]};
   }

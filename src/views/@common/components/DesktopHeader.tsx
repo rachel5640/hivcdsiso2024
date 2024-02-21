@@ -2,7 +2,11 @@ import { ArchiveBtn, ExhibitionBtn, LectureBtn, OurIndexLogo } from '../assets/i
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-const DesktopHeader = () => {
+interface DesktopHeaderProps {
+  isSticky?: boolean;
+}
+
+const DesktopHeader = ({ isSticky }: DesktopHeaderProps) => {
   const navigate = useNavigate();
   const handleClickLogo = () => navigate('/');
 
@@ -13,7 +17,7 @@ const DesktopHeader = () => {
   ];
 
   return (
-    <HeaderWrapper>
+    <HeaderWrapper isSticky={isSticky}>
       <HeaderBox>
         <LogoBtn onClick={handleClickLogo}>
           <OurIndexLogo />
@@ -31,8 +35,8 @@ const DesktopHeader = () => {
   );
 };
 
-const HeaderWrapper = styled.section`
-  position: fixed;
+const HeaderWrapper = styled.section<{ isSticky?: boolean }>`
+  position: ${({ isSticky }) => (isSticky ? 'sticky' : 'fixed')};
   top: 0;
   z-index: 100;
 

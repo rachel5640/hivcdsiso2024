@@ -27,6 +27,7 @@ const TeamExplanationBox = styled.div`
   ${({ theme }) => theme.fonts.body5};
 
   margin-right: 5.7rem;
+  word-break: keep-all;
 `;
 
 const TeamInstaLink = styled.a`
