@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 interface LectureBoxWrapperProps {
@@ -18,6 +18,7 @@ interface LectureboxProps {
 
 const Lecturebox = ({ number, title, date, description, instagram, website, clickedNumber }: LectureboxProps) => {
   const [expanded, setExpanded] = useState(false);
+  const lectureRef = useRef<HTMLDivElement>(null);
 
   const toggleExpand = () => {
     setExpanded(!expanded);
@@ -26,6 +27,7 @@ const Lecturebox = ({ number, title, date, description, instagram, website, clic
   useEffect(() => {
     if (number === clickedNumber) {
       setExpanded(true);
+      lectureRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else {
       setExpanded(false);
     }

@@ -38,25 +38,28 @@ const EventSectionBox = styled.section`
     padding-bottom: 1rem;
     border-bottom: 1px solid black;
     border-style: dashed;
+    word-break: keep-all;
   }
 
   & > h2 {
-    ${({ theme }) => theme.fonts.body9_2};
-  }
-
-  & > div {
-    display: flex;
-  }
-
-  & > div > p {
-    padding-top: 1rem;
     ${({ theme }) => theme.fonts.body9_2};
 
     word-break: keep-all;
   }
 
+  & > div {
+    display: flex;
+    word-break: keep-all;
+  }
+
+  & > div > p {
+    padding-top: 1rem;
+    ${({ theme }) => theme.fonts.body9_2};
+  }
+
   & > div > svg {
     height: 15vh;
+    margin-top: 0.5rem;
   }
 `;
 

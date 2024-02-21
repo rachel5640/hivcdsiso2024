@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import ScrollBarBox from '../../@common/components/ScrollBar';
 import { DAYS, ENG_DAYS, TIMES } from '../constant/timeline';
 
 interface TimeLineProps {
   onClick: (number: number) => void;
+  isMobile?: boolean;
 }
 
-const TimeLine = ({ onClick }: TimeLineProps) => {
+const TimeLine = ({ onClick, isMobile }: TimeLineProps) => {
   const handleClick = (number: number) => {
     onClick(number); // 클릭된 숫자를 부모 컴포넌트로 전달
   };
@@ -74,36 +74,44 @@ const TimeLine = ({ onClick }: TimeLineProps) => {
       return <div key={index}></div>;
     });
 
-  const dayBoxes = DAYS.map((day, index) => <DaySlot key={index}>{day}</DaySlot>);
-  const engDayBoxes = ENG_DAYS.map((engDay, index) => <DaySlot key={index}>{engDay}</DaySlot>);
+  const dayBoxes = DAYS.map((day, index) => (
+    <DaySlot isMobile={isMobile} key={index}>
+      {day}
+    </DaySlot>
+  ));
+  const engDayBoxes = ENG_DAYS.map((engDay, index) => (
+    <DaySlot isMobile={isMobile} key={index}>
+      {engDay}
+    </DaySlot>
+  ));
 
   return (
-    <ScrollBarBox>
+    <>
       <DayBoxWrapper>
         <DayBox>{dayBoxes}</DayBox>
         <DayBox>{engDayBoxes}</DayBox>
       </DayBoxWrapper>
       <Wrapper>
         <TimeLineBox>
-          <TimeBox>
+          <TimeBox isMobile={isMobile}>
             {TIMES.map((time, index) => (
               <div key={index}>{time}</div>
             ))}
           </TimeBox>
 
-          <TimeLineSheet>{cells}</TimeLineSheet>
+          <TimeLineSheet isMobile={isMobile}>{cells}</TimeLineSheet>
         </TimeLineBox>
         <TimeLineBoxTop>
-          <TimeBox>
+          <TimeBox isMobile={isMobile}>
             {TIMES.map((time, index) => (
               <div key={index}>{time}</div>
             ))}
           </TimeBox>
 
-          <TimeLineSheetChecked>{filledcells}</TimeLineSheetChecked>
+          <TimeLineSheetChecked isMobile={isMobile}>{filledcells}</TimeLineSheetChecked>
         </TimeLineBoxTop>
       </Wrapper>
-    </ScrollBarBox>
+    </>
   );
 };
 
@@ -126,24 +134,24 @@ const TimeLineBoxTop = styled.section`
   margin-bottom: 0;
 `;
 
-const TimeBox = styled.div`
+const TimeBox = styled.div<{ isMobile?: boolean }>`
   display: grid;
 
-  height: 50rem;
+  height: ${({ isMobile }) => (isMobile ? '2.4rem' : '4rem')};
   margin-right: 3.7rem;
   grid-template-rows: repeat(7, 1fr);
 
   & > div {
-    ${({ theme }) => theme.fonts.label3};
+    ${({ isMobile, theme }) => (isMobile ? theme.fonts.body7 : theme.fonts.label3)};
 
-    height: 8rem;
+    height: ${({ isMobile }) => (isMobile ? '4.8rem ' : '8rem')};
 
     &:last-child {
       height: 0;
     }
   }
 `;
-const TimeLineSheet = styled.div`
+const TimeLineSheet = styled.div<{ isMobile?: boolean }>`
   display: grid;
 
   width: 100%;
@@ -154,8 +162,8 @@ const TimeLineSheet = styled.div`
   grid-template-rows: repeat(12, 1fr); /* 7줄의 세로 그리드 */
 
   & > div {
-    height: 4rem;
-    border-top: 2.5px solid;
+    height: ${({ isMobile }) => (isMobile ? '2.4rem' : '4rem')};
+    border-top: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
     border-color: ${({ theme }) => theme.colors.darkgrey};
   }
 
@@ -170,11 +178,11 @@ const TimeLineSheet = styled.div`
   }
 
   & > div:nth-child(n + 79):nth-child(-n + 84) {
-    border-bottom: 3px solid;
+    border-bottom: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
   }
 `;
 
-const TimeLineSheetChecked = styled.div`
+const TimeLineSheetChecked = styled.div<{ isMobile?: boolean }>`
   display: grid;
 
   width: 100%;
@@ -189,14 +197,14 @@ const TimeLineSheetChecked = styled.div`
     align-items: center;
 
     width: 100%;
-    height: 4rem;
+    height: ${({ isMobile }) => (isMobile ? '2.4rem' : '4rem')};
 
-    ${({ theme }) => theme.fonts.label1};
+    ${({ isMobile, theme }) => (isMobile ? theme.fonts.body7 : theme.fonts.label1)};
   }
 
   & > div:nth-child(18) {
-    height: 16rem;
-    border-top: 2.5px solid;
+    height: ${({ isMobile }) => (isMobile ? '9.6rem' : '16rem')};
+    border-top: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
     border-color: ${({ theme }) => theme.colors.darkgrey};
 
     background-color: ${({ theme }) => theme.colors.lightgreen};
@@ -206,8 +214,8 @@ const TimeLineSheetChecked = styled.div`
   }
 
   & > div:nth-child(35) {
-    height: 16rem;
-    border-top: 2.5px solid;
+    height: ${({ isMobile }) => (isMobile ? '9.6rem' : '16rem')};
+    border-top: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
     border-color: ${({ theme }) => theme.colors.darkgrey};
 
     background-color: ${({ theme }) => theme.colors.purple};
@@ -217,8 +225,8 @@ const TimeLineSheetChecked = styled.div`
   }
 
   & > div:nth-child(36) {
-    height: 16rem;
-    border-top: 2.5px solid;
+    height: ${({ isMobile }) => (isMobile ? '9.6rem' : '16rem')};
+    border-top: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
     border-color: ${({ theme }) => theme.colors.darkgrey};
 
     background-color: ${({ theme }) => theme.colors.orange};
@@ -228,8 +236,8 @@ const TimeLineSheetChecked = styled.div`
   }
 
   & > div:nth-child(38) {
-    height: 16rem;
-    border-top: 2.5px solid;
+    height: ${({ isMobile }) => (isMobile ? '9.6rem' : '16rem')};
+    border-top: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
     border-color: ${({ theme }) => theme.colors.darkgrey};
 
     background-color: ${({ theme }) => theme.colors.yellow};
@@ -239,9 +247,9 @@ const TimeLineSheetChecked = styled.div`
   }
 
   & > div:nth-child(50) {
-    height: 16rem;
-    border-top: 2.5px solid;
-    border-bottom: 2.5px solid;
+    height: ${({ isMobile }) => (isMobile ? '9.6rem' : '16rem')};
+    border-top: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
+    border-bottom: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
     border-color: ${({ theme }) => theme.colors.darkgrey};
 
     background-color: ${({ theme }) => theme.colors.blue};
@@ -251,9 +259,9 @@ const TimeLineSheetChecked = styled.div`
   }
 
   & > div:nth-child(51) {
-    height: 16rem;
-    border-top: 2.5px solid;
-    border-bottom: 2.5px solid;
+    height: ${({ isMobile }) => (isMobile ? '9.6rem' : '16rem')};
+    border-top: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
+    border-bottom: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
     border-color: ${({ theme }) => theme.colors.darkgrey};
 
     background-color: ${({ theme }) => theme.colors.red};
@@ -263,9 +271,9 @@ const TimeLineSheetChecked = styled.div`
   }
 
   & > div:nth-child(52) {
-    height: 16rem;
-    border-top: 2.5px solid;
-    border-bottom: 2.5px solid;
+    height: ${({ isMobile }) => (isMobile ? '9.6rem' : '16rem')};
+    border-top: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
+    border-bottom: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
     border-color: ${({ theme }) => theme.colors.darkgrey};
 
     background-color: ${({ theme }) => theme.colors.skyblue};
@@ -275,9 +283,9 @@ const TimeLineSheetChecked = styled.div`
   }
 
   & > div:nth-child(53) {
-    height: 16rem;
-    border-top: 2.5px solid;
-    border-bottom: 2.5px solid;
+    height: ${({ isMobile }) => (isMobile ? '9.6rem' : '16rem')};
+    border-top: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
+    border-bottom: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
     border-color: ${({ theme }) => theme.colors.darkgrey};
 
     background-color: ${({ theme }) => theme.colors.teal};
@@ -287,9 +295,9 @@ const TimeLineSheetChecked = styled.div`
   }
 
   & > div:nth-child(54) {
-    height: 16rem;
-    border-top: 2.5px solid;
-    border-bottom: 2.5px solid;
+    height: ${({ isMobile }) => (isMobile ? '9.6rem' : '16rem')};
+    border-top: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
+    border-bottom: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
     border-color: ${({ theme }) => theme.colors.darkgrey};
 
     background-color: ${({ theme }) => theme.colors.pink};
@@ -306,7 +314,7 @@ const DayBox = styled.div`
   margin-left: 5.7rem;
   grid-template-columns: repeat(7, 1fr);
 `;
-const DaySlot = styled.div`
+const DaySlot = styled.div<{ isMobile?: boolean }>`
   display: flex;
   flex: 1;
   justify-content: center;
@@ -314,7 +322,7 @@ const DaySlot = styled.div`
 
   width: 100 %;
 
-  ${({ theme }) => theme.fonts.label3};
+  ${({ isMobile, theme }) => (isMobile ? theme.fonts.body7 : theme.fonts.label3)};
 `;
 
 const DayBoxWrapper = styled.section`
