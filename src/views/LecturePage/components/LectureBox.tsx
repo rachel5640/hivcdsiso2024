@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 interface LectureBoxWrapperProps {
@@ -13,14 +13,23 @@ interface LectureboxProps {
   description: string;
   instagram: string;
   website: string;
+  clickedNumber: number | null;
 }
 
-const Lecturebox = ({ number, title, date, description, instagram, website }: LectureboxProps) => {
+const Lecturebox = ({ number, title, date, description, instagram, website, clickedNumber }: LectureboxProps) => {
   const [expanded, setExpanded] = useState(false);
 
   const toggleExpand = () => {
     setExpanded(!expanded);
   };
+
+  useEffect(() => {
+    if (number === clickedNumber) {
+      setExpanded(true);
+    } else {
+      setExpanded(false);
+    }
+  }, [number, clickedNumber]);
 
   return (
     <LectureBoxWrapper onClick={toggleExpand} expanded={expanded} number={number}>

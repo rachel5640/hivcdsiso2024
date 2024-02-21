@@ -51,6 +51,8 @@ const EventSectionBox = styled.section`
   & > div > p {
     padding-top: 1rem;
     ${({ theme }) => theme.fonts.body9_2};
+
+    word-break: keep-all;
   }
 
   & > div > svg {

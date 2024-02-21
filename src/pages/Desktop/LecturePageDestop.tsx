@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import DesktopFooter from '../../views/@common/components/DestopFooter';
 import DesktopHeader from '../../views/@common/components/DesktopHeader';
+import { useState } from 'react';
 import { useEffect } from 'react';
 import Lecturebox from '../../views/LecturePage/components/LectureBox';
 import { LECTURE_DATA } from '../../views/LecturePage/constant/text';
@@ -8,15 +9,21 @@ import TimeLine from '../../views/LecturePage/components/TimeLine';
 import ScrollBarBox from '../../views/@common/components/ScrollBar';
 
 const LecturePageDesktop = () => {
+  const [clickedNumber, setClickedNumber] = useState<number | null>(null);
+
+  const handleTimeLineClick = (number: number) => {
+    setClickedNumber(number); // 클릭된 값 업데이트
+  };
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <>
       <DesktopHeader />
       <LecturePageBox>
         <TimeTable>
-          <TimeLine />
+          <TimeLine onClick={handleTimeLineClick} />
         </TimeTable>
         <LineBox>
           <Line />
@@ -32,6 +39,7 @@ const LecturePageDesktop = () => {
                 description={content.description}
                 instagram={content.instagram}
                 website={content.website}
+                clickedNumber={clickedNumber}
               />
             ))}
           </ScrollBarBox>
