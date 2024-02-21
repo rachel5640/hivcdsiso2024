@@ -2,9 +2,13 @@ import styled from 'styled-components';
 import { IcHivcd } from '../assets';
 import { IcInstagram } from '../assets';
 
-const Footer = () => {
+interface DesktopFooterProps {
+  isfixed?: boolean;
+}
+
+const DesktopFooter = ({ isfixed }: DesktopFooterProps) => {
   return (
-    <FooterBox>
+    <FooterBox isfixed={isfixed}>
       <FooterText>
         2024 HIVCD CLUB FESTIVAL <div>:</div> SISO
       </FooterText>
@@ -21,21 +25,27 @@ const Footer = () => {
   );
 };
 
-const FooterBox = styled.section`
+const FooterBox = styled.section<DesktopFooterProps>`
   display: flex;
   justify-content: space-between;
+  position: ${({ isfixed }) => (isfixed ? 'fixed' : 'static')};
+  bottom: 0;
+  left: 8.2rem;
 
   width: calc(100vw - 16.4rem);
+  height: 8.8rem;
   margin: auto;
   padding: 2.61rem 0 2.1rem;
   border-top: 3px solid;
+
+  background-color: ${({ theme }) => theme.colors.white};
 `;
+
 const FooterText = styled.p`
   display: flex;
   ${({ theme }) => theme.fonts.label1};
 
   &:nth-child(2) {
-    /* stylelint-disable-next-line declaration-empty-line-before */
     margin-right: 3rem;
   }
 
@@ -51,8 +61,7 @@ const ButtonBox = styled.div`
   gap: 1.5rem;
 
   & > a {
-    /* stylelint-disable-next-line declaration-empty-line-before */
     cursor: pointer;
   }
 `;
-export default Footer;
+export default DesktopFooter;

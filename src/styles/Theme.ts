@@ -12,6 +12,7 @@ const colors = {
   purple: '#a31aa3',
   white: '#ffffff',
   grey: '#c7c7c7',
+  darkgrey: '#4d4d4d',
 };
 
 const fonts = {
@@ -165,6 +166,14 @@ const fonts = {
     font-size: 1.4rem;
     line-height: 164%;
   `,
+  body9_2: css`
+    font-family: 'ABC_ROM_Condensed', 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.4rem;
+    line-height: 164%;
+  `,
+
   body10: css`
     font-family: 'ABC_ROM_Condensed', 'Noto Sans KR', sans-serif;
     font-weight: 700;

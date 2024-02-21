@@ -7,6 +7,7 @@ import Trial from './trial.svg?react';
 
 import IcInstagram from './ic_instagram.svg?react';
 import IcHivcd from './ic_hivcd.svg?react';
+import IcMenu from './ic_menu.svg?react';
 
 export { OurIndexLogo };
 export { ArchiveBtn };
@@ -15,3 +16,4 @@ export { LectureBtn };
 export { IcHivcd };
 export { IcInstagram };
 export { Trial };
+export { IcMenu };

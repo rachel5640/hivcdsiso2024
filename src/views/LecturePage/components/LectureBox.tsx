@@ -91,7 +91,7 @@ const TitleBox = styled.div`
   display: flex;
 
   padding: 1.6rem 0 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 `;
 
 const LectureNumber = styled.p`

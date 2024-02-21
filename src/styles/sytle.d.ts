@@ -14,6 +14,7 @@ declare module 'styled-components' {
       purple: string;
       white: string;
       grey: string;
+      darkgrey: string;
     };
 
     fonts: {
@@ -39,6 +40,7 @@ declare module 'styled-components' {
       body8_1: SerializedStyles;
       body8_2: SerializedStyles;
       body9: SerializedStyles;
+      body9_2: SerializedStyles;
       body10: SerializedStyles;
 
       label1: SerializedStyles;
