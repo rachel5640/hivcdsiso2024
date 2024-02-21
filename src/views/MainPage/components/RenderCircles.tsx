@@ -42,8 +42,8 @@ export const RenderCircles = ({ ismobile }: RenderCirclesProps) => {
 };
 
 const Circle = styled.div<RenderCirclesProps>`
-  width: ${({ ismobile }) => (ismobile ? '1.8rem' : '0.4rem')};
-  height: ${({ ismobile }) => (ismobile ? '1.8rem' : '0.8rem')};
+  width: ${({ ismobile }) => (ismobile ? '0.8rem' : '1.8rem')};
+  height: ${({ ismobile }) => (ismobile ? '0.8rem' : '1.8rem')};
   margin-right: ${({ ismobile }) => (ismobile ? '1.25rem' : '2.1rem')};
   border-radius: 20px;
 
