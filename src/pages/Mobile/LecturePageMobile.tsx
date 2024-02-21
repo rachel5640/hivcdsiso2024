@@ -22,18 +22,21 @@ const LecturePageMobile = () => {
       <MobileHeader />
       <LecturePageMobileSection>
         <TimeLine onClick={handleTimeLineClick} isMobile={true} />
-        {LECTURE_DATA.map((content, index) => (
-          <Lecturebox
-            key={index}
-            number={content.number}
-            title={content.title}
-            date={content.date}
-            description={content.description}
-            instagram={content.instagram}
-            website={content.website}
-            clickedNumber={clickedNumber}
-          />
-        ))}
+        <LectureBoxWrapper>
+          {LECTURE_DATA.map((content, index) => (
+            <Lecturebox
+              key={index}
+              number={content.number}
+              title={content.title}
+              date={content.date}
+              description={content.description}
+              instagram={content.instagram}
+              website={content.website}
+              clickedNumber={clickedNumber}
+              isMobile={true}
+            />
+          ))}
+        </LectureBoxWrapper>
       </LecturePageMobileSection>
 
       <MobileFooter />
@@ -43,8 +46,12 @@ const LecturePageMobile = () => {
 
 const LecturePageMobileSection = styled.section`
   width: 100vw;
-  margin-top: 8.2rem;
+  margin: 8.2rem 0 2rem;
   padding: 0 1.6rem;
 `;
 
+const LectureBoxWrapper = styled.section`
+  width: 100%;
+  margin-top: 5rem;
+`;
 export default LecturePageMobile;
