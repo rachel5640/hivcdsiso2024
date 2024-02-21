@@ -166,6 +166,14 @@ const fonts = {
     font-size: 1.4rem;
     line-height: 164%;
   `,
+  body9_2: css`
+    font-family: 'ABC_ROM_Condensed', 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.4rem;
+    line-height: 164%;
+  `,
+
   body10: css`
     font-family: 'ABC_ROM_Condensed', 'Noto Sans KR', sans-serif;
     font-weight: 700;

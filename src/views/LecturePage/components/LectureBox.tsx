@@ -54,6 +54,7 @@ const Lecturebox = ({ number, title, date, description, instagram, website }: Le
 
 const LectureBoxWrapper = styled.div<LectureBoxWrapperProps>`
   width: 100%;
+
   border-bottom: 2px solid;
   cursor: pointer;
   word-break: keep-all;
@@ -83,10 +84,6 @@ const LectureBoxWrapper = styled.div<LectureBoxWrapperProps>`
           return 'black';
       }
     }};
-  }
-
-  &:last-child {
-    border-style: none;
   }
 `;
 

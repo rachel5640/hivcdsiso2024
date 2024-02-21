@@ -1,15 +1,15 @@
 import { Desktop, Mobile } from '../views/@common/components/mediaQuery';
-import LecturePageDesktop from './Desktop/LecturePageDestop';
-import LecturePageMobile from './Mobile/LecturePageMobile';
+import ArchiveDesktopPage from './Desktop/ArchivePage';
+import ArchivePageMobile from './Mobile/ArchivePageMobile';
 
 const ArchivePage = () => {
   return (
     <>
       <Mobile>
-        <LecturePageMobile />
+        <ArchivePageMobile />
       </Mobile>
       <Desktop>
-        <LecturePageDesktop />
+        <ArchiveDesktopPage />
       </Desktop>
     </>
   );

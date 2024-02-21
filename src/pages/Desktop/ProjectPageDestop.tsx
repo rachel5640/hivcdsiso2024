@@ -25,6 +25,7 @@ const ProjectPageDesktop = () => {
       <ProjectPageBox>
         <NavigationBar page={currentPage} onChangePage={handleChangePage} />
         <TeamInfo page={currentPage} />
+        <Dummy>Comming Soon!</Dummy>
       </ProjectPageBox>
     </>
   );
@@ -33,6 +34,19 @@ const ProjectPageDesktop = () => {
 const ProjectPageBox = styled.section`
   width: 100vw;
   padding: 0 8.2rem;
+`;
+
+const Dummy = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  margin-top: 20rem;
+
+  ${({ theme }) => theme.fonts.title1};
+
+  color: ${({ theme }) => theme.colors.grey};
 `;
 
 export default ProjectPageDesktop;

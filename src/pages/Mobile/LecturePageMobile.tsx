@@ -5,6 +5,7 @@ const LecturePageMobile = () => {
   return (
     <>
       <MobileHeader />
+
       <MobileFooter />
     </>
   );
