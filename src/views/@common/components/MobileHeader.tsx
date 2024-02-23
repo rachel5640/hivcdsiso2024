@@ -47,7 +47,6 @@ const MobileHeader = ({ isSticky }: MobileHeaderProps) => {
 const HeaderWrapper = styled.div<MobileHeaderProps>`
   position: ${({ isSticky }) => (isSticky ? 'sticky' : 'fixed')};
   top: 0;
-  z-index: 100;
 
   border-bottom: 1.5px solid;
 `;
@@ -56,6 +55,7 @@ const MobileHeaderBox = styled.section`
   justify-content: space-between;
   align-items: center;
   position: relative;
+  z-index: 300;
 
   width: 100vw;
   height: 4.8rem;
@@ -78,20 +78,23 @@ const MenuBox = styled.div`
 `;
 
 const BackDim = styled.section`
-  z-index: 50;
+  position: fixed;
+  top: 0;
+  z-index: 100;
 
   width: 100vw;
   height: 100vh;
 
   background: black;
 
-  opacity: 0.4;
+  opacity: 0.5;
 `;
 
 const MenuItem = styled.section<MobileHeaderProps>`
   overflow: hidden;
   position: absolute;
   top: 4.8rem;
+  z-index: 200;
 
   width: 100vw;
 
