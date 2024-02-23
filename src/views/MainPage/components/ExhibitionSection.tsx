@@ -60,10 +60,11 @@ const ExhibitionInfo = styled.div`
   }
 
   & > h2 {
-    ${({ theme }) => theme.fonts.title4};
+    ${({ theme }) => theme.fonts.body1};
 
     padding-bottom: 0.5rem;
     border-bottom: 2px solid;
+    word-break: keep-all;
   }
 
   & > p {
