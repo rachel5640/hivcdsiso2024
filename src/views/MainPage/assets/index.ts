@@ -7,6 +7,7 @@ import ExhibitionTitle from './exhibition_title.svg?react';
 import HivcdLogo from './hivcd_logo.svg?react';
 import InstagramIcon from './instagram_icon.svg?react';
 import MainPageSubtext from './mainpage_subtext.svg?react';
+import ExhibitionDateMobile from './exhibition_date_mobile.svg?react';
 
 import LeftTop from './left-top.svg?react';
 import LeftBottom from './left-bottom.svg?react';
@@ -23,6 +24,7 @@ export { ExhibitionTitle };
 export { HivcdLogo };
 export { InstagramIcon };
 export { MainPageSubtext };
+export { ExhibitionDateMobile };
 
 export { LeftTop };
 export { LeftBottom };

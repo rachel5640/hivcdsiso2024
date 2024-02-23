@@ -149,7 +149,7 @@ const Background = styled.section`
   & > svg {
     position: absolute;
 
-    height: fit-content;
+    height: auto;
   }
 
   & > svg:nth-child(1) {
