@@ -30,7 +30,6 @@ const DesktopHeader = ({ isSticky }: DesktopHeaderProps) => {
           ))}
         </div>
       </HeaderBox>
-      <GradientBox />
     </HeaderWrapper>
   );
 };
@@ -75,10 +74,4 @@ const HeaderBtn = styled.button`
   cursor: pointer;
 `;
 
-const GradientBox = styled.div`
-  width: 100vw;
-  height: 1rem;
-
-  background: linear-gradient(180deg, #fff 0%, rgb(255 255 255 / 0%) 75%);
-`;
 export default DesktopHeader;

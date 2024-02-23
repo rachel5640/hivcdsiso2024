@@ -147,8 +147,9 @@ const SubTextBox = styled.div`
   margin-top: 1.6rem;
 
   & > svg {
-    width: 60%;
+    width: 40%;
     height: auto;
+    margin-top: 1rem;
   }
 `;
 export default SplashMobile;

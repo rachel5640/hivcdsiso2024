@@ -9,7 +9,7 @@ const teams = [
   { title: '홍보팀', members: '김민주, 정예원' },
   { title: '연사초청팀', members: '이일여, 박서연' },
   { title: '예산팀', members: '김주현, 정우성, 이주아' },
-  { title: '웹팀', members: '김주현, 정우성' },
+  { title: '웹팀', members: '강민서' },
 ];
 const ExhibitionCommitteeMobile = () => {
   return (
@@ -35,7 +35,7 @@ const CommiteeMobileBox = styled.section`
     margin-bottom: 1.8rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid black;
-    border-style: dashed;
+    border-style: solid;
   }
 
   & > div {

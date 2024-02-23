@@ -9,6 +9,8 @@ const ExhibitionSection = () => {
       <PosterImg src={SisoPoster} alt="siso poster Our index" />
       <ExhibitionInfoBox>
         <ExhibitionInfo>
+          <h2>2024 홍익대학교 시각디자인과 소모임 축제 주간 : SISO</h2>
+          <br />
           <h1>《OUR INDEX》</h1>
           <p>{EXHIBITION_TEXT.EXHIBITION_KEYNOTE}</p>
         </ExhibitionInfo>
@@ -55,6 +57,13 @@ const ExhibitionInfo = styled.div`
     ${({ theme }) => theme.fonts.title4};
 
     margin-bottom: 3.5rem;
+  }
+
+  & > h2 {
+    ${({ theme }) => theme.fonts.title4};
+
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid;
   }
 
   & > p {

@@ -124,6 +124,7 @@ const LectureNumber = styled.p<{ isMobile?: boolean }>`
   ${({ isMobile, theme }) => (isMobile ? theme.fonts.title7 : theme.fonts.title5)};
 
   margin-right: ${({ isMobile }) => (isMobile ? '2rem' : '2rem')};
+  padding-left: ${({ isMobile }) => (isMobile ? '0.5rem' : '1rem')};
 `;
 
 const LectureInfo = styled.div<{ isMobile?: boolean }>`
@@ -141,7 +142,7 @@ const DetailInfo = styled.div<{ isMobile?: boolean }>`
   padding-right: 1rem;
 
   & > p {
-    ${({ isMobile, theme }) => (isMobile ? theme.fonts.label5 : theme.fonts.body5)};
+    ${({ isMobile, theme }) => (isMobile ? theme.fonts.body10 : theme.fonts.body5)};
 
     margin: ${({ isMobile }) => (isMobile ? '0rem 0 0 3rem' : '0 0 0.5rem 4.8rem')};
   }
@@ -153,11 +154,10 @@ const DetailInfo = styled.div<{ isMobile?: boolean }>`
   }
 
   & > div > a {
-    ${({ isMobile, theme }) => (isMobile ? theme.fonts.body10 : theme.fonts.label2)};
+    ${({ isMobile, theme }) => (isMobile ? theme.fonts.label4 : theme.fonts.label2)};
 
     margin-right: ${({ isMobile }) => (isMobile ? '0.3rem' : '0.7rem')};
-    padding: ${({ isMobile }) => (isMobile ? '0.3rem' : '0.1rem 1.2rem;')};
-    padding: 0.1rem 1.2rem;
+    padding: ${({ isMobile }) => (isMobile ? '0.4rem 1rem' : '0.1rem 1.2rem;')};
     border: ${({ isMobile }) => (isMobile ? '0.8px solid black' : '2.3px solid black')};
     border: 2.3px solid black;
     border-radius: 21px;

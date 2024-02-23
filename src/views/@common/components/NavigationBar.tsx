@@ -61,7 +61,7 @@ const NavigationBarBox = styled.section`
 
 const TeamButton = styled.button<TeamButtonProps>`
   margin: 0 0.5rem 0.7rem 0;
-  padding: 0.4rem 1.8rem;
+  padding: 0.4rem 1.8rem 0.25rem;
   ${({ theme }) => theme.fonts.title6};
 
   border: 3px solid black;
