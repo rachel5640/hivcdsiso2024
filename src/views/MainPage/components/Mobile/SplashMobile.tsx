@@ -85,14 +85,14 @@ const Background = styled.section`
     bottom: 0;
     left: 0;
 
-    width: 40vw;
+    width: 35vw;
   }
 
   & > svg:nth-child(5) {
     right: 0;
     bottom: 0;
 
-    width: 40vw;
+    width: 50vw;
   }
 `;
 const SvgArea = styled.section`
