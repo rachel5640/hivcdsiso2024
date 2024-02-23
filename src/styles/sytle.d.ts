@@ -42,6 +42,7 @@ declare module 'styled-components' {
       body9: SerializedStyles;
       body9_2: SerializedStyles;
       body10: SerializedStyles;
+      body11: SerializedStyles;
 
       label1: SerializedStyles;
       label2: SerializedStyles;

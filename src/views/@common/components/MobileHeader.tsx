@@ -30,7 +30,6 @@ const MobileHeader = ({ isSticky }: MobileHeaderProps) => {
           <IcMenu />
         </MenuBox>
       </MobileHeaderBox>
-      <GradientBox />
       {menuOpen && (
         <>
           <BackDim onClick={toggleMenu} />
@@ -49,6 +48,8 @@ const HeaderWrapper = styled.div<MobileHeaderProps>`
   position: ${({ isSticky }) => (isSticky ? 'sticky' : 'fixed')};
   top: 0;
   z-index: 100;
+
+  border-bottom: 1.5px solid;
 `;
 const MobileHeaderBox = styled.section`
   display: flex;
@@ -74,13 +75,6 @@ const OurIndexLogoBox = styled.div`
 
 const MenuBox = styled.div`
   cursor: pointer;
-`;
-
-const GradientBox = styled.section`
-  width: 100vw;
-  height: 0.5rem;
-
-  background: linear-gradient(180deg, #fff 0%, rgb(255 255 255 / 0%) 75%);
 `;
 
 const BackDim = styled.section`

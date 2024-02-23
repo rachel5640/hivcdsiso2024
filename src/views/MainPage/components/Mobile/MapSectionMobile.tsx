@@ -7,7 +7,7 @@ import { SBF_PLACES } from '../../constant/places';
 const MapSectionMobile = () => {
   return (
     <MapSectionMobileBox>
-      <h1>R1F</h1>
+      <h1>R 1F</h1>
       <MapImg src={Rb1Map}></MapImg>
       <MapInfo>
         {RF1_PLACES.map((places, idx) => (
@@ -17,7 +17,7 @@ const MapSectionMobile = () => {
           </PlaceText>
         ))}
       </MapInfo>
-      <h1>SBF</h1>
+      <h1>S 3F</h1>
       <MapImg src={SbfMap}></MapImg>
       <MapInfo>
         {SBF_PLACES.map((places, idx) => (
@@ -41,8 +41,7 @@ const MapSectionMobileBox = styled.section`
     margin-top: 2rem;
     margin-bottom: 1.8rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid black;
-    border-style: dashed;
+    border-bottom: 1.5px solid black;
   }
 `;
 
@@ -89,7 +88,7 @@ const PlaceText = styled.div`
   }
 
   & > h2 {
-    ${({ theme }) => theme.fonts.body10};
+    ${({ theme }) => theme.fonts.body11};
   }
 `;
 

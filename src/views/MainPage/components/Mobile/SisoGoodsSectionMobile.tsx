@@ -22,8 +22,7 @@ const SisoGoodsSection = styled.div`
 
     margin-bottom: 1.8rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid black;
-    border-style: dashed;
+    border-bottom: 1.5px solid black;
   }
 `;
 const GoodsImg = styled.img`

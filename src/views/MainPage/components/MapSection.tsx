@@ -8,7 +8,7 @@ const MapSection = () => {
   return (
     <MapSectionBox>
       <MapBox>
-        <h1>R1F</h1>
+        <h1>R 1F</h1>
         <MapImg src={Rf1Map} />
         <MapInfo>
           {RF1_PLACES.map((places, idx) => (
@@ -20,7 +20,7 @@ const MapSection = () => {
         </MapInfo>
       </MapBox>
       <MapBox>
-        <h1>SBF</h1>
+        <h1>S 3F</h1>
         <MapImg src={SbfMap} />
         <MapInfo>
           {SBF_PLACES.map((places, idx) => (
@@ -53,7 +53,7 @@ const MapBox = styled.div`
 
     margin-bottom: 2.4rem;
     padding-bottom: 1.3rem;
-    border-bottom: 2px dashed;
+    border-bottom: 1.5px solid;
   }
 `;
 

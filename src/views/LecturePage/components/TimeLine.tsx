@@ -137,13 +137,14 @@ const TimeLineBoxTop = styled.section`
 const TimeBox = styled.div<{ isMobile?: boolean }>`
   display: grid;
 
-  height: ${({ isMobile }) => (isMobile ? '2.4rem' : '4rem')};
+  height: ${({ isMobile }) => (isMobile ? '2.4rem' : '3rem')};
   margin-right: 3.7rem;
   grid-template-rows: repeat(7, 1fr);
 
   & > div {
     ${({ isMobile, theme }) => (isMobile ? theme.fonts.body7 : theme.fonts.label3)};
 
+    width: ${({ isMobile }) => (isMobile ? '1rem ' : 'auto')};
     height: ${({ isMobile }) => (isMobile ? '4.8rem ' : '8rem')};
 
     &:last-child {
