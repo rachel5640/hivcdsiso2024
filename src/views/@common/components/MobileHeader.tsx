@@ -33,7 +33,7 @@ const MobileHeader = ({ isSticky }: MobileHeaderProps) => {
       <GradientBox />
       {menuOpen && (
         <>
-          <BackDim />
+          <BackDim onClick={toggleMenu} />
           <MenuItem isopen={menuOpen}>
             <div onClick={handleClickLecture}>Lecture</div>
             <div onClick={handleClickExhibition}>Exhibition</div>
