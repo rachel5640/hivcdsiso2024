@@ -95,17 +95,17 @@ const SplashSection = styled.section`
     padding: 3.8rem;
 
     & > svg {
-      height: fit-content;
+      height: auto;
     }
 
     & > svg:first-child {
-      min-width: 30vw;
-      max-width: 38vw;
+      min-width: 40rem;
+      max-width: 27vw;
     }
 
     & > svg:last-child {
-      min-width: 15vw;
-      max-width: 22vw;
+      min-width: 24rem;
+      max-width: 19vw;
     }
   }
 `;
