@@ -104,8 +104,8 @@ const SplashSection = styled.section`
     }
 
     & > svg:last-child {
-      min-width: 18vw;
-      max-width: 23vw;
+      min-width: 15vw;
+      max-width: 22vw;
     }
   }
 `;
@@ -156,35 +156,35 @@ const Background = styled.section`
     top: 0;
     left: 0;
 
-    width: 25vw;
+    width: 20vw;
   }
 
   & > svg:nth-child(2) {
     top: 0;
     left: 30vw;
 
-    width: 40vw;
+    width: 30vw;
   }
 
   & > svg:nth-child(3) {
     top: 0;
     right: 0;
 
-    width: 25vw;
+    width: 20vw;
   }
 
   & > svg:nth-child(4) {
     bottom: 0;
     left: 0;
 
-    width: 40vw;
+    width: 30vw;
   }
 
   & > svg:nth-child(5) {
     right: 0;
     bottom: 0;
 
-    width: 40vw;
+    width: 35vw;
   }
 `;
 
