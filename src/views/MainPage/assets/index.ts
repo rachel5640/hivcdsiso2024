@@ -15,6 +15,12 @@ import RightBottom from './right-bottom.svg?react';
 import RightTop from './right-top.svg?react';
 import MiddelTop from './middle-top.svg?react';
 
+import LeftTopMobile from './left-top-mobile.svg?react';
+import MiddleTopMobile from './middle-top-mobile.svg?react';
+import RightTopMobile from './right-top-mobile.svg?react';
+import LeftBottomMobile from './left-bottom-mobile.svg?react';
+import RightBottomtMobile from './right-bottom-mobile.svg?react';
+
 export { ImgFind };
 export { ImgStamp };
 export { MainPageLogo };
@@ -31,3 +37,9 @@ export { LeftBottom };
 export { RightBottom };
 export { RightTop };
 export { MiddelTop };
+
+export { LeftTopMobile };
+export { MiddleTopMobile };
+export { RightTopMobile };
+export { LeftBottomMobile };
+export { RightBottomtMobile };
