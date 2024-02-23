@@ -52,7 +52,7 @@ const Background = styled.section`
   z-index: 1;
 
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
 
   & > svg {
     position: absolute;
@@ -100,7 +100,7 @@ const SvgArea = styled.section`
   z-index: 30;
 
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   padding: 0 4.6rem;
 
   & > svg {

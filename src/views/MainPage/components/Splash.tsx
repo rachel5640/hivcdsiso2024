@@ -161,7 +161,7 @@ const Background = styled.section`
 
   & > svg:nth-child(2) {
     top: 0;
-    left: 30rem;
+    left: 30vw;
 
     width: 40vw;
   }
