@@ -5,10 +5,10 @@ import styled from 'styled-components';
 
 interface MobileHeaderProps {
   isopen?: boolean;
-  isSticky?: boolean;
+  issticky?: boolean;
 }
 
-const MobileHeader = ({ isSticky }: MobileHeaderProps) => {
+const MobileHeader = ({ issticky }: MobileHeaderProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
   const handleClickLogo = () => navigate('/');
@@ -21,7 +21,7 @@ const MobileHeader = ({ isSticky }: MobileHeaderProps) => {
   };
 
   return (
-    <HeaderWrapper isSticky={isSticky}>
+    <HeaderWrapper issticky={issticky}>
       <MobileHeaderBox>
         <OurIndexLogoBox onClick={handleClickLogo}>
           <OurIndexLogo />
@@ -44,10 +44,10 @@ const MobileHeader = ({ isSticky }: MobileHeaderProps) => {
   );
 };
 
-const HeaderWrapper = styled.div<MobileHeaderProps>`
-  position: ${({ isSticky }) => (isSticky ? 'sticky' : 'fixed')};
+const HeaderWrapper = styled.div<{ issticky?: boolean }>`
+  position: ${({ issticky }) => (issticky ? 'sticky' : 'fixed')};
   top: 0;
-  z-index: 90;
+  z-index: 100;
 
   border-bottom: 1.5px solid;
 `;
@@ -56,7 +56,6 @@ const MobileHeaderBox = styled.section`
   justify-content: space-between;
   align-items: center;
   position: relative;
-  z-index: 300;
 
   width: 100vw;
   height: 4.8rem;
@@ -79,23 +78,20 @@ const MenuBox = styled.div`
 `;
 
 const BackDim = styled.section`
-  position: fixed;
-  top: 0;
-  z-index: 100;
+  z-index: 50;
 
   width: 100vw;
   height: 100vh;
 
   background: black;
 
-  opacity: 0.5;
+  opacity: 0.4;
 `;
 
 const MenuItem = styled.section<MobileHeaderProps>`
   overflow: hidden;
   position: absolute;
   top: 4.8rem;
-  z-index: 200;
 
   width: 100vw;
 

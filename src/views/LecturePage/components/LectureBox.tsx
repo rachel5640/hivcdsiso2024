@@ -58,7 +58,7 @@ const Lecturebox = ({
           <div>
             {instagram !== '' && (
               <a href={instagram} target="_blank">
-                Instagram
+                SNS
               </a>
             )}
             {website !== '' && (
@@ -105,10 +105,6 @@ const LectureBoxWrapper = styled.div<LectureBoxWrapperProps>`
           return 'black';
       }
     }};
-  }
-
-  &:last-child {
-    border-bottom: none;
   }
 `;
 

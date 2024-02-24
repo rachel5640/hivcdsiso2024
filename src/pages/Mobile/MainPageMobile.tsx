@@ -10,9 +10,9 @@ import SplashMobile from '../../views/MainPage/components/Mobile/SplashMobile';
 
 const MainPageMobile = () => {
   return (
-    <>
+    <MainPageMobileWrapper>
       <SplashMobile />
-      <MobileHeader isSticky={true} />
+      <MobileHeader issticky={true} />
       <MainPageSection>
         <ExhibitionSectionMobile />
         <MapSectionMobile />
@@ -21,12 +21,15 @@ const MainPageMobile = () => {
         <ExhibitionCommitteeMobile />
       </MainPageSection>
       <MobileFooter />
-    </>
+    </MainPageMobileWrapper>
   );
 };
 
-const MainPageSection = styled.section`
+const MainPageMobileWrapper = styled.section`
   width: 100vw;
+`;
+
+const MainPageSection = styled.section`
   margin-top: 6rem;
   padding: 1.6rem;
 `;
