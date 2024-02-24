@@ -1,27 +1,14 @@
 import styled from 'styled-components';
-import {
-  MainPageLogo,
-  MainPageSubtext,
-  ExhibitionDateMobile,
-  HivcdLogo,
-  InstagramIcon,
-  LeftBottomMobile,
-  LeftTopMobile,
-  RightBottomtMobile,
-  RightTopMobile,
-  MiddleTopMobile,
-} from '../../assets';
+import Background from './Background';
+
+import { MainPageLogo, MainPageSubtext, ExhibitionDateMobile, HivcdLogo, InstagramIcon } from '../../assets';
 
 const SplashMobile = () => {
   return (
     <SplashMobileSection>
-      <Background>
-        <LeftTopMobile />
-        <MiddleTopMobile />
-        <RightTopMobile />
-        <LeftBottomMobile />
-        <RightBottomtMobile />
-      </Background>
+      <BackgroundWrapper>
+        <Background />
+      </BackgroundWrapper>
       <SvgArea>
         <MainPageLogo />
         <SubTextBox>
@@ -46,55 +33,13 @@ const SplashMobileSection = styled.section`
   height: 100dvh;
 `;
 
-const Background = styled.section`
+const BackgroundWrapper = styled.section`
   position: absolute;
-  top: 0;
-  z-index: 1;
 
-  width: 100vw;
-  height: 100dvh;
-
-  & > svg {
-    position: absolute;
-
-    height: auto;
-  }
-
-  & > svg:nth-child(1) {
-    top: 0;
-    left: 0;
-
-    width: 20vw;
-  }
-
-  & > svg:nth-child(2) {
-    top: 0;
-    left: 30vw;
-
-    width: 40vw;
-  }
-
-  & > svg:nth-child(3) {
-    top: 0;
-    right: 0;
-
-    width: 20vw;
-  }
-
-  & > svg:nth-child(4) {
-    bottom: 0;
-    left: 0;
-
-    width: 35vw;
-  }
-
-  & > svg:nth-child(5) {
-    right: 0;
-    bottom: 0;
-
-    width: 50vw;
-  }
+  width: 100%;
+  height: 100%;
 `;
+
 const SvgArea = styled.section`
   position: absolute;
   z-index: 30;
