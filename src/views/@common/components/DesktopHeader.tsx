@@ -46,30 +46,26 @@ const HeaderBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow-y: none;
 
-  width: 100%;
+  width: 100vw;
   height: 7.6rem;
-  margin: 0 auto;
-  padding-top: 0.3rem;
+  padding: 0 8.2rem;
 
   background-color: ${({ theme }) => theme.colors.white};
 
   & > div {
     display: flex;
     align-items: center;
-
-    margin-right: 8.2rem;
   }
 `;
 
 const LogoBtn = styled.button`
-  margin-left: 8.2rem;
-
   cursor: pointer;
 `;
 
 const HeaderBtn = styled.button`
-  margin-left: 4.5rem;
+  margin-left: 4rem;
 
   cursor: pointer;
 `;

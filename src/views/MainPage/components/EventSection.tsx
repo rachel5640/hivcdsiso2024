@@ -38,14 +38,14 @@ const EventSectionBox = styled.section`
 const EventBox = styled.div`
   display: block;
 
-  width: 100%;
+  width: 50%;
 
   & > h1 {
     ${({ theme }) => theme.fonts.title1};
 
     margin-bottom: 2.4rem;
     padding-bottom: 1.3rem;
-    border-bottom: 1.5 solid;
+    border-bottom: 1.5px solid;
   }
 
   & > h2 {

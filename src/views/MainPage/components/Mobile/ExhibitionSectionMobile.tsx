@@ -10,12 +10,12 @@ const ExhibitionSectionMobile = () => {
       <Title>《OUR INDEX》</Title>
       <Description>{EXHIBITION_TEXT.EXHIBITION_KEYNOTE}</Description>
       <ExhibitionInfo>
-        <p>{EXHIBITION_TEXT.EXHIBITION_PLACE}</p>
-        <p>{EXHIBITION_TEXT.EXHIBITION_PLACE_DETAIL}</p>
+        <div>{EXHIBITION_TEXT.EXHIBITION_PLACE}</div>
+        <div>{EXHIBITION_TEXT.EXHIBITION_PLACE_DETAIL}</div>
       </ExhibitionInfo>
       <ExhibitionInfo>
-        <p>{EXHIBITION_TEXT.EXHIBITION_DAY}</p>
-        <p>{EXHIBITION_TEXT.EXHIBITION_TIME}</p>
+        <div>{EXHIBITION_TEXT.EXHIBITION_DAY}</div>
+        <div>{EXHIBITION_TEXT.EXHIBITION_TIME}</div>
       </ExhibitionInfo>
       <ExhibitionInfo>
         <div>
@@ -40,13 +40,13 @@ const Title = styled.h1`
   border-top: 2px solid black;
 `;
 
-const Description = styled.p`
+const Description = styled.div`
   ${({ theme }) => theme.fonts.body9_2};
 
   margin-bottom: 0.8rem;
 `;
 
-const ExhibitionInfo = styled.p`
+const ExhibitionInfo = styled.div`
   width: 100%;
   padding: 0.8rem 0;
   border-top: 2px solid black;
@@ -55,26 +55,8 @@ const ExhibitionInfo = styled.p`
     border-bottom: 2px solid black;
   }
 
-  & > p {
-    ${({ theme }) => theme.fonts.body9_2};
-  }
-
   & > div {
     display: flex;
-  }
-
-  & > div > ul {
-    margin-right: 3.15rem;
-  }
-
-  & > div > ul > li {
-    display: flex;
-    align-items: center;
-
-    margin-bottom: 0.2rem;
-  }
-
-  & > div > ul > li > p {
     ${({ theme }) => theme.fonts.body9_2};
   }
 `;

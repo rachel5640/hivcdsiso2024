@@ -8,9 +8,9 @@ const MobileFooter = ({ isfixed }: MobileFooterProps) => {
   return (
     <MobileFooterWrapper isfixed={isfixed}>
       <MobileFooterBox>
-        <p>
+        <div>
           2024 HIVCD CLUB FESTIVAL <div>:</div> SISO
-        </p>
+        </div>
         <p>《OUR INDEX》</p>
       </MobileFooterBox>
     </MobileFooterWrapper>
@@ -33,13 +33,17 @@ const MobileFooterBox = styled.div`
 
   background-color: ${({ theme }) => theme.colors.white};
 
-  & > p {
+  & > div {
     ${({ theme }) => theme.fonts.label4};
 
     display: flex;
   }
 
-  & > p > div {
+  & > p {
+    ${({ theme }) => theme.fonts.label4};
+  }
+
+  & > div > div {
     ${({ theme }) => theme.fonts.label4};
 
     margin: -0.1rem 0.1rem;

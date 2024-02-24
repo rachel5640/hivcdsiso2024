@@ -5,10 +5,10 @@ import styled from 'styled-components';
 
 interface MobileHeaderProps {
   isopen?: boolean;
-  isSticky?: boolean;
+  issticky?: boolean;
 }
 
-const MobileHeader = ({ isSticky }: MobileHeaderProps) => {
+const MobileHeader = ({ issticky }: MobileHeaderProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
   const handleClickLogo = () => navigate('/');
@@ -21,7 +21,7 @@ const MobileHeader = ({ isSticky }: MobileHeaderProps) => {
   };
 
   return (
-    <HeaderWrapper isSticky={isSticky}>
+    <HeaderWrapper issticky={issticky}>
       <MobileHeaderBox>
         <OurIndexLogoBox onClick={handleClickLogo}>
           <OurIndexLogo />
@@ -44,8 +44,8 @@ const MobileHeader = ({ isSticky }: MobileHeaderProps) => {
   );
 };
 
-const HeaderWrapper = styled.div<MobileHeaderProps>`
-  position: ${({ isSticky }) => (isSticky ? 'sticky' : 'fixed')};
+const HeaderWrapper = styled.div<{ issticky?: boolean }>`
+  position: ${({ issticky }) => (issticky ? 'sticky' : 'fixed')};
   top: 0;
   z-index: 100;
 

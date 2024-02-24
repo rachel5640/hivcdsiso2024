@@ -33,13 +33,11 @@ const MainPageDesktop = () => {
 
 const MainPageDesktopBox = styled.section`
   width: 100vw;
-  scroll-snap-align: start;
 `;
 
 const MainPageBox = styled.section`
-  max-width: 100vw;
+  width: 100vw;
   padding: 0 8.2rem;
-  scroll-snap-type: y mandatory;
 `;
 
 export default MainPageDesktop;

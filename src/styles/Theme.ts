@@ -71,7 +71,7 @@ const fonts = {
     line-height: 158%;
   `,
   body1: css`
-    font-family: 'ABC_ROM_Condensed', 'Noto Sans KR', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     font-weight: 700;
     font-style: normal;
     font-size: 2.5rem;
@@ -114,7 +114,7 @@ const fonts = {
     letter-spacing: -2%;
   `,
   body5: css`
-    font-family: 'ABC_ROM_Condensed', 'Noto Sans KR', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     font-weight: 700;
     font-style: normal;
     font-size: 1.8rem;
@@ -182,7 +182,7 @@ const fonts = {
     line-height: 158%;
   `,
   body11: css`
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'ABC_ROM_Condensed', 'Noto Sans KR', sans-serif;
     font-weight: 700;
     font-style: normal;
     font-size: 1.35rem;

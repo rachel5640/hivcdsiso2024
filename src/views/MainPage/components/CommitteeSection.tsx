@@ -27,7 +27,7 @@ const Title = styled.h1`
 
   margin-bottom: 2.4rem;
   padding-bottom: 1.3rem;
-  border-bottom: 1.5 solid;
+  border-bottom: 1.5px solid;
 `;
 
 const TextBox = styled.div`

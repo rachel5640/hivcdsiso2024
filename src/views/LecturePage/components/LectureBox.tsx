@@ -58,7 +58,7 @@ const Lecturebox = ({
           <div>
             {instagram !== '' && (
               <a href={instagram} target="_blank">
-                Instagram
+                SNS
               </a>
             )}
             {website !== '' && (
@@ -106,10 +106,6 @@ const LectureBoxWrapper = styled.div<LectureBoxWrapperProps>`
       }
     }};
   }
-
-  &:last-child {
-    border-bottom: none;
-  }
 `;
 
 const TitleBox = styled.div<{ isMobile?: boolean }>`
@@ -156,10 +152,11 @@ const DetailInfo = styled.div<{ isMobile?: boolean }>`
   & > div > a {
     ${({ isMobile, theme }) => (isMobile ? theme.fonts.label4 : theme.fonts.label2)};
 
+    margin-top: ${({ isMobile }) => (isMobile ? '0.5rem' : '0.2rem')};
     margin-right: ${({ isMobile }) => (isMobile ? '0.3rem' : '0.7rem')};
     padding: ${({ isMobile }) => (isMobile ? '0.4rem 1rem' : '0.1rem 1.2rem;')};
     border: ${({ isMobile }) => (isMobile ? '0.8px solid black' : '2.3px solid black')};
-    border: 2.3px solid black;
+    border: ${({ isMobile }) => (isMobile ? '1.5px solid black' : '2.3px solid black')};
     border-radius: 21px;
 
     color: black;

@@ -52,7 +52,7 @@ const LecturePageDesktop = () => {
 const LecturePageBox = styled.section`
   display: grid;
 
-  max-width: 100vw;
+  min-width: 100vw;
   height: 100vh;
   padding: 0 8.2rem;
   padding-top: 10rem;

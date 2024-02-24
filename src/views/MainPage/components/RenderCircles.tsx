@@ -21,27 +21,27 @@ export const RenderCircles = ({ ismobile }: RenderCirclesProps) => {
   const secondColumn = circles.slice(Math.ceil(circles.length / 2));
   return (
     <>
-      <ul>
+      <List>
         {firstColumn.map((circle) => (
-          <li key={circle.id}>
+          <Items key={circle.id} ismobile={ismobile}>
             <Circle id={circle.id} ismobile={ismobile}></Circle>
-            <p>{circle.name}</p>
-          </li>
+            <div>{circle.name}</div>
+          </Items>
         ))}
-      </ul>
-      <ul>
+      </List>
+      <List>
         {secondColumn.map((circle) => (
-          <li key={circle.id}>
+          <Items key={circle.id} ismobile={ismobile}>
             <Circle id={circle.id} ismobile={ismobile}></Circle>
-            <p>{circle.name}</p>
-          </li>
+            <div>{circle.name}</div>
+          </Items>
         ))}
-      </ul>
+      </List>
     </>
   );
 };
 
-const Circle = styled.div<RenderCirclesProps>`
+const Circle = styled.div<{ ismobile?: boolean }>`
   width: ${({ ismobile }) => (ismobile ? '0.8rem' : '1.8rem')};
   height: ${({ ismobile }) => (ismobile ? '0.8rem' : '1.8rem')};
   margin-right: ${({ ismobile }) => (ismobile ? '1.25rem' : '2.1rem')};
@@ -70,4 +70,19 @@ const Circle = styled.div<RenderCirclesProps>`
     }
   }};
   aspect-ratio: 1 / 1;
+`;
+
+const List = styled.div`
+  margin-right: 3.15rem;
+`;
+
+const Items = styled.div<{ ismobile?: boolean }>`
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 0.2rem;
+
+  & > div {
+    ${({ ismobile, theme }) => (ismobile ? theme.fonts.body9_2 : theme.fonts.body1)};
+  }
 `;
