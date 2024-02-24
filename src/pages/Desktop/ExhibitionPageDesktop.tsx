@@ -20,7 +20,6 @@ const ExhibitionDesktopPage = () => {
   const navigate = useNavigate();
 
   const handleOnClick = (index: number) => {
-    console.log(index);
     navigate(`/Exhibition/Projects`, { state: index });
   };
 

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 interface LectureBoxWrapperProps {
   expanded: boolean;
   number: number;
+  isMobile?: boolean;
 }
 
 interface LectureboxProps {
@@ -44,7 +45,7 @@ const Lecturebox = ({
   }, [number, clickedNumber]);
 
   return (
-    <LectureBoxWrapper onClick={toggleExpand} expanded={expanded} number={number}>
+    <LectureBoxWrapper onClick={toggleExpand} expanded={expanded} number={number} isMobile={isMobile}>
       <TitleBox isMobile={isMobile}>
         <LectureNumber isMobile={isMobile}>{number}</LectureNumber>
         <LectureInfo isMobile={isMobile}>
@@ -106,6 +107,10 @@ const LectureBoxWrapper = styled.div<LectureBoxWrapperProps>`
       }
     }};
   }
+
+  &:last-child {
+    border-bottom: ${({ isMobile }) => (isMobile ? '2px solid black' : '0.1px solid white')};
+  }
 `;
 
 const TitleBox = styled.div<{ isMobile?: boolean }>`
@@ -155,7 +160,6 @@ const DetailInfo = styled.div<{ isMobile?: boolean }>`
     margin-top: ${({ isMobile }) => (isMobile ? '0.5rem' : '0.2rem')};
     margin-right: ${({ isMobile }) => (isMobile ? '0.3rem' : '0.7rem')};
     padding: ${({ isMobile }) => (isMobile ? '0.4rem 1rem' : '0.1rem 1.2rem;')};
-    border: ${({ isMobile }) => (isMobile ? '0.8px solid black' : '2.3px solid black')};
     border: ${({ isMobile }) => (isMobile ? '1.5px solid black' : '2.3px solid black')};
     border-radius: 21px;
 
