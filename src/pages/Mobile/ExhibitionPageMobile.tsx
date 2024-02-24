@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -18,19 +17,11 @@ import MobileFooter from '../../views/@common/components/MobileFooter';
 
 interface ExhibitionPageMobileProps {
   islast: boolean;
-  ishovered: boolean;
 }
 
 const ExhibitionPageMobile = () => {
-  const [hoveredIndex, setHoveredIndex] = useState(-1);
-  const handleMouseEnter = (index: number) => {
-    setHoveredIndex(index);
-  };
-  const handleMouseLeave = () => {
-    setHoveredIndex(-1);
-  };
-
   const navigate = useNavigate();
+
   const handleOnClick = (index: number) => {
     if (!buttons[index].islast) {
       navigate(`/Exhibition/Projects`, { state: index });
@@ -55,13 +46,7 @@ const ExhibitionPageMobile = () => {
       <ExhibitionPageBox>
         <BtnGrid>
           {buttons.map((button, index) => (
-            <GridItem
-              key={index}
-              onClick={() => handleOnClick(index)}
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={handleMouseLeave}
-              islast={button.islast}
-              ishovered={hoveredIndex === index}>
+            <GridItem key={index} onClick={() => handleOnClick(index)} islast={button.islast}>
               {button.icon}
             </GridItem>
           ))}
@@ -107,6 +92,6 @@ const GridItem = styled.div<ExhibitionPageMobileProps>`
 
   &:hover > svg {
     transition: transform 0.4s;
-    transform: ${({ islast, ishovered }) => (islast && ishovered ? 'none' : 'translateY(-3px)')};
+    transform: ${({ islast }) => (islast ? 'none' : 'translateY(-3px)')};
   }
 `;

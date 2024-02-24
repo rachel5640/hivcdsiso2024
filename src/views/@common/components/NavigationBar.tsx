@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { BUTTON_TEXT } from '../constant/text';
+import TeamInfo from '../../ProjectPage/components/TeamInfo';
 
 type ThemeColorKeys =
   | 'orange'
@@ -32,31 +33,40 @@ const NavigationBar = ({ page, onChangePage }: NavigationBarProps) => {
   };
 
   return (
-    <NavigationBarBox>
-      {BUTTON_TEXT.map((button, index) => (
-        <TeamButton
-          key={index}
-          type="button"
-          isactive={page === index}
-          index={index}
-          color={button.color as ThemeColorKeys}
-          onClick={() => {
-            handleClick(index);
-          }}>
-          {button.name}
-        </TeamButton>
-      ))}
-    </NavigationBarBox>
+    <FixedBar>
+      <NavigationBarBox>
+        {BUTTON_TEXT.map((button, index) => (
+          <TeamButton
+            key={index}
+            type="button"
+            isactive={page === index}
+            index={index}
+            color={button.color as ThemeColorKeys}
+            onClick={() => {
+              handleClick(index);
+            }}>
+            {button.name}
+          </TeamButton>
+        ))}
+      </NavigationBarBox>
+      <TeamInfo page={page} />
+    </FixedBar>
   );
 };
 
-const NavigationBarBox = styled.section`
-  position: relative;
-  top: 8.4rem;
+const FixedBar = styled.section`
+  top: 7.6rem;
 
-  width: 100%;
+  width: 100vw;
+  padding: 1rem 8.2rem;
 
   background-color: ${({ theme }) => theme.colors.white};
+`;
+
+const NavigationBarBox = styled.section`
+  position: relative;
+
+  width: 100%;
 `;
 
 const TeamButton = styled.button<TeamButtonProps>`

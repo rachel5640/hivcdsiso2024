@@ -1,11 +1,13 @@
 import DesktopHeader from '../../views/@common/components/DesktopHeader';
 import NavigationBar from '../../views/@common/components/NavigationBar';
 import styled from 'styled-components';
-import { useLocation } from 'react-router-dom';
-import TeamInfo from '../../views/ProjectPage/components/TeamInfo';
+
+import ProjectSection from '../../views/ProjectPage/components/ProjectSection';
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { useState } from 'react';
+import DesktopFooter from '../../views/@common/components/DestopFooter';
 
 const ProjectPageDesktop = () => {
   useEffect(() => {
@@ -24,29 +26,19 @@ const ProjectPageDesktop = () => {
       <DesktopHeader />
       <ProjectPageBox>
         <NavigationBar page={currentPage} onChangePage={handleChangePage} />
-        <TeamInfo page={currentPage} />
-        <Dummy>Comming Soon!</Dummy>
+        <ProjectSection index={currentPage} />
       </ProjectPageBox>
+
+      <DesktopFooter isfixed={true} />
     </>
   );
 };
 
 const ProjectPageBox = styled.section`
+  position: relative;
+
   width: 100vw;
-  padding: 0 8.2rem;
-`;
-
-const Dummy = styled.section`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 100%;
-  margin-top: 20rem;
-
-  ${({ theme }) => theme.fonts.title1};
-
-  color: ${({ theme }) => theme.colors.grey};
+  margin-top: 7.6rem;
 `;
 
 export default ProjectPageDesktop;
