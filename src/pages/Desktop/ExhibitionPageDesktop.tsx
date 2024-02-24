@@ -59,13 +59,14 @@ const BtnGrid = styled.section`
   display: grid;
   gap: 1.5rem;
 
-  width: calc(100vw - 16.4rem);
-  margin: 9.9rem 8.2rem;
+  width: 100vw;
+  margin: 10rem 0;
+  padding: 0 8.2rem;
+
   grid-template-columns: repeat(3, 1fr);
 `;
 
 const GridItem = styled.div`
-  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
@@ -73,7 +74,6 @@ const GridItem = styled.div`
   width: 100%;
 
   cursor: pointer;
-  aspect-ratio: auto 1 / 1;
 
   & > svg {
     width: 100%;

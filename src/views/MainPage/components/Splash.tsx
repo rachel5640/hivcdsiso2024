@@ -55,7 +55,6 @@ const SplashSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-y: auto;
   position: relative;
   z-index: 30;
 
@@ -79,7 +78,7 @@ const SplashSection = styled.section`
     flex-direction: column;
     z-index: 32;
 
-    margin-top: 5vh;
+    margin-top: 8vh;
   }
 
   & > footer {
@@ -90,7 +89,7 @@ const SplashSection = styled.section`
     bottom: 0;
     z-index: 32;
 
-    width: 100vw;
+    width: 100%;
     height: 35vh;
     padding: 3.8rem;
 
@@ -99,13 +98,13 @@ const SplashSection = styled.section`
     }
 
     & > svg:first-child {
-      min-width: 40rem;
-      max-width: 27vw;
+      min-width: 27vw;
+      max-width: 100rem;
     }
 
     & > svg:last-child {
-      min-width: 24rem;
-      max-width: 19vw;
+      min-width: 16vw;
+      max-width: 30rem;
     }
   }
 `;
@@ -115,7 +114,8 @@ const LogoBox = styled.div`
   justify-content: center;
   align-items: center;
 
-  max-width: 51vw;
+  min-width: 30rem;
+  max-width: 48vw;
 
   & > svg {
     height: 100%;
@@ -127,9 +127,11 @@ const SubBox = styled.div`
   justify-content: center;
   align-items: center;
 
+  margin-top: 1rem;
   padding: 3rem;
 
   & > svg {
+    min-width: 10rem;
     max-width: 23vw;
   }
 `;
@@ -145,6 +147,8 @@ const ArrowWrapper = styled.div`
 
 const Background = styled.section`
   z-index: 1;
+
+  width: 100%;
 
   & > svg {
     position: absolute;

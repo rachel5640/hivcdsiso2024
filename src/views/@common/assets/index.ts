@@ -9,6 +9,11 @@ import IcInstagram from './ic_instagram.svg?react';
 import IcHivcd from './ic_hivcd.svg?react';
 import IcMenu from './ic_menu.svg?react';
 
+import CommiteeBtn from './commitee_btn.svg?react';
+import EventBtn from './event_btn.svg?react';
+import GoodsBtn from './goods_btn.svg?react';
+import InfoBtn from './info_btn.svg?react';
+
 export { OurIndexLogo };
 export { ArchiveBtn };
 export { ExhibitionBtn };
@@ -17,3 +22,7 @@ export { IcHivcd };
 export { IcInstagram };
 export { Trial };
 export { IcMenu };
+export { CommiteeBtn };
+export { EventBtn };
+export { GoodsBtn };
+export { InfoBtn };

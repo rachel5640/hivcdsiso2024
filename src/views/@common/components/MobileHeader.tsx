@@ -47,6 +47,7 @@ const MobileHeader = ({ isSticky }: MobileHeaderProps) => {
 const HeaderWrapper = styled.div<MobileHeaderProps>`
   position: ${({ isSticky }) => (isSticky ? 'sticky' : 'fixed')};
   top: 0;
+  z-index: 90;
 
   border-bottom: 1.5px solid;
 `;

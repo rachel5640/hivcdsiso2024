@@ -9,36 +9,44 @@ interface DesktopFooterProps {
 const DesktopFooter = ({ isfixed }: DesktopFooterProps) => {
   return (
     <FooterBox isfixed={isfixed}>
-      <FooterText>
-        2024 HIVCD CLUB FESTIVAL <div>:</div> SISO
-      </FooterText>
-      <FooterText>《OUR INDEX》</FooterText>
-      <ButtonBox>
-        <a href="https://www.instagram.com/hivcdsiso/" target="_blank">
-          <IcInstagram />
-        </a>
-        <a href="https://sidi.hongik.ac.kr" target="_blank">
-          <IcHivcd />
-        </a>
-      </ButtonBox>
+      <ContentBox>
+        <FooterText>
+          2024 HIVCD CLUB FESTIVAL <div>:</div> SISO
+        </FooterText>
+        <FooterText>《OUR INDEX》</FooterText>
+        <ButtonBox>
+          <a href="https://www.instagram.com/hivcdsiso/" target="_blank">
+            <IcInstagram />
+          </a>
+          <a href="https://sidi.hongik.ac.kr" target="_blank">
+            <IcHivcd />
+          </a>
+        </ButtonBox>
+      </ContentBox>
     </FooterBox>
   );
 };
 
 const FooterBox = styled.section<DesktopFooterProps>`
-  display: flex;
-  justify-content: space-between;
   position: ${({ isfixed }) => (isfixed ? 'fixed' : 'static')};
   bottom: 0;
-  left: 8.2rem;
 
-  width: calc(100vw - 16.4rem);
+  width: 100vw;
   height: 8.8rem;
   margin: auto;
-  padding: 1.3rem 0;
-  border-top: 3px solid;
+  padding: 0 8.2rem;
 
   background-color: ${({ theme }) => theme.colors.white};
+`;
+
+const ContentBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 100%;
+  padding: 1.3rem 0;
+  border-top: 3px solid black;
 `;
 
 const FooterText = styled.p`
@@ -46,7 +54,8 @@ const FooterText = styled.p`
   ${({ theme }) => theme.fonts.label1};
 
   &:nth-child(2) {
-    margin-right: 3rem;
+    margin-right: 2rem;
+    margin-left: 1rem;
   }
 
   & > div {

@@ -160,7 +160,7 @@ const DetailInfo = styled.div<{ isMobile?: boolean }>`
     margin-right: ${({ isMobile }) => (isMobile ? '0.3rem' : '0.7rem')};
     padding: ${({ isMobile }) => (isMobile ? '0.4rem 1rem' : '0.1rem 1.2rem;')};
     border: ${({ isMobile }) => (isMobile ? '0.8px solid black' : '2.3px solid black')};
-    border: 2.3px solid black;
+    border: ${({ isMobile }) => (isMobile ? '1.5px solid black' : '2.3px solid black')};
     border-radius: 21px;
 
     color: black;
