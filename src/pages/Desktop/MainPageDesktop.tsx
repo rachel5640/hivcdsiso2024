@@ -24,7 +24,7 @@ const MainPageDesktop = () => {
     <ScrollWrapper>
       <Splash scrollToStickBox={scrollToStickBox} />
 
-      <StickBox ref={stickBoxRef}>
+      <div ref={stickBoxRef}>
         <DesktopHeader isSticky={true} />
         <MainPageBox>
           <ExhibitionSection />
@@ -33,8 +33,8 @@ const MainPageDesktop = () => {
           <EventSection />
           <CommitteeSection />
         </MainPageBox>
-        <DesktopFooter />
-      </StickBox>
+      </div>
+      <DesktopFooter />
     </ScrollWrapper>
   );
 };
@@ -50,10 +50,8 @@ const ScrollWrapper = styled.section`
 const MainPageBox = styled.section`
   width: 100vw;
   padding: 0 8.2rem;
-`;
-
-const StickBox = styled.section`
   scroll-snap-align: start;
+  scroll-behavior: smooth;
 `;
 
 export default MainPageDesktop;

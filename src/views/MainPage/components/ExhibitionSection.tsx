@@ -36,6 +36,7 @@ const ExhibitionSectionBox = styled.div`
 
   width: 100%;
   margin: 10rem 0 13rem;
+  padding-top: 10.6rem;
 `;
 
 const PosterImg = styled.img`
