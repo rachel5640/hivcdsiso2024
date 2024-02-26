@@ -23,6 +23,7 @@ const MobileFooterWrapper = styled.section<MobileFooterProps>`
 
   width: 100vw;
   padding: 0.7rem 1.6rem;
+  scroll-snap-align: start;
 `;
 const MobileFooterBox = styled.div`
   display: flex;
