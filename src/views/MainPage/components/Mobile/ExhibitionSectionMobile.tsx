@@ -4,7 +4,7 @@ import { EXHIBITION_TEXT } from '../../constant/text';
 import { RenderCircles } from '../RenderCircles';
 import { forwardRef } from 'react';
 
-const ExhibitionSectionMobile = forwardRef<HTMLDivElement>((props, ref) => {
+const ExhibitionSectionMobile = forwardRef<HTMLDivElement>((_props, ref) => {
   return (
     <div ref={ref}>
       <Poster src={SisoPoster} alt="Siso_Poster_OurIndex" />

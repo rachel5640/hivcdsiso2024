@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 import { EVENT_TEXT } from '../../constant/text';
 import { ImgStamp, ImgFind } from '../../assets';
 
-const EventSectionMobile = forwardRef<HTMLDivElement>((props, ref) => {
+const EventSectionMobile = forwardRef<HTMLDivElement>((_props, ref) => {
   return (
     <RefWrapper ref={ref}>
       <EventSectionBox>

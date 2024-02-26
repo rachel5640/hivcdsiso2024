@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import DummyImg from '../../assets/dummy_img.png';
 import { forwardRef } from 'react';
 
-const SisoGoodsSectionMobile = forwardRef<HTMLDivElement>((props, ref) => {
+const SisoGoodsSectionMobile = forwardRef<HTMLDivElement>((_props, ref) => {
   return (
     <SisoGoodsSection ref={ref}>
       <h1>2024 SISO Goods</h1>
