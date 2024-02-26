@@ -8,8 +8,6 @@ const GoodsSection = () => {
       <ImgBox>
         <img src={DummyImg} />
         <img src={DummyImg} />
-        <img src={DummyImg} />
-        <img src={DummyImg} />
       </ImgBox>
     </GoodsSectionBox>
   );
@@ -25,7 +23,7 @@ const Title = styled.h1`
 
   margin-bottom: 2.4rem;
   padding-bottom: 1.3rem;
-  border-bottom: 1.5px solid black;
+  border-bottom: 2px solid black;
 `;
 
 const ImgBox = styled.div`

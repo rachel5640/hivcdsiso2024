@@ -35,7 +35,7 @@ const MainPageMobile = () => {
   };
 
   return (
-    <MainPageMobileWrapper>
+    <ScrollSnapWrapper>
       <SplashMobile />
       <MobileHeader issticky={true} isnavigate={true}>
         <SubHeader>
@@ -61,16 +61,21 @@ const MainPageMobile = () => {
         <ExhibitionCommitteeMobile ref={Committeeref} />
       </MainPageSection>
       <MobileFooter />
-    </MainPageMobileWrapper>
+    </ScrollSnapWrapper>
   );
 };
 
-const MainPageMobileWrapper = styled.section`
+const ScrollSnapWrapper = styled.div`
+  overflow-y: scroll;
+
   width: 100vw;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
 `;
 
 const MainPageSection = styled.section`
   padding: 1.6rem;
+  scroll-snap-align: start;
 `;
 
 const SubHeader = styled.section`

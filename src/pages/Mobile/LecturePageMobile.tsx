@@ -46,7 +46,7 @@ const LecturePageMobile = () => {
 
 const LecturePageMobileSection = styled.section`
   width: 100vw;
-  margin: 8.2rem 0 2rem;
+  margin: 8.2rem 0 5rem;
   padding: 0 1.6rem;
 `;
 

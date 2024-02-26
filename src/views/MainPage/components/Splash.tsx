@@ -8,11 +8,11 @@ import { ArrowIcon } from '../assets';
 import { MainPageSubtext } from '../assets';
 import BackgroundDesktop from './BackgroundDesktop';
 
-const Splash = () => {
-  const scrollToMainSection = () => {
-    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
-  };
+interface SplashProps {
+  scrollToStickBox: () => void;
+}
 
+const Splash = ({ scrollToStickBox }: SplashProps) => {
   return (
     <SplashSection>
       <BackgroundWrapper>
@@ -35,7 +35,7 @@ const Splash = () => {
         <ExhibitionTitle />
         <ExhibitionDate />
       </footer>
-      <ArrowWrapper onClick={scrollToMainSection}>
+      <ArrowWrapper onClick={scrollToStickBox}>
         <ArrowIcon />
       </ArrowWrapper>
     </SplashSection>
@@ -46,11 +46,11 @@ const SplashSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  scroll-snap-align: start;
+
+  position: relative;
 
   width: 100vw;
-  height: 100vh;
-
-  scroll-snap-align: start;
 
   & > header {
     display: flex;

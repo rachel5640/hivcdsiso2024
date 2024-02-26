@@ -15,7 +15,7 @@ const ProjectPageMobile = () => {
       <ExhibitionTextSection>
         <ProjectSectionMobile index={index} />
       </ExhibitionTextSection>
-      <MobileFooter isfixed={true} />
+      <MobileFooter />
     </>
   );
 };

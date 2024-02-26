@@ -8,8 +8,6 @@ const SisoGoodsSectionMobile = forwardRef<HTMLDivElement>((_props, ref) => {
       <h1>2024 SISO Goods</h1>
       <GoodsImg src={DummyImg}></GoodsImg>
       <GoodsImg src={DummyImg}></GoodsImg>
-      <GoodsImg src={DummyImg}></GoodsImg>
-      <GoodsImg src={DummyImg}></GoodsImg>
     </SisoGoodsSection>
   );
 });

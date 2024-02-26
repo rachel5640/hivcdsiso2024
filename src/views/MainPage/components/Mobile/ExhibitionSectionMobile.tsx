@@ -39,7 +39,7 @@ const Title = styled.h1`
 
   margin-bottom: 0.8rem;
   padding-top: 0.8rem;
-  border-top: 2px solid black;
+  border-top: 1.5px solid black;
 `;
 
 const Description = styled.div`
