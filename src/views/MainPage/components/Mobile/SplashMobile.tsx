@@ -42,7 +42,7 @@ const BackgroundWrapper = styled.section`
 
 const SvgArea = styled.section`
   position: absolute;
-  z-index: 30;
+  z-index: 300;
 
   width: 100vw;
   height: 100dvh;

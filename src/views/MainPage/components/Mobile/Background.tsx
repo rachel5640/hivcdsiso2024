@@ -77,10 +77,12 @@ const BackgroundSection = styled.section`
   position: relative;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 230;
 
   width: 100vw;
   height: 100dvh;
+
+  background-color: white;
 
   & > div {
     position: absolute;
@@ -124,9 +126,9 @@ const LeftTop = styled.div`
 `;
 const MiddleTop = styled.div`
   top: 0;
-  left: 27vw;
+  left: 26vw;
 
-  width: 40vw;
+  width: 47vw;
   height: 50rem;
 
   & > svg {

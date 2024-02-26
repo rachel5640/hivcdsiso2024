@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { IcMenu, OurIndexLogo } from '../assets';
+import { OurIndexLogo } from '../assets';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import MenuIcon from './MenuIcon';
 
 interface MobileHeaderProps {
   isopen?: boolean;
@@ -9,7 +10,7 @@ interface MobileHeaderProps {
 }
 
 const MobileHeader = ({ issticky }: MobileHeaderProps) => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuopen, setMenuopen] = useState(false);
   const navigate = useNavigate();
   const handleClickLogo = () => navigate('/');
   const handleClickExhibition = () => navigate('/Exhibition');
@@ -17,29 +18,25 @@ const MobileHeader = ({ issticky }: MobileHeaderProps) => {
   const handleClickArchive = () => navigate('/Archive');
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen); // 메뉴를 열거나 닫음
+    setMenuopen(!menuopen); // 메뉴를 열거나 닫음
   };
 
   return (
     <HeaderWrapper issticky={issticky}>
+      <BackDim onClick={toggleMenu} style={{ display: menuopen ? 'block' : 'none' }} />
+      <MenuItem isopen={menuopen} style={{ top: menuopen ? '4.8rem' : '-16.5rem' }}>
+        <div onClick={handleClickLecture}>Lecture</div>
+        <div onClick={handleClickExhibition}>Exhibition</div>
+        <div onClick={handleClickArchive}>Archive</div>
+      </MenuItem>
       <MobileHeaderBox>
         <OurIndexLogoBox onClick={handleClickLogo}>
           <OurIndexLogo />
         </OurIndexLogoBox>
         <MenuBox onClick={toggleMenu}>
-          <IcMenu />
+          <MenuIcon menuOpen={menuopen} />
         </MenuBox>
       </MobileHeaderBox>
-      {menuOpen && (
-        <>
-          <BackDim onClick={toggleMenu} />
-          <MenuItem isopen={menuOpen}>
-            <div onClick={handleClickLecture}>Lecture</div>
-            <div onClick={handleClickExhibition}>Exhibition</div>
-            <div onClick={handleClickArchive}>Archive</div>
-          </MenuItem>
-        </>
-      )}
     </HeaderWrapper>
   );
 };
@@ -47,7 +44,7 @@ const MobileHeader = ({ issticky }: MobileHeaderProps) => {
 const HeaderWrapper = styled.div<{ issticky?: boolean }>`
   position: ${({ issticky }) => (issticky ? 'sticky' : 'fixed')};
   top: 0;
-  z-index: 100;
+  z-index: 200;
 
   border-bottom: 1.5px solid;
 `;
@@ -77,8 +74,10 @@ const MenuBox = styled.div`
   cursor: pointer;
 `;
 
-const BackDim = styled.section`
-  z-index: 50;
+const BackDim = styled.section<{ isopen?: boolean }>`
+  position: fixed;
+  top: 0;
+  left: 0;
 
   width: 100vw;
   height: 100vh;
@@ -91,21 +90,28 @@ const BackDim = styled.section`
 const MenuItem = styled.section<MobileHeaderProps>`
   overflow: hidden;
   position: absolute;
-  top: 4.8rem;
 
   width: 100vw;
+
+  transition: top 0.3s ease;
 
   & > div {
     display: flex;
     align-items: center;
 
-    padding: 1.2rem 0 1.2rem 1.6rem;
-    border-top: 1px solid black;
+    height: 5.2rem;
+    padding: 0 0 0 1.6rem;
+    border-bottom: 1.5px solid black;
 
     background-color: ${({ theme }) => theme.colors.white};
     ${({ theme }) => theme.fonts.label3};
 
     cursor: pointer;
+    pointer-events: ${({ isopen }) => (isopen ? 'auto' : 'none')};
+  }
+
+  & > div:first-child {
+    border-top: 1.5px solid black;
   }
 `;
 
