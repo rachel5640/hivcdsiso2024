@@ -1,5 +1,15 @@
 import styled from 'styled-components';
 import {
+  SlideInBottom,
+  SlideInLeft,
+  SlideInRight,
+  SlideInRightBottom,
+  SlideInRightTop,
+  SlideInTop,
+  SlideInTopLeft,
+} from '../utils/keyframes';
+
+import {
   LeftBottomFive,
   LeftBottomFour,
   LeftBottomOne,
@@ -95,6 +105,22 @@ const LeftTop = styled.div`
     width: 100%;
     height: auto;
   }
+
+  & > *:nth-child(1) {
+    animation: ${SlideInLeft} 0.9s;
+  }
+
+  & > *:nth-child(2) {
+    animation: ${SlideInTopLeft} 1.1s;
+  }
+
+  & > *:nth-child(3) {
+    animation: ${SlideInTop} 0.7s;
+  }
+
+  & > *:nth-child(4) {
+    animation: ${SlideInTopLeft} 0.5s;
+  }
 `;
 
 const MiddleTop = styled.div`
@@ -106,6 +132,18 @@ const MiddleTop = styled.div`
   & > svg {
     width: 100%;
     height: auto;
+  }
+
+  & > *:nth-child(1) {
+    animation: ${SlideInTop} 0.5s;
+  }
+
+  & > *:nth-child(2) {
+    animation: ${SlideInTop} 1.1s;
+  }
+
+  & > *:nth-child(3) {
+    animation: ${SlideInTop} 0.7s;
   }
 `;
 
@@ -119,6 +157,22 @@ const RightTop = styled.div`
     width: 100%;
     height: auto;
   }
+
+  & > *:nth-child(1) {
+    animation: ${SlideInRight} 1.1s;
+  }
+
+  & > *:nth-child(2) {
+    animation: ${SlideInRightTop} 0.9s;
+  }
+
+  & > *:nth-child(3) {
+    animation: ${SlideInRightTop} 0.5s;
+  }
+
+  & > *:nth-child(4) {
+    animation: ${SlideInRight} 0.7s;
+  }
 `;
 
 const LeftBottom = styled.div`
@@ -131,6 +185,26 @@ const LeftBottom = styled.div`
 
     width: 27vw;
     height: auto;
+  }
+
+  & > *:nth-child(1) {
+    animation: ${SlideInLeft} 0.5s;
+  }
+
+  & > *:nth-child(2) {
+    animation: ${SlideInLeft} 0.9s;
+  }
+
+  & > *:nth-child(3) {
+    animation: ${SlideInLeft} 1.1s;
+  }
+
+  & > *:nth-child(4) {
+    animation: ${SlideInBottom} 1.2s;
+  }
+
+  & > *:nth-child(5) {
+    animation: ${SlideInBottom} 0.7s;
   }
 `;
 
@@ -146,5 +220,25 @@ const RightBottom = styled.div`
 
     width: 30vw;
     height: auto;
+  }
+
+  & > *:nth-child(1) {
+    animation: ${SlideInBottom} 0.7s;
+  }
+
+  & > *:nth-child(2) {
+    animation: ${SlideInBottom} 1.1s;
+  }
+
+  & > *:nth-child(3) {
+    animation: ${SlideInRight} 0.5s;
+  }
+
+  & > *:nth-child(4) {
+    animation: ${SlideInRight} 1.2s;
+  }
+
+  & > *:nth-child(5) {
+    animation: ${SlideInRightBottom} 0.9s;
   }
 `;
