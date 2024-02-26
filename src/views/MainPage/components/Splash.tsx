@@ -68,7 +68,7 @@ const SplashSection = styled.section`
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 10vh;
+    top: 15vh;
     z-index: 32;
 
     margin-top: 8vh;
@@ -114,8 +114,8 @@ const LogoBox = styled.div`
   justify-content: center;
   align-items: center;
 
-  min-width: 30rem;
-  max-width: 48vw;
+  min-width: 59rem;
+  max-width: 57vw;
 
   & > svg {
     height: 100%;

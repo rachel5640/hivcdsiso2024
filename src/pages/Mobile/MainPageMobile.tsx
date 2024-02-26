@@ -8,7 +8,13 @@ import EventSectionMobile from '../../views/MainPage/components/Mobile/EventSect
 import ExhibitionCommitteeMobile from '../../views/MainPage/components/Mobile/ExhibitionCommitteeMobile';
 import SplashMobile from '../../views/MainPage/components/Mobile/SplashMobile';
 
+import { useEffect } from 'react';
+
 const MainPageMobile = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <MainPageMobileWrapper>
       <SplashMobile />

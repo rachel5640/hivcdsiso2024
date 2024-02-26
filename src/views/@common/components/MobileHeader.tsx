@@ -107,6 +107,7 @@ const MenuItem = styled.section<MobileHeaderProps>`
     ${({ theme }) => theme.fonts.label3};
 
     cursor: pointer;
+    pointer-events: ${({ isopen }) => (isopen ? 'auto' : 'none')};
   }
 
   & > div:first-child {

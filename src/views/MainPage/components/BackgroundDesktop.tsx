@@ -80,7 +80,7 @@ const Background = styled.section`
   z-index: 1;
 
   width: 100vw;
-  height: 100dvh;
+  height: 100vh;
 
   & > div {
     position: absolute;
@@ -99,7 +99,7 @@ const LeftTop = styled.div`
   top: 0;
   left: 0;
 
-  width: 18vw;
+  width: 20vw;
 
   & > svg {
     width: 100%;
@@ -127,7 +127,7 @@ const MiddleTop = styled.div`
   top: 0;
   left: 30vw;
 
-  width: 40vw;
+  width: 43vw;
 
   & > svg {
     width: 100%;
@@ -151,7 +151,7 @@ const RightTop = styled.div`
   top: 0;
   right: 0;
 
-  width: 18vw;
+  width: 20vw;
 
   & > svg {
     width: 100%;
@@ -183,7 +183,7 @@ const LeftBottom = styled.div`
     bottom: 0;
     left: 0;
 
-    width: 27vw;
+    width: 34vw;
     height: auto;
   }
 
@@ -212,7 +212,7 @@ const RightBottom = styled.div`
   right: 0;
   bottom: 0;
 
-  width: 30vw;
+  width: 38vw;
 
   & > svg {
     right: 0;
