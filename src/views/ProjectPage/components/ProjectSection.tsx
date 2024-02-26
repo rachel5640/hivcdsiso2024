@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { TEAM_EXHIBITION_INFO } from '../constants/text';
 import ScrollBarBox from '../../@common/components/ScrollBar';
-import Sisoposter from '../../MainPage/assets/siso_poster_web.jpg';
 
 interface ProjectSectionProps {
   index: number;
@@ -37,7 +36,7 @@ const ProjectSection = ({ index }: ProjectSectionProps) => {
           <h1>참여자</h1>
           <h2>{exhibitionInfo.participant}</h2>
         </ParticipantBox>
-        <img src={Sisoposter} />
+        <img src={exhibitionInfo.image} alt={exhibitionInfo.Title} />
       </TextArea>
     </ProjectSectionWrapper>
   );
