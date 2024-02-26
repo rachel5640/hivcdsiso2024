@@ -62,7 +62,7 @@ export const TEAM_EXHIBITION_INFO = [
     artdirector: '김성재, 김수아, 조예린',
     participant:
       '강소정, 김규빈, 김린, 김민주, 김수아, 김유진, 박수민, 박예진, 양해든, 어영은, 오윤서, 유은지, 윤채원, 이연우, 이연주, 이예은, 이지원, 전지원, 정예원, 조승완, 조예린, 조훈규, 하수민, 현혜영',
-    image: '/src/views/ProjectPage/assets/team/greenbee_poster.jpg',
+    image: '',
   },
   {
     Title: '삼매경 samadhi 三昧境 ',
@@ -70,7 +70,7 @@ export const TEAM_EXHIBITION_INFO = [
     artdirector: '이다연, 정민경, 조서영',
     participant:
       '김민서, 김성윤, 김채은, 남주현, 문을주, 박기정, 박소현, 박채현, 백유석, 안가은, 안서원, 여단아, 오연재, 이다연, 이세라, 이윤정, 이은제, 이주영, 정민경, 정병준, 정현욱, 조서영, 최세은, 홍지윤, 황지원',
-    image: '/src/views/ProjectPage/assets/team/dromapic.jpg',
+    image: '',
   },
   {
     Title: 'Polyphony Vortex (폴리포니 보텍스)',
@@ -78,7 +78,7 @@ export const TEAM_EXHIBITION_INFO = [
     artdirector: '강보영, 권용희, 김민하, 조예원',
     participant:
       '강보영, 구한나, 권선주, 권용희, 김민하, 김유은, 김현민, 맹지연, 박민아, 박서연, 박서영, 박찬영, 이건호, 이면경, 이휘성, 임효원, 정수연, 조예봄, 조예원, 천예인, 최승민, 최원정, 최유빈',
-    image: '/src/views/ProjectPage/assets/team/i-ray_poster.jpg',
+    image: 'https://imgur.com/gstdjsc.jpg',
   },
   {
     Title: 'yadz in the glasshouse',
@@ -86,7 +86,7 @@ export const TEAM_EXHIBITION_INFO = [
     artdirector: '김예영, 민지원, 이경민, 정경윤, 조수민',
     participant:
       '강민서, 고다현, 권민지, 기가연, 김서연, 김예영, 김정혜, 김지호, 류정현, 민아영, 민지원, 박서영, 박태연, 배수연, 배초은, 부문희, 서재상, 송윤하, 신혜영, 심준섭, 오다은, 유희연, 이경민, 이송은, 이민지, 임유진, 정경윤, 정재령, 조수민',
-    image: '/src/views/ProjectPage/assets/team/yadz_poster.jpg',
+    image: '',
   },
   {
     Title: 'AnD',
@@ -94,7 +94,7 @@ export const TEAM_EXHIBITION_INFO = [
     artdirector: '엄소연, 장지윤, 최예린, 최유진',
     participant:
       '김민서, 김윤수, 박세진, 박소민, 백신영, 서가은, 엄소연, 장지윤, 정유라, 최예린, 최유진, 최윤영, 최혜림',
-    image: '/src/views/ProjectPage/assets/team/adrenalin_poster.jpg',
+    image: 'https://imgur.com/QgWKaHk.jpg',
   },
   {
     Title: 'Möbius',
@@ -102,7 +102,7 @@ export const TEAM_EXHIBITION_INFO = [
     artdirector: '김경빈, 윤희서, 조서진, 최지원',
     participant:
       '강유성, 권수민, 김세은, 김하민, 배은환, 신유안, 안유진, 안재민, 유민서, 윤희서, 이민석, 이수민, 이지윤, 전시은, 전지연, 정나명, 정윤서, 조희원, 최지현',
-    image: '/src/views/ProjectPage/assets/team/proto_poster.jpg',
+    image: '',
   },
   {
     Title: '하이퍼큐브 : Hypercube',
@@ -110,7 +110,7 @@ export const TEAM_EXHIBITION_INFO = [
     artdirector: '박서연, 이일여',
     participant:
       '구윤지, 권수연, 김민재, 김새하, 김서현(20), 김서현(22), 김소은, 김채현, 민솔, 박서연, 박세은, 박소현, 박하경, 손서우, 양찬규, 윤서윤, 윤유빈, 이명건, 이송희, 이영서, 이일여, 이한나, 전서현, 정세진, 조진주, 진나경, 최선우, 최영재, 황예지',
-    image: '/src/views/ProjectPage/assets/team/hyphen_poster.jpg',
+    image: '',
   },
   {
     Title: 'TYPE LOOP',
@@ -118,13 +118,13 @@ export const TEAM_EXHIBITION_INFO = [
     artdirector: '구재혁, 문서현, 정지우',
     participant:
       '구재혁, 권순형, 김가온, 김경빈, 김주현, 김태은, 노유진, 박시은, 박정빈, 신채원, 이주아, 전재곤, 정우성, 조영재, 진서영, 한수영, 한시연',
-    image: '/src/views/ProjectPage/assets/team/hangulggol_poster.jpg',
+    image: '',
   },
   {
     Title: '워크스, 플러스, 페이스 (Works plus Pace)',
     text: '[워크스, 플러스, 페이스.] 는 지금 이 공간을 관통하는 세 요소이자 하나의 규칙이다.워크스.작업과 작업과 작업들이 모여들어 현장의 대기에 짙게 깔린다. 플러스.     궁극적으로 모든 개인에게 미점으로 작용하기를 도모한다. 페이스.     우리는 모두 침착하게 각자의 숨을 쉬는 것을 잊지 않는다. 이 전시는 워크스와 플러스 그리고 페이스가 한데 모여 본연의 역할 그 이상을 수행할 수 있는 워크스페이스 (Works+Pace)로 기능하고자 하는 HIPS라는 팀이자 공간에 대해 이야기한다.',
     artdirector: '김동혜, 이지희',
     participant: '김경빈, 김동혜, 김예린, 성경찬, 이린, 이지현, 이지희, 이해인, 정은우, 한연수',
-    image: '/src/views/ProjectPage/assets/team/hips_poster.jpg',
+    image: '',
   },
 ];

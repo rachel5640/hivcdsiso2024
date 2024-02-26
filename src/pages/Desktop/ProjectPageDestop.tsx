@@ -14,7 +14,7 @@ const ProjectPageDesktop = () => {
     window.scrollTo(0, 0);
   }, []);
   const location = useLocation();
-  const index = location.state;
+  const index = location.state || 0;
   const [currentPage, setCurrentPage] = useState<number>(index);
 
   const handleChangePage = (page: number) => {
