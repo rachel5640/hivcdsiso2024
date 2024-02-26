@@ -34,7 +34,7 @@ const ImgBox = styled.div`
     align-items: center;
 
     width: 100%;
-    height: 35rem;
+    height: 40rem;
 
     color: ${({ theme }) => theme.colors.grey};
     ${({ theme }) => theme.fonts.title1};

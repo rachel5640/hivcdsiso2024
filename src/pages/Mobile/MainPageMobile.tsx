@@ -96,7 +96,7 @@ const SubHeader = styled.section`
   & > div > svg {
     width: auto;
     height: 2rem;
-    margin-right: 0.7rem;
+    margin-right: 0.9rem;
   }
 `;
 
