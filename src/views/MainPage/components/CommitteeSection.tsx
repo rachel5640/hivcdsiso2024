@@ -20,7 +20,7 @@ const CommitteeSection = forwardRef<HTMLDivElement>((_props, ref) => {
 
 const CommitteeSectionBox = styled.section`
   width: 100%;
-  padding-top: 8.8rem;
+  margin-bottom: 5rem;
 `;
 
 const Title = styled.h1`
@@ -28,7 +28,7 @@ const Title = styled.h1`
 
   margin-bottom: 2.4rem;
   padding-bottom: 1.3rem;
-  border-bottom: 1.5px solid;
+  border-bottom: 2px solid;
 `;
 
 const TextBox = styled.div`

@@ -35,7 +35,7 @@ const ExhibitionSectionBox = styled.div`
   gap: 3rem;
 
   width: 100%;
-  margin: 21.2rem 0 13rem;
+  margin: 10rem 0 13rem;
 `;
 
 const PosterImg = styled.img`

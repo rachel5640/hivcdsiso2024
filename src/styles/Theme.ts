@@ -134,6 +134,7 @@ const fonts = {
     font-style: normal;
     font-size: 1.7rem;
     line-height: 158%;
+    letter-spacing: -2%;
   `,
   body7: css`
     font-family: 'ABC_ROM_Condensed', 'Noto Sans KR', sans-serif;

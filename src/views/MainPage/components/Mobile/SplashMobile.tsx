@@ -28,6 +28,7 @@ const SplashMobile = () => {
 
 const SplashMobileSection = styled.section`
   position: relative;
+  scroll-snap-align: start;
 
   width: 100vw;
   height: 100dvh;

@@ -45,7 +45,7 @@ const EventBox = styled.div`
 
     margin-bottom: 2.4rem;
     padding-bottom: 1.3rem;
-    border-bottom: 1.5px solid;
+    border-bottom: 2px solid;
   }
 
   & > h2 {

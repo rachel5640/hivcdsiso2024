@@ -9,6 +9,7 @@ const ProjectSectionMobile = ({ index }: ProjectSectionMobileProps) => {
   const exhibitionInfo = TEAM_EXHIBITION_INFO[index];
   return (
     <div>
+      <Poster src={exhibitionInfo.image} alt={exhibitionInfo.Title} />
       <TextArea>
         <h1>{exhibitionInfo.Title}</h1>
         <p>{exhibitionInfo.text}</p>
@@ -23,8 +24,12 @@ const ProjectSectionMobile = ({ index }: ProjectSectionMobileProps) => {
   );
 };
 
-const TextArea = styled.section`
+const Poster = styled.img`
+  width: 100%;
   margin-top: 6.7rem;
+`;
+const TextArea = styled.section`
+  margin-top: 2rem;
 
   & > h1 {
     ${({ theme }) => theme.fonts.title5};
@@ -57,4 +62,5 @@ const ParticipantBox = styled.div`
     word-break: keep-all;
   }
 `;
+
 export default ProjectSectionMobile;
