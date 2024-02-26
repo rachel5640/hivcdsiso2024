@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import { forwardRef } from 'react';
 import { COMMITTEE_DATA } from '../constant/committeeData';
 
-const CommitteeSection = () => {
+const CommitteeSection = forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <CommitteeSectionBox>
+    <CommitteeSectionBox ref={ref}>
       <Title>EXHIBITION COMMITTEE</Title>
       <TextBox>
         {COMMITTEE_DATA.map((item, index) => (
@@ -15,11 +16,11 @@ const CommitteeSection = () => {
       </TextBox>
     </CommitteeSectionBox>
   );
-};
+});
 
 const CommitteeSectionBox = styled.section`
   width: 100%;
-  margin-bottom: 13rem;
+  padding-top: 8.8rem;
 `;
 
 const Title = styled.h1`

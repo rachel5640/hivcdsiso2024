@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import { forwardRef } from 'react';
 import { EVENT_TEXT } from '../../constant/text';
 import { ImgStamp, ImgFind } from '../../assets';
 
-const EventSectionMobile = () => {
+const EventSectionMobile = forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <>
+    <RefWrapper ref={ref}>
       <EventSectionBox>
         <h1>STAMP TOUR</h1>
 
@@ -23,13 +24,16 @@ const EventSectionMobile = () => {
           <ImgFind />
         </div>
       </EventSectionBox>
-    </>
+    </RefWrapper>
   );
-};
+});
+
+const RefWrapper = styled.section`
+  padding-top: 8.8rem;
+`;
 
 const EventSectionBox = styled.section`
   width: 100%;
-  margin-top: 7rem;
 
   & > h1 {
     ${({ theme }) => theme.fonts.title2};

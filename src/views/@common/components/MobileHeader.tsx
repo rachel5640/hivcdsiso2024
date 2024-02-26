@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import { OurIndexLogo } from '../assets';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
@@ -7,9 +7,11 @@ import MenuIcon from './MenuIcon';
 interface MobileHeaderProps {
   isopen?: boolean;
   issticky?: boolean;
+  isnavigate?: boolean;
+  children?: ReactNode;
 }
 
-const MobileHeader = ({ issticky }: MobileHeaderProps) => {
+const MobileHeader = ({ issticky, isnavigate, children }: MobileHeaderProps) => {
   const [menuopen, setMenuopen] = useState(false);
   const navigate = useNavigate();
   const handleClickLogo = () => navigate('/');
@@ -37,6 +39,7 @@ const MobileHeader = ({ issticky }: MobileHeaderProps) => {
           <MenuIcon menuOpen={menuopen} />
         </MenuBox>
       </MobileHeaderBox>
+      {isnavigate && <Navigation>{children}</Navigation>}
     </HeaderWrapper>
   );
 };
@@ -45,8 +48,6 @@ const HeaderWrapper = styled.div<{ issticky?: boolean }>`
   position: ${({ issticky }) => (issticky ? 'sticky' : 'fixed')};
   top: 0;
   z-index: 200;
-
-  border-bottom: 1.5px solid;
 `;
 const MobileHeaderBox = styled.section`
   display: flex;
@@ -113,6 +114,10 @@ const MenuItem = styled.section<MobileHeaderProps>`
   & > div:first-child {
     border-top: 1.5px solid black;
   }
+`;
+
+const Navigation = styled.div`
+  width: 100%;
 `;
 
 export default MobileHeader;

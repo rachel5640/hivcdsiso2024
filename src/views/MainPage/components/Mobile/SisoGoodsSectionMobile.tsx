@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import DummyImg from '../../assets/dummy_img.png';
+import { forwardRef } from 'react';
 
-const SisoGoodsSectionMobile = () => {
+const SisoGoodsSectionMobile = forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <SisoGoodsSection>
+    <SisoGoodsSection ref={ref}>
       <h1>2024 SISO Goods</h1>
       <GoodsImg src={DummyImg}></GoodsImg>
       <GoodsImg src={DummyImg}></GoodsImg>
@@ -11,11 +12,11 @@ const SisoGoodsSectionMobile = () => {
       <GoodsImg src={DummyImg}></GoodsImg>
     </SisoGoodsSection>
   );
-};
+});
 
 const SisoGoodsSection = styled.div`
   width: 100%;
-  margin-top: 7rem;
+  padding-top: 8.8rem;
 
   & > h1 {
     ${({ theme }) => theme.fonts.title2};
