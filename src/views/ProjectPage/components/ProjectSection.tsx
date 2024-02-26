@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { TEAM_EXHIBITION_INFO } from '../constants/text';
+import ScrollBarBox from '../../@common/components/ScrollBar';
+import Sisoposter from '../../MainPage/assets/siso_poster_web.jpg';
 
 interface ProjectSectionProps {
   index: number;
@@ -11,7 +13,16 @@ const ProjectSection = ({ index }: ProjectSectionProps) => {
   return (
     <ProjectSectionWrapper>
       <ProjectList>
-        <div>Comming Soon</div>
+        <ScrollBarBox>
+          <ListItem></ListItem>
+          <ListItem></ListItem>
+          <ListItem></ListItem>
+          <ListItem></ListItem>
+          <ListItem></ListItem>
+          <ListItem></ListItem>
+          <ListItem></ListItem>
+          <ListItem></ListItem>
+        </ScrollBarBox>
       </ProjectList>
 
       <LineBox>
@@ -24,8 +35,9 @@ const ProjectSection = ({ index }: ProjectSectionProps) => {
           <h1>아트디렉터</h1>
           <h2>{exhibitionInfo.artdirector}</h2>
           <h1>참여자</h1>
-          <h2>{exhibitionInfo.participant.split(' ').join(',')}</h2>
+          <h2>{exhibitionInfo.participant}</h2>
         </ParticipantBox>
+        <img src={Sisoposter} />
       </TextArea>
     </ProjectSectionWrapper>
   );
@@ -33,6 +45,8 @@ const ProjectSection = ({ index }: ProjectSectionProps) => {
 
 const ProjectSectionWrapper = styled.section`
   display: grid;
+  position: sticky;
+  top: 7.6rem;
 
   width: 100%;
   height: 100%;
@@ -44,28 +58,27 @@ const ProjectSectionWrapper = styled.section`
 `;
 
 const ProjectList = styled.section`
-  overflow-y: scroll;
-
+  min-height: calc(100vh - 16.4rem);
   border-top: 3px solid;
   grid-column: span 20;
+`;
 
-  & > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+const ListItem = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    width: 100%;
-    height: 60vh;
-    border-bottom: 3px solid black;
+  width: 100%;
+  height: 15rem;
+  border-bottom: 3px solid black;
 
-    color: ${({ theme }) => theme.colors.grey};
+  color: ${({ theme }) => theme.colors.grey};
 
-    cursor: pointer;
+  cursor: pointer;
 
-    ${({ theme }) => theme.fonts.title1};
-  }
+  ${({ theme }) => theme.fonts.title1};
 
-  & > div:last-child {
+  &:last-child {
     border-bottom: none;
   }
 `;
@@ -84,14 +97,22 @@ const Line = styled.div`
   background-color: black;
 `;
 const TextArea = styled.section`
+  top: 0;
+
   border-top: 3px solid;
 
   grid-column: span 15;
+
+  & > img {
+    width: 100%;
+    margin-top: 2rem;
+  }
 
   & > h1 {
     ${({ theme }) => theme.fonts.title3};
 
     margin-top: 1.4rem;
+    word-break: keep-all;
   }
 
   & > p {
