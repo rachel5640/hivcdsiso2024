@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { keyframes } from 'styled-components';
 import {
   RightBottomMobileOne,
   RightBottomMobileTwo,
@@ -19,10 +18,20 @@ import {
   TopLeftMobileThree,
   TopLeftMobileTwo,
   TopLeftMobileOne,
-  TopMiddleOne,
-  TopMiddleTwo,
-  TopMiddleThree,
+  TopMiddleMobileOne,
+  TopMiddleMobileTwo,
+  TopMiddleMobileThree,
 } from '../../assets';
+
+import {
+  SlideInBottom,
+  SlideInLeft,
+  SlideInRight,
+  SlideInRightBottom,
+  SlideInRightTop,
+  SlideInTop,
+  SlideInTopLeft,
+} from '../../utils/keyframes';
 
 const Background = () => {
   return (
@@ -35,9 +44,9 @@ const Background = () => {
           <TopLeftMobileOne />
         </LeftTop>
         <MiddleTop>
-          <TopMiddleThree />
-          <TopMiddleTwo />
-          <TopMiddleOne />
+          <TopMiddleMobileThree />
+          <TopMiddleMobileTwo />
+          <TopMiddleMobileOne />
         </MiddleTop>
         <RightTop>
           <TopRightMobileFour />
@@ -63,74 +72,6 @@ const Background = () => {
     </>
   );
 };
-
-const SlideInTop = keyframes`
-  from {
-    transform: translateY(-100%) ;
-  }
-
-  to {
-    transform: translateX(0) ;
-  }
-`;
-const SlideInBottom = keyframes`
-  from {
-    transform: translateY(100%) ;
-  }
-
-  to {
-    transform: translateX(0) ;
-  }
-`;
-
-const SlideInTopLeft = keyframes`
-  from {
-    transform: translateX(-100%) translateY(-100%) ;
-  }
-
-  to {
-    transform: translateX(0) translateY(0);
-  }
-`;
-
-const SlideInRightBottom = keyframes`
-  from {
-    transform: translateY(100%) translateX(100%);
-  }
-
-  to {
-    transform: translateX(0) translateY(0);
-  }
-`;
-
-const SlideInRightTop = keyframes`
-  from {
-    transform: translateY(-100%) translateX(100%);
-  }
-
-  to {
-    transform: translateX(0) translateY(0);
-  }
-`;
-
-const SlideInRight = keyframes`
-  from {
-    transform: translateX(100%);
-  }
-
-  to {
-    transform: translateX(0) ;
-  }
-`;
-const SlideInLeft = keyframes`
-  from {
-    transform: translateX(-100%);
-  }
-
-  to {
-    transform: translateX(0) ;
-  }
-`;
 
 const BackgroundSection = styled.section`
   position: relative;

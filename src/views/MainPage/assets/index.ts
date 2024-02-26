@@ -43,9 +43,35 @@ import TopLeftMobileTwo from './top-left-mobile-two.svg?react';
 import TopLeftMobileThree from './top-left-mobile-three.svg?react';
 import TopLeftMobileFour from './top-left-mobile-four.svg?react';
 
-import TopMiddleOne from './top-middle-one.svg?react';
-import TopMiddleTwo from './top-middle-two.svg?react';
-import TopMiddleThree from './top-middle-three.svg?react';
+import TopMiddleMobileOne from './top-middle-one.svg?react';
+import TopMiddleMobileTwo from './top-middle-two.svg?react';
+import TopMiddleMobileThree from './top-middle-three.svg?react';
+
+import LeftTopOne from './left-top-1.svg?react';
+import LeftTopTwo from './left-top-2.svg?react';
+import LeftTopThree from './left-top-3.svg?react';
+import LeftTopFour from './left-top-4.svg?react';
+
+import MiddleTopOne from './middle-top-1.svg?react';
+import MiddleTopTwo from './middle-top-2.svg?react';
+import MiddleTopThree from './middle-top-3.svg?react';
+
+import RightTopOne from './right-top-1.svg?react';
+import RightTopTwo from './right-top-2.svg?react';
+import RightTopThree from './right-top-3.svg?react';
+import RightTopFour from './right-top-4.svg?react';
+
+import LeftBottomOne from './left-bottom-1.svg?react';
+import LeftBottomTwo from './left-bottom-2.svg?react';
+import LeftBottomThree from './left-bottom-3.svg?react';
+import LeftBottomFour from './left-bottom-4.svg?react';
+import LeftBottomFive from './left-bottom-5.svg?react';
+
+import RightBottomOne from './right-bottom-1.svg?react';
+import RightBottomTwo from './right-bottom-2.svg?react';
+import RightBottomThree from './right-bottom-3.svg?react';
+import RightBottomFour from './right-bottom-4.svg?react';
+import RightBottomFive from './right-bottom-5.svg?react';
 
 export { ImgFind };
 export { ImgStamp };
@@ -92,6 +118,32 @@ export { TopLeftMobileTwo };
 export { TopLeftMobileThree };
 export { TopLeftMobileFour };
 
-export { TopMiddleOne };
-export { TopMiddleTwo };
-export { TopMiddleThree };
+export { TopMiddleMobileOne };
+export { TopMiddleMobileTwo };
+export { TopMiddleMobileThree };
+
+export { LeftTopOne };
+export { LeftTopTwo };
+export { LeftTopThree };
+export { LeftTopFour };
+
+export { MiddleTopOne };
+export { MiddleTopTwo };
+export { MiddleTopThree };
+
+export { RightTopOne };
+export { RightTopTwo };
+export { RightTopThree };
+export { RightTopFour };
+
+export { LeftBottomOne };
+export { LeftBottomTwo };
+export { LeftBottomThree };
+export { LeftBottomFour };
+export { LeftBottomFive };
+
+export { RightBottomOne };
+export { RightBottomTwo };
+export { RightBottomThree };
+export { RightBottomFour };
+export { RightBottomFive };

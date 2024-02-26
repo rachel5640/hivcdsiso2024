@@ -24,12 +24,13 @@ const ProjectPageDesktop = () => {
   return (
     <>
       <DesktopHeader />
+
       <ProjectPageBox>
         <NavigationBar page={currentPage} onChangePage={handleChangePage} />
         <ProjectSection index={currentPage} />
       </ProjectPageBox>
 
-      <DesktopFooter isfixed={true} />
+      <DesktopFooter />
     </>
   );
 };

@@ -14,9 +14,9 @@ const ProjectSectionMobile = ({ index }: ProjectSectionMobileProps) => {
         <p>{exhibitionInfo.text}</p>
         <ParticipantBox>
           <h1>아트디렉터</h1>
-          <h2>{exhibitionInfo.artdirector}</h2>
+          <div>{exhibitionInfo.artdirector}</div>
           <h1>참여자</h1>
-          <h2>{exhibitionInfo.participant.split(' ').join(',')}</h2>
+          <div>{exhibitionInfo.participant}</div>
         </ParticipantBox>
       </TextArea>
     </div>
@@ -41,17 +41,17 @@ const TextArea = styled.section`
 
 const ParticipantBox = styled.div`
   display: grid;
-  grid-template-columns: 1fr 4fr;
-
   gap: 10px;
 
+  width: 100%;
   margin-top: 2.1rem;
+  grid-template-columns: 1fr 3fr;
 
   & > h1 {
     ${({ theme }) => theme.fonts.title7};
   }
 
-  & > h2 {
+  & > div {
     ${({ theme }) => theme.fonts.body8_1};
 
     word-break: keep-all;
