@@ -9,18 +9,6 @@ import InstagramIcon from './instagram_icon.svg?react';
 import MainPageSubtext from './mainpage_subtext.svg?react';
 import ExhibitionDateMobile from './exhibition_date_mobile.svg?react';
 
-import LeftTop from './left-top.svg?react';
-import LeftBottom from './left-bottom.svg?react';
-import RightBottom from './right-bottom.svg?react';
-import RightTop from './right-top.svg?react';
-import MiddelTop from './middle-top.svg?react';
-
-import LeftTopMobile from './left-top-mobile.svg?react';
-import MiddleTopMobile from './middle-top-mobile.svg?react';
-import RightTopMobile from './right-top-mobile.svg?react';
-import LeftBottomMobile from './left-bottom-mobile.svg?react';
-import RightBottomtMobile from './right-bottom-mobile.svg?react';
-
 import RightBottomMobileOne from './right-bottom-mobile-1.svg?react';
 import RightBottomMobileTwo from './right-bottom-mobile-2.svg?react';
 import RightBottomMobileThree from './right-bottom-mobile-3.svg?react';
@@ -83,18 +71,6 @@ export { HivcdLogo };
 export { InstagramIcon };
 export { MainPageSubtext };
 export { ExhibitionDateMobile };
-
-export { LeftTop };
-export { LeftBottom };
-export { RightBottom };
-export { RightTop };
-export { MiddelTop };
-
-export { LeftTopMobile };
-export { MiddleTopMobile };
-export { RightTopMobile };
-export { LeftBottomMobile };
-export { RightBottomtMobile };
 
 export { RightBottomMobileOne };
 export { RightBottomMobileTwo };
