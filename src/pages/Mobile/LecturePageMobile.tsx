@@ -26,6 +26,7 @@ const LecturePageMobile = () => {
           {LECTURE_DATA.map((content, index) => (
             <Lecturebox
               key={index}
+              blacknumber={content.blacknumber}
               number={content.number}
               title={content.title}
               date={content.date}

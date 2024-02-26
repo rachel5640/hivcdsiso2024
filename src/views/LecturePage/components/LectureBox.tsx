@@ -9,6 +9,7 @@ interface LectureBoxWrapperProps {
 
 interface LectureboxProps {
   number: number;
+  blacknumber: string;
   title: string;
   date: string;
   description: string;
@@ -20,6 +21,7 @@ interface LectureboxProps {
 
 const Lecturebox = ({
   number,
+  blacknumber,
   title,
   date,
   description,
@@ -47,13 +49,13 @@ const Lecturebox = ({
   return (
     <LectureBoxWrapper onClick={toggleExpand} expanded={expanded} number={number} isMobile={isMobile} ref={lectureRef}>
       <TitleBox isMobile={isMobile}>
-        <LectureNumber isMobile={isMobile}>{number}</LectureNumber>
+        <LectureNumber isMobile={isMobile}>{blacknumber}</LectureNumber>
         <LectureInfo isMobile={isMobile}>
           <h1>{title}</h1>
           <h1>{date} </h1>
         </LectureInfo>
       </TitleBox>
-      {expanded && (
+      <DetailInfoWrapper expanded={expanded} isMobile={isMobile}>
         <DetailInfo isMobile={isMobile}>
           <p>{description}</p>
           <div>
@@ -69,7 +71,7 @@ const Lecturebox = ({
             )}
           </div>
         </DetailInfo>
-      )}
+      </DetailInfoWrapper>
     </LectureBoxWrapper>
   );
 };
@@ -120,9 +122,16 @@ const TitleBox = styled.div<{ isMobile?: boolean }>`
   padding: ${({ isMobile }) => (isMobile ? '1rem 0 1rem' : '1.4rem 0 0.8rem')};
 `;
 
+const DetailInfoWrapper = styled.div<{ expanded: boolean; isMobile?: boolean }>`
+  overflow: hidden;
+
+  max-height: ${({ expanded }) => (expanded ? '100rem' : '0')};
+
+  transition: max-height 0.5s ease-in-out;
+`;
 const LectureNumber = styled.p<{ isMobile?: boolean }>`
   width: ${({ isMobile }) => (isMobile ? '1rem' : '3rem')};
-  ${({ isMobile, theme }) => (isMobile ? theme.fonts.title7 : theme.fonts.title5)};
+  ${({ isMobile, theme }) => (isMobile ? theme.fonts.title8 : theme.fonts.title5)};
 
   margin-right: ${({ isMobile }) => (isMobile ? '2rem' : '2rem')};
   padding-left: ${({ isMobile }) => (isMobile ? '0.5rem' : '1rem')};
@@ -155,12 +164,12 @@ const DetailInfo = styled.div<{ isMobile?: boolean }>`
   }
 
   & > div > a {
-    ${({ isMobile, theme }) => (isMobile ? theme.fonts.label4 : theme.fonts.label2)};
+    ${({ isMobile, theme }) => (isMobile ? theme.fonts.label4 : theme.fonts.label3)};
 
     margin-top: ${({ isMobile }) => (isMobile ? '0.5rem' : '0.2rem')};
     margin-right: ${({ isMobile }) => (isMobile ? '0.3rem' : '0.7rem')};
-    padding: ${({ isMobile }) => (isMobile ? '0.4rem 1rem' : '0.1rem 1.2rem;')};
-    border: ${({ isMobile }) => (isMobile ? '1.5px solid black' : '2.3px solid black')};
+    padding: ${({ isMobile }) => (isMobile ? '0.4rem 1rem' : '0.2rem 1rem;')};
+    border: ${({ isMobile }) => (isMobile ? '1.5px solid black' : '2.5px solid black')};
     border-radius: 21px;
 
     color: black;

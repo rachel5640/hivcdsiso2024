@@ -25,7 +25,7 @@ const MainPageDesktop = () => {
       <Splash scrollToStickBox={scrollToStickBox} />
 
       <div ref={stickBoxRef}>
-        <DesktopHeader isSticky={true} />
+        <DesktopHeader issticky={true} />
         <MainPageBox>
           <ExhibitionSection />
           <MapSection />

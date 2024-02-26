@@ -8,6 +8,9 @@ const ExhibitionSectionMobile = forwardRef<HTMLDivElement>((_props, ref) => {
   return (
     <div ref={ref}>
       <Poster src={SisoPoster} alt="Siso_Poster_OurIndex" />
+      <ExhibitionInfo>
+        <h2>2024 홍익대학교 시각디자인과 소모임 축제 주간 : SISO</h2>
+      </ExhibitionInfo>
       <Title>《OUR INDEX》</Title>
       <Description>{EXHIBITION_TEXT.EXHIBITION_KEYNOTE}</Description>
       <ExhibitionInfo>
@@ -59,6 +62,10 @@ const ExhibitionInfo = styled.div`
 
   & > div {
     display: flex;
+    ${({ theme }) => theme.fonts.body9_2};
+  }
+
+  & > h2 {
     ${({ theme }) => theme.fonts.body9_2};
   }
 `;

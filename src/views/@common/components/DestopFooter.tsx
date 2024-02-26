@@ -50,7 +50,7 @@ const ContentBox = styled.div`
   border-top: 3px solid black;
 `;
 
-const FooterText = styled.p`
+const FooterText = styled.div`
   display: flex;
   ${({ theme }) => theme.fonts.label1};
 

@@ -1,6 +1,7 @@
 export const LECTURE_DATA = [
   {
     number: 1,
+    blacknumber: '❶',
     title: '야즈 × 산호',
     date: '03.05 (TUE) 17:00 - 19:00 | 온라인',
     description:
@@ -10,6 +11,7 @@ export const LECTURE_DATA = [
   },
   {
     number: 2,
+    blacknumber: '❷',
     title: '힙스 × 정지현',
     date: '03.05 (TUE) 19:00 - 21:00 | 온라인',
     description:
@@ -19,8 +21,9 @@ export const LECTURE_DATA = [
   },
   {
     number: 3,
+    blacknumber: '❸',
     title: '애드레날린 × 강우림',
-    date: '03.05 (TUE) 19:00 - 21:00 | 오프라인',
+    date: '03.06 (TUE) 19:00 - 21:00 | 오프라인',
     description:
       '강우림은 홍익대학교 시각디자인과 출신으로 광고 소모임 애드레날린에서 활동했던 제일기획 소속 아트디렉터다. 2016년 이후로 제작본부 아트디렉터로서 삼성전자, 한국GM 쉐보레, 신한은행, 한샘 등 다양한 기업의 광고를 제작했다. 2024 SISO에서는 광고대행사에서 한 편의 광고를 만드는 과정 및 광고회사 아트디렉터의 업무와 같이 광고계의 실무에 대해 강연하고자 한다.',
     instagram: '',
@@ -28,6 +31,7 @@ export const LECTURE_DATA = [
   },
   {
     number: 4,
+    blacknumber: '❹',
     title: '드로마픽 × 멜트미러',
     date: '03. 06 (WED) 19:00 - 21:00 | 오프라인',
     description:
@@ -37,6 +41,7 @@ export const LECTURE_DATA = [
   },
   {
     number: 5,
+    blacknumber: '❺',
     title: '한글꼴연구회 × 유현선',
     date: '03.07 (THU) 19:00 - 21:00 | 오프라인',
     description:
@@ -46,6 +51,7 @@ export const LECTURE_DATA = [
   },
   {
     number: 6,
+    blacknumber: '❻',
     title: '아이레이 × 아텍 스튜디오',
     date: '03.08 (FRI) 17:00 - 19:00 | 오프라인',
     description:
@@ -55,6 +61,7 @@ export const LECTURE_DATA = [
   },
   {
     number: 7,
+    blacknumber: '❼',
     title: '프로토 × 새로운 질서 그 후',
     date: '03.08 (FRI) 19:00 - 21:00 | 오프라인',
     description:
@@ -64,6 +71,7 @@ export const LECTURE_DATA = [
   },
   {
     number: 8,
+    blacknumber: '❽',
     title: '하이픈 × 윤서경',
     date: '03.09 (SAT) 15:00 - 17:00 | 온라인',
     description:
@@ -73,6 +81,7 @@ export const LECTURE_DATA = [
   },
   {
     number: 9,
+    blacknumber: '❾',
     title: '그린비 × 스튜디오 프론트도어',
     date: '03.09 (SAT) 19:00 - 21:00 | 오프라인',
     description:

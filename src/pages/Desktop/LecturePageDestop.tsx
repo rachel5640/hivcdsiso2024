@@ -35,6 +35,7 @@ const LecturePageDesktop = () => {
               <Lecturebox
                 key={index}
                 number={content.number}
+                blacknumber={content.blacknumber}
                 title={content.title}
                 date={content.date}
                 description={content.description}
