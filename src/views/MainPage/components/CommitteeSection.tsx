@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { forwardRef } from 'react';
 import { COMMITTEE_DATA } from '../constant/committeeData';
 
-const CommitteeSection = forwardRef<HTMLDivElement>((props, ref) => {
+const CommitteeSection = forwardRef<HTMLDivElement>((_props, ref) => {
   return (
     <CommitteeSectionBox ref={ref}>
       <Title>EXHIBITION COMMITTEE</Title>
