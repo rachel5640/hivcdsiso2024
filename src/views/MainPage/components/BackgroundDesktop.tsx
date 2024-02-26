@@ -192,7 +192,7 @@ const LeftBottom = styled.div`
   }
 
   & > *:nth-child(2) {
-    animation: ${SlideInLeft} 0.9s;
+    animation: ${SlideInLeft} 1.2s;
   }
 
   & > *:nth-child(3) {
@@ -200,7 +200,7 @@ const LeftBottom = styled.div`
   }
 
   & > *:nth-child(4) {
-    animation: ${SlideInBottom} 1.2s;
+    animation: ${SlideInBottom} 0.9s;
   }
 
   & > *:nth-child(5) {
@@ -227,11 +227,11 @@ const RightBottom = styled.div`
   }
 
   & > *:nth-child(2) {
-    animation: ${SlideInBottom} 1.1s;
+    animation: ${SlideInBottom} 0.5s;
   }
 
   & > *:nth-child(3) {
-    animation: ${SlideInRight} 0.5s;
+    animation: ${SlideInRight} 1.1s;
   }
 
   & > *:nth-child(4) {
