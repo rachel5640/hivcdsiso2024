@@ -31,9 +31,9 @@ import TopLeftMobileTwo from './top-left-mobile-two.svg?react';
 import TopLeftMobileThree from './top-left-mobile-three.svg?react';
 import TopLeftMobileFour from './top-left-mobile-four.svg?react';
 
-import TopMiddleMobileOne from './top-middle-one.svg?react';
-import TopMiddleMobileTwo from './top-middle-two.svg?react';
-import TopMiddleMobileThree from './top-middle-three.svg?react';
+import TopMiddleMobileThree from './top-middle-mobile-one.svg?react';
+import TopMiddleMobileTwo from './top-middle-mobile-two.svg?react';
+import TopMiddleMobileOne from './top-middle-mobile-three.svg?react';
 
 import LeftTopOne from './left-top-1.svg?react';
 import LeftTopTwo from './left-top-2.svg?react';
