@@ -68,7 +68,7 @@ const SplashSection = styled.section`
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 15vh;
+    top: 13vh;
     z-index: 32;
 
     margin-top: 8vh;

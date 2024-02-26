@@ -36,12 +36,6 @@ import {
 const BackgroundDesktop = () => {
   return (
     <Background>
-      <LeftTop>
-        <LeftTopOne />
-        <LeftTopTwo />
-        <LeftTopThree />
-        <LeftTopFour />
-      </LeftTop>
       <MiddleTop>
         <MiddleTopOne />
         <MiddleTopTwo />
@@ -67,6 +61,12 @@ const BackgroundDesktop = () => {
         <RightBottomFour />
         <RightBottomFive />
       </RightBottom>
+      <LeftTop>
+        <LeftTopOne />
+        <LeftTopTwo />
+        <LeftTopThree />
+        <LeftTopFour />
+      </LeftTop>
     </Background>
   );
 };
@@ -183,7 +183,7 @@ const LeftBottom = styled.div`
     bottom: 0;
     left: 0;
 
-    width: 34vw;
+    width: 36vw;
     height: auto;
   }
 
@@ -218,7 +218,7 @@ const RightBottom = styled.div`
     right: 0;
     bottom: 0;
 
-    width: 30vw;
+    width: 45vw;
     height: auto;
   }
 
