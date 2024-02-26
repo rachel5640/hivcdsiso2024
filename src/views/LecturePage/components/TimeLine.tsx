@@ -20,55 +20,55 @@ const TimeLine = ({ onClick, isMobile }: TimeLineProps) => {
       if (index === 17)
         return (
           <div key={index} onClick={() => handleClick(8)}>
-            {8}
+            ❽
           </div>
         );
       if (index === 34)
         return (
           <div key={index} onClick={() => handleClick(1)}>
-            {1}
+            ❶
           </div>
         );
       if (index === 35)
         return (
           <div key={index} onClick={() => handleClick(3)}>
-            {3}
+            ❸
           </div>
         );
       if (index === 37)
         return (
           <div key={index} onClick={() => handleClick(6)}>
-            {6}
+            ❻
           </div>
         );
       if (index === 49)
         return (
           <div key={index} onClick={() => handleClick(2)}>
-            {2}
+            ❷
           </div>
         );
       if (index === 50)
         return (
           <div key={index} onClick={() => handleClick(4)}>
-            {4}
+            ❹
           </div>
         );
       if (index === 51)
         return (
           <div key={index} onClick={() => handleClick(5)}>
-            {5}
+            ❺
           </div>
         );
       if (index === 52)
         return (
           <div key={index} onClick={() => handleClick(7)}>
-            {7}
+            ❼
           </div>
         );
       if (index === 53)
         return (
           <div key={index} onClick={() => handleClick(9)}>
-            {9}
+            ❾
           </div>
         );
       return <div key={index}></div>;
@@ -142,7 +142,7 @@ const TimeBox = styled.div<{ isMobile?: boolean }>`
   grid-template-rows: repeat(7, 1fr);
 
   & > div {
-    ${({ isMobile, theme }) => (isMobile ? theme.fonts.body7 : theme.fonts.label3)};
+    ${({ isMobile, theme }) => (isMobile ? theme.fonts.body7 : theme.fonts.label5)};
 
     width: ${({ isMobile }) => (isMobile ? '1rem ' : 'auto')};
     height: ${({ isMobile }) => (isMobile ? '4.8rem ' : '8rem')};

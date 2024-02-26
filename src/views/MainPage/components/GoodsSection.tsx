@@ -1,13 +1,11 @@
 import styled from 'styled-components';
-import DummyImg from '../assets/dummy_img.png';
 
 const GoodsSection = () => {
   return (
     <GoodsSectionBox>
       <Title>2024 SISO Goods</Title>
       <ImgBox>
-        <img src={DummyImg} />
-        <img src={DummyImg} />
+        <div>3/3 OPEN!</div>
       </ImgBox>
     </GoodsSectionBox>
   );
@@ -30,10 +28,16 @@ const ImgBox = styled.div`
   display: grid;
   gap: 1rem;
 
-  grid-template-columns: repeat(2, 1fr);
+  & > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  & > img {
     width: 100%;
+    height: 35rem;
+
+    color: ${({ theme }) => theme.colors.grey};
+    ${({ theme }) => theme.fonts.title1};
   }
 `;
 

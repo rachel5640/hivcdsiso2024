@@ -1,13 +1,11 @@
 import styled from 'styled-components';
-import DummyImg from '../../assets/dummy_img.png';
 import { forwardRef } from 'react';
 
 const SisoGoodsSectionMobile = forwardRef<HTMLDivElement>((_props, ref) => {
   return (
     <SisoGoodsSection ref={ref}>
       <h1>2024 SISO Goods</h1>
-      <GoodsImg src={DummyImg}></GoodsImg>
-      <GoodsImg src={DummyImg}></GoodsImg>
+      <div>3/3 OPEN!</div>
     </SisoGoodsSection>
   );
 });
@@ -23,9 +21,19 @@ const SisoGoodsSection = styled.div`
     padding-bottom: 1rem;
     border-bottom: 1.5px solid black;
   }
-`;
-const GoodsImg = styled.img`
-  width: calc(100vw - 3.2rem);
+
+  & > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 20rem;
+
+    ${({ theme }) => theme.fonts.title2};
+
+    color: ${({ theme }) => theme.colors.grey};
+  }
 `;
 
 export default SisoGoodsSectionMobile;

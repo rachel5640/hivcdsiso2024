@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 interface DesktopHeaderProps {
-  isSticky?: boolean;
+  issticky?: boolean;
 }
 
-const DesktopHeader = ({ isSticky }: DesktopHeaderProps) => {
+const DesktopHeader = ({ issticky }: DesktopHeaderProps) => {
   const navigate = useNavigate();
   const handleClickLogo = () => navigate('/');
 
@@ -17,7 +17,7 @@ const DesktopHeader = ({ isSticky }: DesktopHeaderProps) => {
   ];
 
   return (
-    <HeaderWrapper isSticky={isSticky}>
+    <HeaderWrapper issticky={issticky}>
       <HeaderBox>
         <LogoBtn onClick={handleClickLogo}>
           <OurIndexLogo />
@@ -34,8 +34,8 @@ const DesktopHeader = ({ isSticky }: DesktopHeaderProps) => {
   );
 };
 
-const HeaderWrapper = styled.section<{ isSticky?: boolean }>`
-  position: ${({ isSticky }) => (isSticky ? 'sticky' : 'fixed')};
+const HeaderWrapper = styled.section<{ issticky?: boolean }>`
+  position: ${({ issticky }) => (issticky ? 'sticky' : 'fixed')};
   top: 0;
   z-index: 100;
 

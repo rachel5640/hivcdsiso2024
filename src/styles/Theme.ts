@@ -193,7 +193,7 @@ const fonts = {
     font-family: 'ABC_ROM_Condensed', 'Noto Sans KR', sans-serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 2.6rem;
+    font-size: 2.2rem;
     line-height: 156%;
   `,
   label2: css`
