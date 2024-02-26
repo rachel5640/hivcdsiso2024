@@ -3,6 +3,7 @@ import DesktopFooter from '../../views/@common/components/DestopFooter';
 import DesktopHeader from '../../views/@common/components/DesktopHeader';
 import { useState } from 'react';
 import { useEffect } from 'react';
+
 import Lecturebox from '../../views/LecturePage/components/LectureBox';
 import { LECTURE_DATA } from '../../views/LecturePage/constant/text';
 import TimeLine from '../../views/LecturePage/components/TimeLine';

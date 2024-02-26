@@ -78,7 +78,7 @@ export const TEAM_EXHIBITION_INFO = [
     artdirector: '강보영, 권용희, 김민하, 조예원',
     participant:
       '강보영, 구한나, 권선주, 권용희, 김민하, 김유은, 김현민, 맹지연, 박민아, 박서연, 박서영, 박찬영, 이건호, 이면경, 이휘성, 임효원, 정수연, 조예봄, 조예원, 천예인, 최승민, 최원정, 최유빈',
-    image: 'https://imgur.com/gstdjsc.jpg',
+    image: 'https://imgur.com/qxnJrGJ.jpg',
   },
   {
     Title: 'yadz in the glasshouse',
