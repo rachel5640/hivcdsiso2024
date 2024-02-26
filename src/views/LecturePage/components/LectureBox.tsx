@@ -36,7 +36,7 @@ const Lecturebox = ({
   };
 
   useEffect(() => {
-    if (number === clickedNumber) {
+    if (number === clickedNumber && lectureRef.current) {
       setExpanded(true);
       lectureRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else {
@@ -45,7 +45,7 @@ const Lecturebox = ({
   }, [number, clickedNumber]);
 
   return (
-    <LectureBoxWrapper onClick={toggleExpand} expanded={expanded} number={number} isMobile={isMobile}>
+    <LectureBoxWrapper onClick={toggleExpand} expanded={expanded} number={number} isMobile={isMobile} ref={lectureRef}>
       <TitleBox isMobile={isMobile}>
         <LectureNumber isMobile={isMobile}>{number}</LectureNumber>
         <LectureInfo isMobile={isMobile}>

@@ -2,10 +2,11 @@ import styled from 'styled-components';
 import SisoPoster from '../../assets/siso_poster_web.jpg';
 import { EXHIBITION_TEXT } from '../../constant/text';
 import { RenderCircles } from '../RenderCircles';
+import { forwardRef } from 'react';
 
-const ExhibitionSectionMobile = () => {
+const ExhibitionSectionMobile = forwardRef<HTMLDivElement>((_props, ref) => {
   return (
-    <>
+    <div ref={ref}>
       <Poster src={SisoPoster} alt="Siso_Poster_OurIndex" />
       <Title>《OUR INDEX》</Title>
       <Description>{EXHIBITION_TEXT.EXHIBITION_KEYNOTE}</Description>
@@ -22,13 +23,14 @@ const ExhibitionSectionMobile = () => {
           <RenderCircles ismobile={true} />
         </div>
       </ExhibitionInfo>
-    </>
+    </div>
   );
-};
+});
 
 const Poster = styled.img`
   width: 100%;
   margin-bottom: 3.1rem;
+  padding-top: 8.8rem;
 `;
 
 const Title = styled.h1`

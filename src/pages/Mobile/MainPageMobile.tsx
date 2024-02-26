@@ -7,24 +7,58 @@ import SisoGoodsSectionMobile from '../../views/MainPage/components/Mobile/SisoG
 import EventSectionMobile from '../../views/MainPage/components/Mobile/EventSectionMobile';
 import ExhibitionCommitteeMobile from '../../views/MainPage/components/Mobile/ExhibitionCommitteeMobile';
 import SplashMobile from '../../views/MainPage/components/Mobile/SplashMobile';
+import { CommiteeBtn, InfoBtn, GoodsBtn, EventBtn } from '../../views/@common/assets';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 const MainPageMobile = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const Inforef = useRef<HTMLDivElement>(null);
+  const Goodsref = useRef<HTMLDivElement>(null);
+  const Eventref = useRef<HTMLDivElement>(null);
+  const Committeeref = useRef<HTMLDivElement>(null);
+
+  const onInfoClick = () => {
+    Inforef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+  const onGoodsClick = () => {
+    Goodsref.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+  const onEventClick = () => {
+    Eventref.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+  const onCommiteeClick = () => {
+    Committeeref.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <MainPageMobileWrapper>
       <SplashMobile />
-      <MobileHeader issticky={true} />
+      <MobileHeader issticky={true} isnavigate={true}>
+        <SubHeader>
+          <div onClick={onInfoClick}>
+            <InfoBtn />
+          </div>
+          <div onClick={onGoodsClick}>
+            <GoodsBtn />
+          </div>
+          <div onClick={onEventClick}>
+            <EventBtn />
+          </div>
+          <div onClick={onCommiteeClick}>
+            <CommiteeBtn />
+          </div>
+        </SubHeader>
+      </MobileHeader>
       <MainPageSection>
-        <ExhibitionSectionMobile />
+        <ExhibitionSectionMobile ref={Inforef} />
         <MapSectionMobile />
-        <SisoGoodsSectionMobile />
-        <EventSectionMobile />
-        <ExhibitionCommitteeMobile />
+        <SisoGoodsSectionMobile ref={Goodsref} />
+        <EventSectionMobile ref={Eventref} />
+        <ExhibitionCommitteeMobile ref={Committeeref} />
       </MainPageSection>
       <MobileFooter />
     </MainPageMobileWrapper>
@@ -36,7 +70,28 @@ const MainPageMobileWrapper = styled.section`
 `;
 
 const MainPageSection = styled.section`
-  margin-top: 6rem;
   padding: 1.6rem;
 `;
+
+const SubHeader = styled.section`
+  display: flex;
+  align-items: center;
+
+  width: 100vw;
+  height: 4rem;
+  padding: 0 1.6rem;
+
+  background-color: ${({ theme }) => theme.colors.white};
+
+  & > div {
+    cursor: pointer;
+  }
+
+  & > div > svg {
+    width: auto;
+    height: 2rem;
+    margin-right: 0.7rem;
+  }
+`;
+
 export default MainPageMobile;
