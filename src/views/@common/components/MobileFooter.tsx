@@ -24,6 +24,8 @@ const MobileFooterWrapper = styled.section<MobileFooterProps>`
   width: 100vw;
   padding: 0.7rem 1.6rem;
   scroll-snap-align: start;
+
+  background-color: ${({ theme }) => theme.colors.white};
 `;
 const MobileFooterBox = styled.div`
   display: flex;

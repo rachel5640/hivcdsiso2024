@@ -57,7 +57,7 @@ export const TEAM_TEXT = [
 
 export const TEAM_EXHIBITION_INFO = [
   {
-    Title: 'Indentity Crisis',
+    Title: 'Identity Crisis',
     text: '이미지가 범람하는 시대 속에서 우리는 종종 스스로를 잃어버린다. 다수의 소비자를 위해 만들어진 대량 생산 시스템은 수요와 보편성을 이유로 획일화된 이미지를 고집해 왔다. 이러한 이미지는 미디어와 광고, 상품의 형태를 거쳐 우리의 정체성에 영향을 주기도 한다. 자본의 보편성이 개인의 개성이 되는 ‘정체성의 위기’ 속에서 그린비는 자신만의 고유한 그래픽을 통해 새로운 아이덴티티를 확립하고자 시도한다.',
     artdirector: '김성재, 김수아, 조예린',
     participant:

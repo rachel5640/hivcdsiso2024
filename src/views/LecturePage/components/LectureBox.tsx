@@ -91,9 +91,9 @@ const LectureBoxWrapper = styled.div<LectureBoxWrapperProps>`
         case 2:
           return `${theme.colors.blue}`;
         case 3:
-          return `${theme.colors.orange}`;
-        case 4:
           return `${theme.colors.red}`;
+        case 4:
+          return `${theme.colors.orange}`;
         case 5:
           return `${theme.colors.skyblue}`;
         case 6:
