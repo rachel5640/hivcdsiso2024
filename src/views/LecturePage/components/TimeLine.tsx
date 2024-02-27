@@ -138,11 +138,11 @@ const TimeBox = styled.div<{ isMobile?: boolean }>`
   display: grid;
 
   height: ${({ isMobile }) => (isMobile ? '2.4rem' : '3rem')};
-  margin-right: 3.7rem;
+  margin-right: 3.5rem;
   grid-template-rows: repeat(7, 1fr);
 
   & > div {
-    ${({ isMobile, theme }) => (isMobile ? theme.fonts.body7 : theme.fonts.label5)};
+    ${({ isMobile, theme }) => (isMobile ? theme.fonts.body7 : theme.fonts.label3)};
 
     width: ${({ isMobile }) => (isMobile ? '1rem ' : 'auto')};
     height: ${({ isMobile }) => (isMobile ? '4.8rem ' : '8rem')};
@@ -230,7 +230,7 @@ const TimeLineSheetChecked = styled.div<{ isMobile?: boolean }>`
     border-top: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
     border-color: ${({ theme }) => theme.colors.darkgrey};
 
-    background-color: ${({ theme }) => theme.colors.orange};
+    background-color: ${({ theme }) => theme.colors.red};
     grid-row-end: span 4;
 
     cursor: pointer;
@@ -265,7 +265,8 @@ const TimeLineSheetChecked = styled.div<{ isMobile?: boolean }>`
     border-bottom: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
     border-color: ${({ theme }) => theme.colors.darkgrey};
 
-    background-color: ${({ theme }) => theme.colors.red};
+    background-color: ${({ theme }) => theme.colors.orange};
+
     grid-row-end: span 4;
 
     cursor: pointer;
