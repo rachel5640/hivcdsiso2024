@@ -45,6 +45,7 @@ const ScrollWrapper = styled.section`
   width: 100vw;
   height: 100vh;
   scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 `;
 
 const MainPageBox = styled.section`
