@@ -11,7 +11,7 @@ const ArchiveDesktopPage = () => {
     <>
       <DesktopHeader />
       <ArchivePageBox>Comming Soon!</ArchivePageBox>
-      <DesktopFooter isfixed={true} />
+      <DesktopFooter $isfixed={true} />
     </>
   );
 };

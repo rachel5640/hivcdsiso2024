@@ -23,7 +23,7 @@ const ExhibitionSection = () => {
           <p>{EXHIBITION_TEXT.EXHIBITION_TIME}</p>
         </ExhibitionInfo>
         <ExhibitionInfoList>
-          <RenderCircles ismobile={false} />
+          <RenderCircles $ismobile={false} />
         </ExhibitionInfoList>
       </ExhibitionInfoBox>
     </ExhibitionSectionBox>

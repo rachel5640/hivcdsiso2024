@@ -5,13 +5,13 @@ import styled from 'styled-components';
 import MenuIcon from './MenuIcon';
 
 interface MobileHeaderProps {
-  isopen?: boolean;
-  issticky?: boolean;
+  $isopen?: boolean;
+  $issticky?: boolean;
   isnavigate?: boolean;
   children?: ReactNode;
 }
 
-const MobileHeader = ({ issticky, isnavigate, children }: MobileHeaderProps) => {
+const MobileHeader = ({ $issticky, isnavigate, children }: MobileHeaderProps) => {
   const [menuopen, setMenuopen] = useState(false);
   const navigate = useNavigate();
   const handleClickLogo = () => navigate('/');
@@ -24,9 +24,9 @@ const MobileHeader = ({ issticky, isnavigate, children }: MobileHeaderProps) => 
   };
 
   return (
-    <HeaderWrapper issticky={issticky}>
+    <HeaderWrapper $issticky={$issticky}>
       <BackDim onClick={toggleMenu} style={{ display: menuopen ? 'block' : 'none' }} />
-      <MenuItem isopen={menuopen} style={{ top: menuopen ? '4.8rem' : '-16.5rem' }}>
+      <MenuItem $isopen={menuopen} style={{ top: menuopen ? '4.8rem' : '-16.5rem' }}>
         <div onClick={handleClickLecture}>Lecture</div>
         <div onClick={handleClickExhibition}>Exhibition</div>
         <div onClick={handleClickArchive}>Archive</div>
@@ -36,7 +36,7 @@ const MobileHeader = ({ issticky, isnavigate, children }: MobileHeaderProps) => 
           <OurIndexLogo />
         </OurIndexLogoBox>
         <MenuBox onClick={toggleMenu}>
-          <MenuIcon menuOpen={menuopen} />
+          <MenuIcon $menuopen={menuopen} />
         </MenuBox>
       </MobileHeaderBox>
       {isnavigate && <Navigation>{children}</Navigation>}
@@ -44,8 +44,8 @@ const MobileHeader = ({ issticky, isnavigate, children }: MobileHeaderProps) => 
   );
 };
 
-const HeaderWrapper = styled.div<{ issticky?: boolean }>`
-  position: ${({ issticky }) => (issticky ? 'sticky' : 'fixed')};
+const HeaderWrapper = styled.div<{ $issticky?: boolean }>`
+  position: ${({ $issticky }) => ($issticky ? 'sticky' : 'fixed')};
   top: 0;
   z-index: 200;
 
@@ -77,7 +77,7 @@ const MenuBox = styled.div`
   cursor: pointer;
 `;
 
-const BackDim = styled.section<{ isopen?: boolean }>`
+const BackDim = styled.section<{ $isopen?: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
@@ -110,7 +110,7 @@ const MenuItem = styled.section<MobileHeaderProps>`
     ${({ theme }) => theme.fonts.label3};
 
     cursor: pointer;
-    pointer-events: ${({ isopen }) => (isopen ? 'auto' : 'none')};
+    pointer-events: ${({ $isopen }) => ($isopen ? 'auto' : 'none')};
   }
 
   & > div:first-child {

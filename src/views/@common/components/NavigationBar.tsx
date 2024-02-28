@@ -17,7 +17,7 @@ type ThemeColorKeys =
 
 interface TeamButtonProps {
   index: number;
-  isactive: boolean;
+  $isactive: boolean;
   color: ThemeColorKeys;
   onClick: () => void;
 }
@@ -39,7 +39,7 @@ const NavigationBar = ({ page, onChangePage }: NavigationBarProps) => {
           <TeamButton
             key={index}
             type="button"
-            isactive={page === index}
+            $isactive={page === index}
             index={index}
             color={button.color as ThemeColorKeys}
             onClick={() => {
@@ -77,7 +77,7 @@ const TeamButton = styled.button<TeamButtonProps>`
   border: 3px solid black;
   border-radius: 36px;
 
-  background-color: ${({ isactive, color, theme }) => (isactive ? theme.colors[color] : 'transparent')};
+  background-color: ${({ $isactive, color, theme }) => ($isactive ? theme.colors[color] : 'transparent')};
 
   color: black;
 

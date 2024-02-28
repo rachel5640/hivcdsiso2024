@@ -23,14 +23,14 @@ const Splash = ({ scrollToStickBox }: SplashProps) => {
         <HivcdLogo />
       </header>
 
-      <body>
+      <Body>
         <LogoBox>
           <MainPageLogo />
         </LogoBox>
         <SubBox>
           <MainPageSubtext />
         </SubBox>
-      </body>
+      </Body>
       <footer>
         <ExhibitionTitle />
         <ExhibitionDate />
@@ -100,6 +100,16 @@ const SplashSection = styled.section`
       max-width: 30rem;
     }
   }
+`;
+
+const Body = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 11vh;
+  z-index: 32;
+
+  margin-top: 8vh;
 `;
 
 const BackgroundWrapper = styled.section`

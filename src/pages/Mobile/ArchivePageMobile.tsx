@@ -7,7 +7,7 @@ const ArchivePageMobile = () => {
     <>
       <MobileHeader />
       <Dummy>Comming Soon!</Dummy>
-      <MobileFooter isfixed={true} />
+      <MobileFooter $isfixed={true} />
     </>
   );
 };

@@ -3,12 +3,12 @@ import { IcHivcd } from '../assets';
 import { IcInstagram } from '../assets';
 
 interface DesktopFooterProps {
-  isfixed?: boolean;
+  $isfixed?: boolean;
 }
 
-const DesktopFooter = ({ isfixed }: DesktopFooterProps) => {
+const DesktopFooter = ({ $isfixed }: DesktopFooterProps) => {
   return (
-    <FooterBox isfixed={isfixed}>
+    <FooterBox $isfixed={$isfixed}>
       <ContentBox>
         <FooterText>
           2024 HIVCD CLUB FESTIVAL <div>:</div> SISO
@@ -28,7 +28,7 @@ const DesktopFooter = ({ isfixed }: DesktopFooterProps) => {
 };
 
 const FooterBox = styled.section<DesktopFooterProps>`
-  position: ${({ isfixed }) => (isfixed ? 'fixed' : 'static')};
+  position: ${({ $isfixed }) => ($isfixed ? 'fixed' : 'static')};
   bottom: 0;
   scroll-snap-align: start;
 
