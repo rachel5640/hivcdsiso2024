@@ -21,7 +21,7 @@ const MainPageDesktop = () => {
   };
 
   return (
-    <ScrollWrapper>
+    <>
       <Splash scrollToStickBox={scrollToStickBox} />
 
       <div ref={stickBoxRef}>
@@ -35,21 +35,13 @@ const MainPageDesktop = () => {
         </MainPageBox>
       </div>
       <DesktopFooter />
-    </ScrollWrapper>
+    </>
   );
 };
-
-const ScrollWrapper = styled.section`
-  width: 100vw;
-  height: 100vh;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-`;
 
 const MainPageBox = styled.section`
   width: 100vw;
   padding: 0 8.2rem;
-  scroll-snap-align: start;
   scroll-behavior: smooth;
 `;
 

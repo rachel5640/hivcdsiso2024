@@ -35,9 +35,9 @@ const MainPageMobile = () => {
   };
 
   return (
-    <ScrollSnapWrapper>
+    <>
       <SplashMobile />
-      <MobileHeader issticky={true} isnavigate={true}>
+      <MobileHeader $issticky={true} isnavigate={true}>
         <SubHeader>
           <div onClick={onInfoClick}>
             <InfoBtn />
@@ -61,21 +61,13 @@ const MainPageMobile = () => {
         <ExhibitionCommitteeMobile ref={Committeeref} />
       </MainPageSection>
       <MobileFooter />
-    </ScrollSnapWrapper>
+    </>
   );
 };
-
-const ScrollSnapWrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-`;
 
 const MainPageSection = styled.section`
   width: 100%;
   padding: 1.6rem;
-  scroll-snap-align: start;
 `;
 
 const SubHeader = styled.section`

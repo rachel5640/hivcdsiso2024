@@ -46,8 +46,6 @@ const SplashSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  scroll-snap-align: start;
-
   position: relative;
 
   width: 100vw;
