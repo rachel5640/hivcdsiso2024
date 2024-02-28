@@ -7,7 +7,6 @@ import { useEffect } from 'react';
 import Lecturebox from '../../views/LecturePage/components/LectureBox';
 import { LECTURE_DATA } from '../../views/LecturePage/constant/text';
 import TimeLine from '../../views/LecturePage/components/TimeLine';
-import ScrollBarBox from '../../views/@common/components/ScrollBar';
 
 const LecturePageDesktop = () => {
   const [clickedNumber, setClickedNumber] = useState<number | null>(null);
@@ -31,36 +30,32 @@ const LecturePageDesktop = () => {
         </LineBox>
 
         <TextArea>
-          <ScrollBarBox>
-            {LECTURE_DATA.map((content, index) => (
-              <Lecturebox
-                key={index}
-                number={content.number}
-                blacknumber={content.blacknumber}
-                title={content.title}
-                date={content.date}
-                description={content.description}
-                instagram={content.instagram}
-                website={content.website}
-                clickedNumber={clickedNumber}
-              />
-            ))}
-          </ScrollBarBox>
+          {LECTURE_DATA.map((content, index) => (
+            <Lecturebox
+              key={index}
+              number={content.number}
+              blacknumber={content.blacknumber}
+              title={content.title}
+              date={content.date}
+              description={content.description}
+              instagram={content.instagram}
+              website={content.website}
+              clickedNumber={clickedNumber}
+            />
+          ))}
         </TextArea>
       </LecturePageBox>
-      <DesktopFooter />
+      <DesktopFooter $isfixed={true} />
     </>
   );
 };
 const LecturePageBox = styled.section`
   display: grid;
-  position: relative;
 
-  height: 100%;
-  max-height: 70rem;
+  height: calc(100vh - 18.8rem);
+  min-height: 65rem;
   margin-top: 9rem;
   padding: 0 8.2rem;
-  padding-bottom: 1rem;
 
   grid-column-gap: 1rem;
   grid-template-columns: repeat(36, 1fr);
@@ -82,16 +77,19 @@ const LineBox = styled.div`
 
 const Line = styled.div`
   width: 3px;
-  height: calc(100% - 8.8rem);
-  min-height: 68rem;
+  height: calc(100vh - 18.8rem);
+  min-height: 65rem;
 
   background-color: black;
 `;
 
 const TextArea = styled.section`
-  height: calc(100% - 8.8rem);
-  min-height: 70rem;
+  overflow-y: scroll;
+
+  height: calc(100vh - 18.8rem);
+  min-height: 65rem;
   border-top: 3px solid;
+
   grid-column: span 13;
 `;
 
