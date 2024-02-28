@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { TEAM_EXHIBITION_INFO } from '../constants/text';
-import ScrollBarBox from '../../@common/components/ScrollBar';
 
 interface ProjectSectionProps {
   index: number;
@@ -12,16 +11,15 @@ const ProjectSection = ({ index }: ProjectSectionProps) => {
   return (
     <ProjectSectionWrapper>
       <ProjectList>
-        <ScrollBarBox>
+        <Dummy>3/15 Open!</Dummy>
+        {/* <ListItem></ListItem>
           <ListItem></ListItem>
           <ListItem></ListItem>
           <ListItem></ListItem>
           <ListItem></ListItem>
           <ListItem></ListItem>
           <ListItem></ListItem>
-          <ListItem></ListItem>
-          <ListItem></ListItem>
-        </ScrollBarBox>
+          <ListItem></ListItem> */}
       </ProjectList>
 
       <LineBox>
@@ -62,24 +60,36 @@ const ProjectList = styled.section`
   grid-column: span 20;
 `;
 
-const ListItem = styled.div`
+// const ListItem = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+
+//   width: 100%;
+//   height: 15rem;
+//   border-bottom: 3px solid black;
+
+//   color: ${({ theme }) => theme.colors.grey};
+
+//   cursor: pointer;
+
+//   ${({ theme }) => theme.fonts.title1};
+
+//   &:last-child {
+//     border-bottom: none;
+//   }
+// `;
+
+const Dummy = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
 
   width: 100%;
-  height: 15rem;
-  border-bottom: 3px solid black;
-
-  color: ${({ theme }) => theme.colors.grey};
-
-  cursor: pointer;
-
+  height: 40%;
   ${({ theme }) => theme.fonts.title1};
 
-  &:last-child {
-    border-bottom: none;
-  }
+  color: ${({ theme }) => theme.colors.grey};
 `;
 
 const LineBox = styled.div`
@@ -104,7 +114,7 @@ const TextArea = styled.section`
 
   & > img {
     width: 100%;
-    margin-top: 2rem;
+    margin: 2rem 0;
   }
 
   & > h1 {

@@ -28,9 +28,8 @@ const SplashMobile = () => {
 
 const SplashMobileSection = styled.section`
   position: relative;
-  scroll-snap-align: start;
 
-  width: 100vw;
+  width: 100%;
   height: 100dvh;
 `;
 
@@ -45,7 +44,7 @@ const SvgArea = styled.section`
   position: absolute;
   z-index: 300;
 
-  width: 100vw;
+  width: 100%;
   height: 100dvh;
   padding: 0 4.6rem;
 
@@ -62,7 +61,7 @@ const SvgArea = styled.section`
     bottom: 0;
     left: 0;
 
-    width: 100vw;
+    width: 100%;
     padding: 0 2rem;
     padding-bottom: 2rem;
   }

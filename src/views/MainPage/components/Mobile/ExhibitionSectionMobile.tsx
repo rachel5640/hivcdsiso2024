@@ -23,7 +23,7 @@ const ExhibitionSectionMobile = forwardRef<HTMLDivElement>((_props, ref) => {
       </ExhibitionInfo>
       <ExhibitionInfo>
         <div>
-          <RenderCircles ismobile={true} />
+          <RenderCircles $ismobile={true} />
         </div>
       </ExhibitionInfo>
     </div>

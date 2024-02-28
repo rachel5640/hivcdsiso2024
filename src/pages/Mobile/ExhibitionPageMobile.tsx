@@ -16,29 +16,29 @@ import MobileHeader from '../../views/@common/components/MobileHeader';
 import MobileFooter from '../../views/@common/components/MobileFooter';
 
 interface ExhibitionPageMobileProps {
-  islast: boolean;
+  $islast: boolean;
 }
 
 const ExhibitionPageMobile = () => {
   const navigate = useNavigate();
 
   const handleOnClick = (index: number) => {
-    if (!buttons[index].islast) {
+    if (!buttons[index].$islast) {
       navigate(`/Exhibition/Projects`, { state: index });
     }
   };
 
   const buttons = [
-    { icon: <GreenbeeBtn />, islast: false },
-    { icon: <DromapicBtn />, islast: false },
-    { icon: <IrayBtn />, islast: false },
-    { icon: <YadzBtn />, islast: false },
-    { icon: <AdrenalinBtn />, islast: false },
-    { icon: <ProtoBtn />, islast: false },
-    { icon: <HyphenBtn />, islast: false },
-    { icon: <HangulggolBtn />, islast: false },
-    { icon: <HipsBtn />, islast: false },
-    { icon: <HivcdGreyLogo />, islast: true },
+    { icon: <GreenbeeBtn />, $islast: false },
+    { icon: <DromapicBtn />, $islast: false },
+    { icon: <IrayBtn />, $islast: false },
+    { icon: <YadzBtn />, $islast: false },
+    { icon: <AdrenalinBtn />, $islast: false },
+    { icon: <ProtoBtn />, $islast: false },
+    { icon: <HyphenBtn />, $islast: false },
+    { icon: <HangulggolBtn />, $islast: false },
+    { icon: <HipsBtn />, $islast: false },
+    { icon: <HivcdGreyLogo />, $islast: true },
   ];
   return (
     <>
@@ -46,7 +46,7 @@ const ExhibitionPageMobile = () => {
       <ExhibitionPageBox>
         <BtnGrid>
           {buttons.map((button, index) => (
-            <GridItem key={index} onClick={() => handleOnClick(index)} islast={button.islast}>
+            <GridItem key={index} onClick={() => handleOnClick(index)} $islast={button.$islast}>
               {button.icon}
             </GridItem>
           ))}
@@ -80,7 +80,7 @@ const GridItem = styled.div<ExhibitionPageMobileProps>`
 
   width: 100%;
 
-  cursor: ${({ islast }) => (islast ? 'auto' : 'pointer')};
+  cursor: ${({ $islast }) => ($islast ? 'auto' : 'pointer')};
   aspect-ratio: auto 1 / 1;
 
   & > svg {
@@ -92,6 +92,6 @@ const GridItem = styled.div<ExhibitionPageMobileProps>`
 
   &:hover > svg {
     transition: transform 0.4s;
-    transform: ${({ islast }) => (islast ? 'none' : 'translateY(-3px)')};
+    transform: ${({ $islast }) => ($islast ? 'none' : 'translateY(-3px)')};
   }
 `;

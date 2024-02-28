@@ -3,10 +3,10 @@ import { DAYS, ENG_DAYS, TIMES } from '../constant/timeline';
 
 interface TimeLineProps {
   onClick: (number: number) => void;
-  isMobile?: boolean;
+  $ismobile?: boolean;
 }
 
-const TimeLine = ({ onClick, isMobile }: TimeLineProps) => {
+const TimeLine = ({ onClick, $ismobile }: TimeLineProps) => {
   const handleClick = (number: number) => {
     onClick(number); // 클릭된 숫자를 부모 컴포넌트로 전달
   };
@@ -75,12 +75,12 @@ const TimeLine = ({ onClick, isMobile }: TimeLineProps) => {
     });
 
   const dayBoxes = DAYS.map((day, index) => (
-    <DaySlot isMobile={isMobile} key={index}>
+    <DaySlot $ismobile={$ismobile} key={index}>
       {day}
     </DaySlot>
   ));
   const engDayBoxes = ENG_DAYS.map((engDay, index) => (
-    <DaySlot isMobile={isMobile} key={index}>
+    <DaySlot $ismobile={$ismobile} key={index}>
       {engDay}
     </DaySlot>
   ));
@@ -91,34 +91,35 @@ const TimeLine = ({ onClick, isMobile }: TimeLineProps) => {
         <DayBox>{dayBoxes}</DayBox>
         <DayBox>{engDayBoxes}</DayBox>
       </DayBoxWrapper>
-      <Wrapper>
+      <Wrapper $ismobile={$ismobile}>
         <TimeLineBox>
-          <TimeBox isMobile={isMobile}>
+          <TimeBox $ismobile={$ismobile}>
             {TIMES.map((time, index) => (
               <div key={index}>{time}</div>
             ))}
           </TimeBox>
 
-          <TimeLineSheet isMobile={isMobile}>{cells}</TimeLineSheet>
+          <TimeLineSheet $ismobile={$ismobile}>{cells}</TimeLineSheet>
         </TimeLineBox>
         <TimeLineBoxTop>
-          <TimeBox isMobile={isMobile}>
+          <TimeBox $ismobile={$ismobile}>
             {TIMES.map((time, index) => (
               <div key={index}>{time}</div>
             ))}
           </TimeBox>
 
-          <TimeLineSheetChecked isMobile={isMobile}>{filledcells}</TimeLineSheetChecked>
+          <TimeLineSheetChecked $ismobile={$ismobile}>{filledcells}</TimeLineSheetChecked>
         </TimeLineBoxTop>
       </Wrapper>
     </>
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ $ismobile?: boolean }>`
   position: relative;
 
   width: 100%;
+  margin-bottom: ${({ $ismobile }) => ($ismobile ? '0rem' : '10rem')};
 `;
 const TimeLineBox = styled.section`
   display: flex;
@@ -134,25 +135,25 @@ const TimeLineBoxTop = styled.section`
   margin-bottom: 0;
 `;
 
-const TimeBox = styled.div<{ isMobile?: boolean }>`
+const TimeBox = styled.div<{ $ismobile?: boolean }>`
   display: grid;
 
-  height: ${({ isMobile }) => (isMobile ? '2.4rem' : '3rem')};
+  height: ${({ $ismobile }) => ($ismobile ? '2.4rem' : '3rem')};
   margin-right: 3.5rem;
   grid-template-rows: repeat(7, 1fr);
 
   & > div {
-    ${({ isMobile, theme }) => (isMobile ? theme.fonts.body7 : theme.fonts.label3)};
+    ${({ $ismobile, theme }) => ($ismobile ? theme.fonts.body7 : theme.fonts.label3)};
 
-    width: ${({ isMobile }) => (isMobile ? '1rem ' : 'auto')};
-    height: ${({ isMobile }) => (isMobile ? '4.8rem ' : '8rem')};
+    width: ${({ $ismobile }) => ($ismobile ? '1rem ' : 'auto')};
+    height: ${({ $ismobile }) => ($ismobile ? '4.8rem ' : '8rem')};
 
     &:last-child {
       height: 0;
     }
   }
 `;
-const TimeLineSheet = styled.div<{ isMobile?: boolean }>`
+const TimeLineSheet = styled.div<{ $ismobile?: boolean }>`
   display: grid;
 
   width: 100%;
@@ -163,8 +164,8 @@ const TimeLineSheet = styled.div<{ isMobile?: boolean }>`
   grid-template-rows: repeat(12, 1fr); /* 7줄의 세로 그리드 */
 
   & > div {
-    height: ${({ isMobile }) => (isMobile ? '2.4rem' : '4rem')};
-    border-top: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
+    height: ${({ $ismobile }) => ($ismobile ? '2.4rem' : '4rem')};
+    border-top: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
     border-color: ${({ theme }) => theme.colors.darkgrey};
   }
 
@@ -179,11 +180,11 @@ const TimeLineSheet = styled.div<{ isMobile?: boolean }>`
   }
 
   & > div:nth-child(n + 79):nth-child(-n + 84) {
-    border-bottom: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
+    border-bottom: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
   }
 `;
 
-const TimeLineSheetChecked = styled.div<{ isMobile?: boolean }>`
+const TimeLineSheetChecked = styled.div<{ $ismobile?: boolean }>`
   display: grid;
 
   width: 100%;
@@ -198,14 +199,14 @@ const TimeLineSheetChecked = styled.div<{ isMobile?: boolean }>`
     align-items: center;
 
     width: 100%;
-    height: ${({ isMobile }) => (isMobile ? '2.4rem' : '4rem')};
+    height: ${({ $ismobile }) => ($ismobile ? '2.4rem' : '4rem')};
 
-    ${({ isMobile, theme }) => (isMobile ? theme.fonts.body7 : theme.fonts.label1)};
+    ${({ $ismobile, theme }) => ($ismobile ? theme.fonts.body7 : theme.fonts.label1)};
   }
 
   & > div:nth-child(18) {
-    height: ${({ isMobile }) => (isMobile ? '9.6rem' : '16rem')};
-    border-top: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
+    height: ${({ $ismobile }) => ($ismobile ? '9.6rem' : '16rem')};
+    border-top: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
     border-color: ${({ theme }) => theme.colors.darkgrey};
 
     background-color: ${({ theme }) => theme.colors.lightgreen};
@@ -215,8 +216,8 @@ const TimeLineSheetChecked = styled.div<{ isMobile?: boolean }>`
   }
 
   & > div:nth-child(35) {
-    height: ${({ isMobile }) => (isMobile ? '9.6rem' : '16rem')};
-    border-top: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
+    height: ${({ $ismobile }) => ($ismobile ? '9.6rem' : '16rem')};
+    border-top: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
     border-color: ${({ theme }) => theme.colors.darkgrey};
 
     background-color: ${({ theme }) => theme.colors.purple};
@@ -226,8 +227,8 @@ const TimeLineSheetChecked = styled.div<{ isMobile?: boolean }>`
   }
 
   & > div:nth-child(36) {
-    height: ${({ isMobile }) => (isMobile ? '9.6rem' : '16rem')};
-    border-top: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
+    height: ${({ $ismobile }) => ($ismobile ? '9.6rem' : '16rem')};
+    border-top: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
     border-color: ${({ theme }) => theme.colors.darkgrey};
 
     background-color: ${({ theme }) => theme.colors.red};
@@ -237,8 +238,8 @@ const TimeLineSheetChecked = styled.div<{ isMobile?: boolean }>`
   }
 
   & > div:nth-child(38) {
-    height: ${({ isMobile }) => (isMobile ? '9.6rem' : '16rem')};
-    border-top: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
+    height: ${({ $ismobile }) => ($ismobile ? '9.6rem' : '16rem')};
+    border-top: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
     border-color: ${({ theme }) => theme.colors.darkgrey};
 
     background-color: ${({ theme }) => theme.colors.yellow};
@@ -248,9 +249,9 @@ const TimeLineSheetChecked = styled.div<{ isMobile?: boolean }>`
   }
 
   & > div:nth-child(50) {
-    height: ${({ isMobile }) => (isMobile ? '9.6rem' : '16rem')};
-    border-top: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
-    border-bottom: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
+    height: ${({ $ismobile }) => ($ismobile ? '9.6rem' : '16rem')};
+    border-top: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
+    border-bottom: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
     border-color: ${({ theme }) => theme.colors.darkgrey};
 
     background-color: ${({ theme }) => theme.colors.blue};
@@ -260,9 +261,9 @@ const TimeLineSheetChecked = styled.div<{ isMobile?: boolean }>`
   }
 
   & > div:nth-child(51) {
-    height: ${({ isMobile }) => (isMobile ? '9.6rem' : '16rem')};
-    border-top: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
-    border-bottom: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
+    height: ${({ $ismobile }) => ($ismobile ? '9.6rem' : '16rem')};
+    border-top: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
+    border-bottom: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
     border-color: ${({ theme }) => theme.colors.darkgrey};
 
     background-color: ${({ theme }) => theme.colors.orange};
@@ -273,9 +274,9 @@ const TimeLineSheetChecked = styled.div<{ isMobile?: boolean }>`
   }
 
   & > div:nth-child(52) {
-    height: ${({ isMobile }) => (isMobile ? '9.6rem' : '16rem')};
-    border-top: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
-    border-bottom: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
+    height: ${({ $ismobile }) => ($ismobile ? '9.6rem' : '16rem')};
+    border-top: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
+    border-bottom: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
     border-color: ${({ theme }) => theme.colors.darkgrey};
 
     background-color: ${({ theme }) => theme.colors.skyblue};
@@ -285,9 +286,9 @@ const TimeLineSheetChecked = styled.div<{ isMobile?: boolean }>`
   }
 
   & > div:nth-child(53) {
-    height: ${({ isMobile }) => (isMobile ? '9.6rem' : '16rem')};
-    border-top: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
-    border-bottom: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
+    height: ${({ $ismobile }) => ($ismobile ? '9.6rem' : '16rem')};
+    border-top: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
+    border-bottom: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
     border-color: ${({ theme }) => theme.colors.darkgrey};
 
     background-color: ${({ theme }) => theme.colors.teal};
@@ -297,9 +298,9 @@ const TimeLineSheetChecked = styled.div<{ isMobile?: boolean }>`
   }
 
   & > div:nth-child(54) {
-    height: ${({ isMobile }) => (isMobile ? '9.6rem' : '16rem')};
-    border-top: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
-    border-bottom: ${({ isMobile }) => (isMobile ? '2px solid ' : '2.5px solid')};
+    height: ${({ $ismobile }) => ($ismobile ? '9.6rem' : '16rem')};
+    border-top: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
+    border-bottom: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
     border-color: ${({ theme }) => theme.colors.darkgrey};
 
     background-color: ${({ theme }) => theme.colors.pink};
@@ -316,7 +317,7 @@ const DayBox = styled.div`
   margin-left: 5.7rem;
   grid-template-columns: repeat(7, 1fr);
 `;
-const DaySlot = styled.div<{ isMobile?: boolean }>`
+const DaySlot = styled.div<{ $ismobile?: boolean }>`
   display: flex;
   flex: 1;
   justify-content: center;
@@ -324,7 +325,7 @@ const DaySlot = styled.div<{ isMobile?: boolean }>`
 
   width: 100 %;
 
-  ${({ isMobile, theme }) => (isMobile ? theme.fonts.body7 : theme.fonts.label3)};
+  ${({ $ismobile, theme }) => ($ismobile ? theme.fonts.body7 : theme.fonts.label3)};
 `;
 
 const DayBoxWrapper = styled.section`

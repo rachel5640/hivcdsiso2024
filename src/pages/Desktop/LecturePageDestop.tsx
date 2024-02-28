@@ -7,7 +7,6 @@ import { useEffect } from 'react';
 import Lecturebox from '../../views/LecturePage/components/LectureBox';
 import { LECTURE_DATA } from '../../views/LecturePage/constant/text';
 import TimeLine from '../../views/LecturePage/components/TimeLine';
-import ScrollBarBox from '../../views/@common/components/ScrollBar';
 
 const LecturePageDesktop = () => {
   const [clickedNumber, setClickedNumber] = useState<number | null>(null);
@@ -29,43 +28,43 @@ const LecturePageDesktop = () => {
         <LineBox>
           <Line />
         </LineBox>
+
         <TextArea>
-          <ScrollBarBox>
-            {LECTURE_DATA.map((content, index) => (
-              <Lecturebox
-                key={index}
-                number={content.number}
-                blacknumber={content.blacknumber}
-                title={content.title}
-                date={content.date}
-                description={content.description}
-                instagram={content.instagram}
-                website={content.website}
-                clickedNumber={clickedNumber}
-              />
-            ))}
-          </ScrollBarBox>
+          {LECTURE_DATA.map((content, index) => (
+            <Lecturebox
+              key={index}
+              number={content.number}
+              blacknumber={content.blacknumber}
+              title={content.title}
+              date={content.date}
+              description={content.description}
+              instagram={content.instagram}
+              website={content.website}
+              clickedNumber={clickedNumber}
+            />
+          ))}
         </TextArea>
       </LecturePageBox>
-      <DesktopFooter isfixed={true} />
+      <DesktopFooter $isfixed={true} />
     </>
   );
 };
 const LecturePageBox = styled.section`
   display: grid;
 
-  min-width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 18.8rem);
+  min-height: 65rem;
+  margin-top: 9rem;
   padding: 0 8.2rem;
-  padding-top: 10rem;
-  padding-bottom: 8.8rem;
 
   grid-column-gap: 1rem;
   grid-template-columns: repeat(36, 1fr);
 `;
 
 const TimeTable = styled.section`
+  height: 100%;
   border-top: 3px solid;
+
   grid-column: span 22;
 `;
 
@@ -78,14 +77,17 @@ const LineBox = styled.div`
 
 const Line = styled.div`
   width: 3px;
-  height: calc(100vh - 21rem);
+  height: calc(100vh - 18.8rem);
+  min-height: 65rem;
 
   background-color: black;
 `;
-const TextArea = styled.section`
-  overflow-y: auto;
 
-  height: 100%;
+const TextArea = styled.section`
+  overflow-y: scroll;
+
+  height: calc(100vh - 18.8rem);
+  min-height: 65rem;
   border-top: 3px solid;
 
   grid-column: span 13;

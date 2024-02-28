@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 interface RenderCirclesProps {
-  ismobile?: boolean;
+  $ismobile?: boolean;
 }
 
-export const RenderCircles = ({ ismobile }: RenderCirclesProps) => {
+export const RenderCircles = ({ $ismobile }: RenderCirclesProps) => {
   const circles = [
     { id: '1', name: '그린비' },
     { id: '2', name: '드로마픽' },
@@ -23,16 +23,16 @@ export const RenderCircles = ({ ismobile }: RenderCirclesProps) => {
     <>
       <List>
         {firstColumn.map((circle) => (
-          <Items key={circle.id} ismobile={ismobile}>
-            <Circle id={circle.id} ismobile={ismobile}></Circle>
+          <Items key={circle.id} $ismobile={$ismobile}>
+            <Circle id={circle.id} $ismobile={$ismobile}></Circle>
             <div>{circle.name}</div>
           </Items>
         ))}
       </List>
       <List>
         {secondColumn.map((circle) => (
-          <Items key={circle.id} ismobile={ismobile}>
-            <Circle id={circle.id} ismobile={ismobile}></Circle>
+          <Items key={circle.id} $ismobile={$ismobile}>
+            <Circle id={circle.id} $ismobile={$ismobile}></Circle>
             <div>{circle.name}</div>
           </Items>
         ))}
@@ -41,10 +41,10 @@ export const RenderCircles = ({ ismobile }: RenderCirclesProps) => {
   );
 };
 
-const Circle = styled.div<{ ismobile?: boolean }>`
-  width: ${({ ismobile }) => (ismobile ? '0.8rem' : '1.8rem')};
-  height: ${({ ismobile }) => (ismobile ? '0.8rem' : '1.8rem')};
-  margin-right: ${({ ismobile }) => (ismobile ? '1.25rem' : '2.1rem')};
+const Circle = styled.div<{ $ismobile?: boolean }>`
+  width: ${({ $ismobile }) => ($ismobile ? '0.8rem' : '1.8rem')};
+  height: ${({ $ismobile }) => ($ismobile ? '0.8rem' : '1.8rem')};
+  margin-right: ${({ $ismobile }) => ($ismobile ? '1.25rem' : '2.1rem')};
   border-radius: 20px;
 
   background-color: ${({ id }) => {
@@ -76,13 +76,13 @@ const List = styled.div`
   margin-right: 3.15rem;
 `;
 
-const Items = styled.div<{ ismobile?: boolean }>`
+const Items = styled.div<{ $ismobile?: boolean }>`
   display: flex;
   align-items: center;
 
   margin-bottom: 0.2rem;
 
   & > div {
-    ${({ ismobile, theme }) => (ismobile ? theme.fonts.body9_2 : theme.fonts.body1)};
+    ${({ $ismobile, theme }) => ($ismobile ? theme.fonts.body9_2 : theme.fonts.body1)};
   }
 `;

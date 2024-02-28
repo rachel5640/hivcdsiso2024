@@ -2,9 +2,9 @@ import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 interface LectureBoxWrapperProps {
-  expanded: boolean;
+  $expanded: boolean;
   number: number;
-  isMobile?: boolean;
+  $ismobile?: boolean;
 }
 
 interface LectureboxProps {
@@ -16,7 +16,7 @@ interface LectureboxProps {
   instagram: string;
   website: string;
   clickedNumber: number | null;
-  isMobile?: boolean;
+  $ismobile?: boolean;
 }
 
 const Lecturebox = ({
@@ -28,35 +28,40 @@ const Lecturebox = ({
   instagram,
   website,
   clickedNumber,
-  isMobile,
+  $ismobile,
 }: LectureboxProps) => {
-  const [expanded, setExpanded] = useState(false);
+  const [$expanded, set$Expanded] = useState(false);
   const lectureRef = useRef<HTMLDivElement>(null);
 
   const toggleExpand = () => {
-    setExpanded(!expanded);
+    set$Expanded(!$expanded);
   };
 
   useEffect(() => {
     if (number === clickedNumber && lectureRef.current) {
-      setExpanded(true);
+      set$Expanded(true);
       lectureRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else {
-      setExpanded(false);
+      set$Expanded(false);
     }
   }, [number, clickedNumber]);
 
   return (
-    <LectureBoxWrapper onClick={toggleExpand} expanded={expanded} number={number} isMobile={isMobile} ref={lectureRef}>
-      <TitleBox isMobile={isMobile}>
-        <LectureNumber isMobile={isMobile}>{blacknumber}</LectureNumber>
-        <LectureInfo isMobile={isMobile}>
+    <LectureBoxWrapper
+      onClick={toggleExpand}
+      $expanded={$expanded}
+      number={number}
+      $ismobile={$ismobile}
+      ref={lectureRef}>
+      <TitleBox $ismobile={$ismobile}>
+        <LectureNumber $ismobile={$ismobile}>{blacknumber}</LectureNumber>
+        <LectureInfo $ismobile={$ismobile}>
           <h1>{title}</h1>
           <h1>{date} </h1>
         </LectureInfo>
       </TitleBox>
-      <DetailInfoWrapper expanded={expanded} isMobile={isMobile}>
-        <DetailInfo isMobile={isMobile}>
+      <DetailInfoWrapper $expanded={$expanded} $ismobile={$ismobile}>
+        <DetailInfo $ismobile={$ismobile}>
           <p>{description}</p>
           <div>
             {instagram !== '' && (
@@ -111,65 +116,65 @@ const LectureBoxWrapper = styled.div<LectureBoxWrapperProps>`
   }
 
   &:last-child {
-    border-bottom: ${({ isMobile }) => (isMobile ? '2px solid black' : '0.1px solid white')};
+    border-bottom: ${({ $ismobile }) => ($ismobile ? '2px solid black' : '0.1px solid white')};
   }
 `;
 
-const TitleBox = styled.div<{ isMobile?: boolean }>`
+const TitleBox = styled.div<{ $ismobile?: boolean }>`
   display: flex;
 
-  margin-bottom: ${({ isMobile }) => (isMobile ? '0' : '0.7rem')};
-  padding: ${({ isMobile }) => (isMobile ? '1rem 0 1rem' : '1.4rem 0 0.8rem')};
+  margin-bottom: ${({ $ismobile }) => ($ismobile ? '0' : '0.7rem')};
+  padding: ${({ $ismobile }) => ($ismobile ? '1rem 0 1rem' : '1.4rem 0 0.8rem')};
 `;
 
-const DetailInfoWrapper = styled.div<{ expanded: boolean; isMobile?: boolean }>`
+const DetailInfoWrapper = styled.div<{ $expanded: boolean; $ismobile?: boolean }>`
   overflow: hidden;
 
-  max-height: ${({ expanded }) => (expanded ? '100rem' : '0')};
+  max-height: ${({ $expanded }) => ($expanded ? '100rem' : '0')};
 
   transition: max-height 0.5s ease-in-out;
 `;
-const LectureNumber = styled.p<{ isMobile?: boolean }>`
-  width: ${({ isMobile }) => (isMobile ? '1rem' : '3rem')};
-  ${({ isMobile, theme }) => (isMobile ? theme.fonts.title8 : theme.fonts.title5)};
+const LectureNumber = styled.p<{ $ismobile?: boolean }>`
+  width: ${({ $ismobile }) => ($ismobile ? '1rem' : '3rem')};
+  ${({ $ismobile, theme }) => ($ismobile ? theme.fonts.title8 : theme.fonts.title5)};
 
-  margin-right: ${({ isMobile }) => (isMobile ? '2rem' : '2rem')};
-  padding-left: ${({ isMobile }) => (isMobile ? '0.5rem' : '1rem')};
+  margin-right: ${({ $ismobile }) => ($ismobile ? '2rem' : '2rem')};
+  padding-left: ${({ $ismobile }) => ($ismobile ? '0.5rem' : '1rem')};
 `;
 
-const LectureInfo = styled.div<{ isMobile?: boolean }>`
+const LectureInfo = styled.div<{ $ismobile?: boolean }>`
   & > h1 {
-    ${({ isMobile, theme }) => (isMobile ? theme.fonts.title8 : theme.fonts.title5)};
+    ${({ $ismobile, theme }) => ($ismobile ? theme.fonts.title8 : theme.fonts.title5)};
   }
 
   & > h2 {
-    ${({ isMobile, theme }) => (isMobile ? theme.fonts.title7 : theme.fonts.title5)};
+    ${({ $ismobile, theme }) => ($ismobile ? theme.fonts.title7 : theme.fonts.title5)};
   }
 `;
 
-const DetailInfo = styled.div<{ isMobile?: boolean }>`
+const DetailInfo = styled.div<{ $ismobile?: boolean }>`
   width: 100%;
   padding-right: 1rem;
 
   & > p {
-    ${({ isMobile, theme }) => (isMobile ? theme.fonts.body10 : theme.fonts.body5)};
+    ${({ $ismobile, theme }) => ($ismobile ? theme.fonts.body10 : theme.fonts.body5)};
 
-    margin: ${({ isMobile }) => (isMobile ? '0rem 0 0 3rem' : '0 0 0.5rem 4.8rem')};
+    margin: ${({ $ismobile }) => ($ismobile ? '0rem 0 0 3rem' : '0 0 0.5rem 4.8rem')};
   }
 
   & > div {
     display: flex;
 
-    margin: ${({ isMobile }) => (isMobile ? '0.6rem 2rem 1.3rem 3rem ' : '0 4.8rem 3rem 4.5rem')};
+    margin: ${({ $ismobile }) => ($ismobile ? '0.6rem 2rem 1.3rem 3rem ' : '0 4.8rem 3rem 4.5rem')};
   }
 
   & > div > a {
-    ${({ isMobile, theme }) => (isMobile ? theme.fonts.label4 : theme.fonts.label3)};
+    ${({ $ismobile, theme }) => ($ismobile ? theme.fonts.label4 : theme.fonts.label3)};
 
-    margin-top: ${({ isMobile }) => (isMobile ? '0.5rem' : '0.2rem')};
-    margin-right: ${({ isMobile }) => (isMobile ? '0.3rem' : '0.7rem')};
-    padding: ${({ isMobile }) => (isMobile ? '0.4rem 1rem' : '0.2rem 1rem;')};
-    border: ${({ isMobile }) => (isMobile ? '1.5px solid black' : '2.5px solid black')};
+    margin-top: ${({ $ismobile }) => ($ismobile ? '0.5rem' : '0.2rem')};
+    margin-right: ${({ $ismobile }) => ($ismobile ? '0.3rem' : '0.7rem')};
+    padding: ${({ $ismobile }) => ($ismobile ? '0.4rem 1rem' : '0.2rem 1rem;')};
+    border: ${({ $ismobile }) => ($ismobile ? '1.5px solid black' : '2.5px solid black')};
     border-radius: 21px;
 
     color: black;

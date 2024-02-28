@@ -79,7 +79,7 @@ const BackgroundSection = styled.section`
   left: 0;
   z-index: 230;
 
-  width: 100vw;
+  width: 100%;
   height: 100dvh;
 
   background-color: white;

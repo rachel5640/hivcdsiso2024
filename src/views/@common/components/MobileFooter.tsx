@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 interface MobileFooterProps {
-  isfixed?: boolean;
+  $isfixed?: boolean;
 }
 
-const MobileFooter = ({ isfixed }: MobileFooterProps) => {
+const MobileFooter = ({ $isfixed }: MobileFooterProps) => {
   return (
-    <MobileFooterWrapper isfixed={isfixed}>
+    <MobileFooterWrapper $isfixed={$isfixed}>
       <MobileFooterBox>
         <div>
           2024 HIVCD CLUB FESTIVAL <div>:</div> SISO
@@ -18,10 +18,10 @@ const MobileFooter = ({ isfixed }: MobileFooterProps) => {
 };
 
 const MobileFooterWrapper = styled.section<MobileFooterProps>`
-  position: ${({ isfixed }) => (isfixed ? 'fixed' : 'static')};
+  position: ${({ $isfixed }) => ($isfixed ? 'fixed' : 'static')};
   bottom: 0;
 
-  width: 100vw;
+  width: 100%;
   padding: 0.7rem 1.6rem;
   scroll-snap-align: start;
 

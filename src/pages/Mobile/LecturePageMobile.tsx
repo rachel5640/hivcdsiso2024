@@ -21,7 +21,7 @@ const LecturePageMobile = () => {
     <>
       <MobileHeader />
       <LecturePageMobileSection>
-        <TimeLine onClick={handleTimeLineClick} isMobile={true} />
+        <TimeLine onClick={handleTimeLineClick} $ismobile={true} />
         <LectureBoxWrapper>
           {LECTURE_DATA.map((content, index) => (
             <Lecturebox
@@ -34,7 +34,7 @@ const LecturePageMobile = () => {
               instagram={content.instagram}
               website={content.website}
               clickedNumber={clickedNumber}
-              isMobile={true}
+              $ismobile={true}
             />
           ))}
         </LectureBoxWrapper>
