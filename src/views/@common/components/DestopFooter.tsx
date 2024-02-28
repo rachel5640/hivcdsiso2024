@@ -30,7 +30,6 @@ const DesktopFooter = ({ $isfixed }: DesktopFooterProps) => {
 const FooterBox = styled.section<DesktopFooterProps>`
   position: ${({ $isfixed }) => ($isfixed ? 'fixed' : 'static')};
   bottom: 0;
-  scroll-snap-align: start;
 
   width: 100vw;
   height: 8.8rem;

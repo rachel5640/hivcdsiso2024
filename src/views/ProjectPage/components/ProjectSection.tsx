@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { useState } from 'react';
+import Loading from '../../@common/components/Loading';
 import { TEAM_EXHIBITION_INFO } from '../constants/text';
 
 interface ProjectSectionProps {
@@ -7,6 +9,7 @@ interface ProjectSectionProps {
 
 const ProjectSection = ({ index }: ProjectSectionProps) => {
   const exhibitionInfo = TEAM_EXHIBITION_INFO[index];
+  const [loading, setLoading] = useState(true);
 
   return (
     <ProjectSectionWrapper>
@@ -34,7 +37,8 @@ const ProjectSection = ({ index }: ProjectSectionProps) => {
           <h1>참여자</h1>
           <h2>{exhibitionInfo.participant}</h2>
         </ParticipantBox>
-        <img src={exhibitionInfo.image} alt={exhibitionInfo.Title} />
+        {loading && <Loading />}
+        <img src={exhibitionInfo.image} alt={exhibitionInfo.Title} onLoad={() => setLoading(false)} />
       </TextArea>
     </ProjectSectionWrapper>
   );
