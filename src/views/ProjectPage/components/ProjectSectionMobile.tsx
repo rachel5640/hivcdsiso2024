@@ -1,15 +1,18 @@
 import styled from 'styled-components';
+import { useState } from 'react';
 import { TEAM_EXHIBITION_INFO } from '../constants/text';
-
+import Loading from '../../@common/components/Loading';
 interface ProjectSectionMobileProps {
   index: number;
 }
 
 const ProjectSectionMobile = ({ index }: ProjectSectionMobileProps) => {
+  const [loading, setLoading] = useState(true);
   const exhibitionInfo = TEAM_EXHIBITION_INFO[index];
   return (
     <div>
-      <Poster src={exhibitionInfo.image} alt={exhibitionInfo.Title} />
+      {loading && <Loading />}
+      <Poster src={exhibitionInfo.image} alt={exhibitionInfo.Title} onLoad={() => setLoading(false)} />
       <TextArea>
         <h1>{exhibitionInfo.Title}</h1>
         <p>{exhibitionInfo.text}</p>
