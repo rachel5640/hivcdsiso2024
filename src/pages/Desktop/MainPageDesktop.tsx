@@ -40,8 +40,6 @@ const MainPageDesktop = () => {
 };
 
 const ScrollWrapper = styled.section`
-  overflow-y: scroll;
-
   width: 100vw;
   height: 100vh;
   scroll-snap-type: y mandatory;

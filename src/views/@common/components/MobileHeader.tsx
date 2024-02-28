@@ -48,6 +48,8 @@ const HeaderWrapper = styled.div<{ issticky?: boolean }>`
   position: ${({ issticky }) => (issticky ? 'sticky' : 'fixed')};
   top: 0;
   z-index: 200;
+
+  width: 100%;
 `;
 const MobileHeaderBox = styled.section`
   display: flex;
@@ -55,7 +57,7 @@ const MobileHeaderBox = styled.section`
   align-items: center;
   position: relative;
 
-  width: 100vw;
+  width: 100%;
   height: 4.8rem;
   padding: 1.2rem 1.6rem;
 
@@ -92,7 +94,7 @@ const MenuItem = styled.section<MobileHeaderProps>`
   overflow: hidden;
   position: absolute;
 
-  width: 100vw;
+  width: 100%;
 
   transition: top 0.3s ease;
 

@@ -29,6 +29,7 @@ const LecturePageDesktop = () => {
         <LineBox>
           <Line />
         </LineBox>
+
         <TextArea>
           <ScrollBarBox>
             {LECTURE_DATA.map((content, index) => (
@@ -47,25 +48,28 @@ const LecturePageDesktop = () => {
           </ScrollBarBox>
         </TextArea>
       </LecturePageBox>
-      <DesktopFooter isfixed={true} />
+      <DesktopFooter />
     </>
   );
 };
 const LecturePageBox = styled.section`
   display: grid;
+  position: relative;
 
-  min-width: 100vw;
-  height: 100vh;
+  height: 100%;
+  max-height: 70rem;
+  margin-top: 9rem;
   padding: 0 8.2rem;
-  padding-top: 10rem;
-  padding-bottom: 8.8rem;
+  padding-bottom: 1rem;
 
   grid-column-gap: 1rem;
   grid-template-columns: repeat(36, 1fr);
 `;
 
 const TimeTable = styled.section`
+  height: 100%;
   border-top: 3px solid;
+
   grid-column: span 22;
 `;
 
@@ -78,16 +82,16 @@ const LineBox = styled.div`
 
 const Line = styled.div`
   width: 3px;
-  height: calc(100vh - 21rem);
+  height: calc(100% - 8.8rem);
+  min-height: 68rem;
 
   background-color: black;
 `;
+
 const TextArea = styled.section`
-  overflow-y: auto;
-
-  height: 100%;
+  height: calc(100% - 8.8rem);
+  min-height: 70rem;
   border-top: 3px solid;
-
   grid-column: span 13;
 `;
 

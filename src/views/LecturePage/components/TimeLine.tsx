@@ -119,6 +119,7 @@ const Wrapper = styled.div`
   position: relative;
 
   width: 100%;
+  margin-bottom: 10rem;
 `;
 const TimeLineBox = styled.section`
   display: flex;

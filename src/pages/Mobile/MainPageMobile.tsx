@@ -66,8 +66,6 @@ const MainPageMobile = () => {
 };
 
 const ScrollSnapWrapper = styled.div`
-  overflow-y: scroll;
-
   width: 100vw;
   height: 100vh;
   scroll-snap-type: y mandatory;
@@ -75,6 +73,7 @@ const ScrollSnapWrapper = styled.div`
 `;
 
 const MainPageSection = styled.section`
+  width: 100%;
   padding: 1.6rem;
   scroll-snap-align: start;
 `;
