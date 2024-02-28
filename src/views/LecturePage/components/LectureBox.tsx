@@ -30,26 +30,27 @@ const Lecturebox = ({
   clickedNumber,
   $ismobile,
 }: LectureboxProps) => {
-  const [$expanded, set$Expanded] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+
   const lectureRef = useRef<HTMLDivElement>(null);
 
   const toggleExpand = () => {
-    set$Expanded(!$expanded);
+    setExpanded(!expanded);
   };
 
   useEffect(() => {
     if (number === clickedNumber && lectureRef.current) {
-      set$Expanded(true);
+      setExpanded(true);
       lectureRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else {
-      set$Expanded(false);
+      setExpanded(false);
     }
   }, [number, clickedNumber]);
 
   return (
     <LectureBoxWrapper
       onClick={toggleExpand}
-      $expanded={$expanded}
+      $expanded={expanded}
       number={number}
       $ismobile={$ismobile}
       ref={lectureRef}>
@@ -60,7 +61,7 @@ const Lecturebox = ({
           <h1>{date} </h1>
         </LectureInfo>
       </TitleBox>
-      <DetailInfoWrapper $expanded={$expanded} $ismobile={$ismobile}>
+      <DetailInfoWrapper $expanded={expanded} $ismobile={$ismobile}>
         <DetailInfo $ismobile={$ismobile}>
           <p>{description}</p>
           <div>
