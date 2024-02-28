@@ -3,7 +3,7 @@ export const EXHIBITION_TEXT = {
     '9개의 소모임은 각자의 관심 분야에 따른 인덱스를 통해 분류되어 있다. 서로 다른 방향을 향하고 있는 듯한 우리는 디자인이라는 하나의 출발점에서 시작했다. 우리는 이번 전시를 통해 우리의 관심과 시선을 보여주는 인덱스들을 한데 모아 ‘우리의 인덱스’라는 이름으로 선보인다. 우리의 출발점에 만들어질 인덱스를 통해 하나의 정체성을 공유한다.',
   EXHIBITION_PLACE: '홍익대학교 서울캠퍼스',
   EXHIBITION_PLACE_DETAIL: 'R동 1층 다목적실, S동 3층 신축강당',
-  EXHIBITION_DAY: '2024. 03. 05(화)- 03. 09(토) ',
+  EXHIBITION_DAY: '2024. 03. 05(화) - 03. 09(토) ',
   EXHIBITION_TIME: '오전 9시 30분- 오후 6시',
 };
 export const EVENT_TEXT = {
