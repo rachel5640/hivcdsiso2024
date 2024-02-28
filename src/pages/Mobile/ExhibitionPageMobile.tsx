@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import {
   DromapicBtn,
   GreenbeeBtn,
@@ -21,6 +22,9 @@ interface ExhibitionPageMobileProps {
 
 const ExhibitionPageMobile = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleOnClick = (index: number) => {
     if (!buttons[index].$islast) {
