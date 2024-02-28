@@ -110,7 +110,7 @@ export const TEAM_EXHIBITION_INFO = [
     artdirector: '박서연, 이일여',
     participant:
       '구윤지, 권수연, 김민재, 김새하, 김서현(20), 김서현(22), 김소은, 김채현, 민솔, 박서연, 박세은, 박소현, 박하경, 손서우, 양찬규, 윤서윤, 윤유빈, 이명건, 이송희, 이영서, 이일여, 이한나, 전서현, 정세진, 조진주, 진나경, 최선우, 최영재, 황예지',
-    image: 'https://i.imgur.com/p3vp19p.jpg',
+    image: 'https://i.imgur.com/qfoRXjD.jpg',
   },
   {
     Title: 'TYPE LOOP',
