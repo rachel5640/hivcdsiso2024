@@ -194,8 +194,13 @@ input, textarea,button {
     appearance: none;
 }
 
+  ::-webkit-scrollbar {
+    width: 0; 
+  }
+
 body{
    overflow-x: hidden;
+   
 }`;
 
 export default GlobalStyle;
