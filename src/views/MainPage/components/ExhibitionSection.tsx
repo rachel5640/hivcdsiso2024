@@ -44,7 +44,7 @@ const ExhibitionSectionBox = styled.div`
 const PosterImg = styled.img`
   align-self: flex-start;
 
-  width: 100%;
+  max-width: 60rem;
 `;
 
 const ExhibitionInfoBox = styled.div`
