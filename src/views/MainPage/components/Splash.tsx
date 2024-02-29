@@ -123,7 +123,7 @@ const LogoBox = styled.div`
   align-items: center;
 
   min-width: 59rem;
-  max-width: 50vw;
+  max-width: 48vw;
 
   & > svg {
     height: 100%;
@@ -139,8 +139,8 @@ const SubBox = styled.div`
   padding: 3rem;
 
   & > svg {
-    min-width: 10rem;
-    max-width: 23vw;
+    min-width: 18rem;
+    max-width: 19vw;
   }
 `;
 
