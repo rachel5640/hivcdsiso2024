@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Loading from '../../@common/components/Loading';
 import { TEAM_EXHIBITION_INFO } from '../constants/text';
+import { DATA_SETS } from '../../MainPage/constant/ProjectData';
 
 interface ProjectSectionProps {
   index: number;
@@ -10,35 +11,64 @@ interface ProjectSectionProps {
 const ProjectSection = ({ index }: ProjectSectionProps) => {
   const exhibitionInfo = TEAM_EXHIBITION_INFO[index];
   const [loading, setLoading] = useState(true);
+  const [expandedItemIndex, setExpandedItemIndex] = useState(-1);
+  const currentDataSet = DATA_SETS[index] || [];
+
+  const handleListItemClick = (index: number) => {
+    setExpandedItemIndex(index === expandedItemIndex ? -1 : index);
+  };
+
+  useEffect(() => {
+    setExpandedItemIndex(-1);
+  }, [index]);
 
   return (
     <ProjectSectionWrapper>
-      <ProjectList>
-        <Dummy>3/15 Open!</Dummy>
-        {/* <ListItem></ListItem>
-          <ListItem></ListItem>
-          <ListItem></ListItem>
-          <ListItem></ListItem>
-          <ListItem></ListItem>
-          <ListItem></ListItem>
-          <ListItem></ListItem>
-          <ListItem></ListItem> */}
+      <ProjectList $isexpanded={expandedItemIndex >= 0}>
+        {currentDataSet.map((item, index) => (
+          <ListItem
+            key={index}
+            onClick={() => handleListItemClick(index)}
+            $isdimmed={expandedItemIndex >= 0 && index == expandedItemIndex}>
+            <ListImg src={item.thumbnail} alt={item.title} />
+            <ProjectText>
+              <h1>{item.title}</h1>
+              <h2>{item.author}</h2>
+            </ProjectText>
+          </ListItem>
+        ))}
       </ProjectList>
 
       <LineBox>
         <Line />
       </LineBox>
-      <TextArea>
-        <h1>{exhibitionInfo.Title}</h1>
-        <p>{exhibitionInfo.text}</p>
-        <ParticipantBox>
-          <h1>아트디렉터</h1>
-          <h2>{exhibitionInfo.artdirector}</h2>
-          <h1>참여자</h1>
-          <h2>{exhibitionInfo.participant}</h2>
-        </ParticipantBox>
-        {loading && <Loading />}
-        <img src={exhibitionInfo.image} alt={exhibitionInfo.Title} onLoad={() => setLoading(false)} />
+      <TextArea $isexpanded={expandedItemIndex >= 0}>
+        {expandedItemIndex >= 0 && currentDataSet.length > 0 && currentDataSet[expandedItemIndex] ? (
+          <>
+            <TitleBox>
+              <h1>{currentDataSet[expandedItemIndex].title}</h1>
+              <h2>{currentDataSet[expandedItemIndex].author}</h2>
+            </TitleBox>
+            <p>{currentDataSet[expandedItemIndex].text}</p>
+            {loading && <Loading />}
+            {currentDataSet[expandedItemIndex].image.map((url, index) => (
+              <img key={index} src={url} alt={`Image ${index + 1}`} onLoad={() => setLoading(false)} />
+            ))}
+          </>
+        ) : (
+          <>
+            <h1>{exhibitionInfo.Title}</h1>
+            <p>{exhibitionInfo.text}</p>
+            <ParticipantBox>
+              <h1>아트디렉터</h1>
+              <h2>{exhibitionInfo.artdirector}</h2>
+              <h1>참여자</h1>
+              <h2>{exhibitionInfo.participant}</h2>
+            </ParticipantBox>
+            {loading && <Loading />}
+            <img src={exhibitionInfo.image} alt={exhibitionInfo.Title} onLoad={() => setLoading(false)} />
+          </>
+        )}
       </TextArea>
     </ProjectSectionWrapper>
   );
@@ -58,42 +88,59 @@ const ProjectSectionWrapper = styled.section`
   grid-template-columns: repeat(36, 1fr);
 `;
 
-const ProjectList = styled.section`
+const ProjectList = styled.section<{ $isexpanded: boolean }>`
   min-height: calc(100vh - 16.4rem);
   border-top: 3px solid;
-  grid-column: span 20;
+  grid-column: ${({ $isexpanded }) => ($isexpanded ? 'span 15' : 'span 20')};
+
+  transition: grid-column 0.5s ease-in-out;
 `;
 
-// const ListItem = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-
-//   width: 100%;
-//   height: 15rem;
-//   border-bottom: 3px solid black;
-
-//   color: ${({ theme }) => theme.colors.grey};
-
-//   cursor: pointer;
-
-//   ${({ theme }) => theme.fonts.title1};
-
-//   &:last-child {
-//     border-bottom: none;
-//   }
-// `;
-
-const Dummy = styled.div`
+const ListItem = styled.div<{ $isdimmed: boolean }>`
   display: flex;
-  justify-content: center;
   align-items: center;
 
   width: 100%;
-  height: 40%;
-  ${({ theme }) => theme.fonts.title1};
+  height: 16rem;
+  padding: 2rem 0;
+  border-bottom: 3px solid black;
 
-  color: ${({ theme }) => theme.colors.grey};
+  background-color: ${({ $isdimmed, theme }) => ($isdimmed ? theme.colors.grey : theme.colors.white)};
+
+  cursor: pointer;
+
+  &:last-child {
+    border-bottom: none;
+  }
+`;
+
+const ListImg = styled.img`
+  width: 16rem;
+  height: 12rem;
+  margin-right: 2.3rem;
+
+  background-color: lightgrey;
+  object-fit: cover;
+`;
+
+const ProjectText = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100%;
+
+  & > h1 {
+    ${({ theme }) => theme.fonts.body5};
+
+    word-break: keep-all;
+  }
+
+  & > h2 {
+    ${({ theme }) => theme.fonts.body5_2};
+
+    word-break: keep-all;
+  }
 `;
 
 const LineBox = styled.div`
@@ -103,22 +150,42 @@ const LineBox = styled.div`
   grid-column: span 1;
 `;
 
+const TitleBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  margin-top: 1.4rem;
+
+  & > h1 {
+    ${({ theme }) => theme.fonts.title3};
+  }
+
+  & > h2 {
+    ${({ theme }) => theme.fonts.body1};
+  }
+`;
+
 const Line = styled.div`
   width: 3px;
   height: 99%;
 
   background-color: black;
 `;
-const TextArea = styled.section`
+const TextArea = styled.section<{ $isexpanded: boolean }>`
   top: 0;
 
+  margin-bottom: 2rem;
   border-top: 3px solid;
 
-  grid-column: span 15;
+  transition: grid-column 0.5s ease-in-out;
+
+  grid-column: ${({ $isexpanded }) => ($isexpanded ? 'span 20' : 'span 15')};
 
   & > img {
     width: 100%;
-    margin: 2rem 0;
+    margin: 1rem 0 0;
   }
 
   & > h1 {
@@ -144,6 +211,7 @@ const ParticipantBox = styled.div`
   gap: 10px;
 
   margin-top: 2.1rem;
+  margin-bottom: 2rem;
 
   & > h1 {
     ${({ theme }) => theme.fonts.body4};

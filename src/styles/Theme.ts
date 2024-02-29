@@ -20,7 +20,7 @@ const fonts = {
     font-family: 'megazoid', sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 5.8rem;
+    font-size: 5.4rem;
   `,
   title2: css`
     font-family: 'megazoid', sans-serif;
