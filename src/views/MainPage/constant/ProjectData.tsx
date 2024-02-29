@@ -34,6 +34,34 @@ export const DATA_SETS = [
       text: '글자설명',
       image: ['imageurl1', 'imageurl2', 'url'],
     },
+    {
+      thumbnail: 'https://i.pinimg.com/736x/1f/5c/96/1f5c966c2cff5a530d2e8238576a1e7b.jpg',
+      title: 'Catching Time',
+      author: '허은제',
+      text: '글자설명',
+      image: ['imageurl1', 'imageurl2', 'url'],
+    },
+    {
+      thumbnail: 'https://i.pinimg.com/736x/1f/5c/96/1f5c966c2cff5a530d2e8238576a1e7b.jpg',
+      title: 'Catching Time',
+      author: '허은제',
+      text: '글자설명',
+      image: ['imageurl1', 'imageurl2', 'url'],
+    },
+    {
+      thumbnail: 'https://i.pinimg.com/736x/1f/5c/96/1f5c966c2cff5a530d2e8238576a1e7b.jpg',
+      title: 'Catching Time',
+      author: '허은제',
+      text: '글자설명',
+      image: ['imageurl1', 'imageurl2', 'url'],
+    },
+    {
+      thumbnail: 'https://i.pinimg.com/736x/1f/5c/96/1f5c966c2cff5a530d2e8238576a1e7b.jpg',
+      title: 'Catching Time',
+      author: '허은제',
+      text: '글자설명',
+      image: ['imageurl1', 'imageurl2', 'url'],
+    },
   ],
   [
     // 드로마픽

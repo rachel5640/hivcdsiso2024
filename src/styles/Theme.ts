@@ -57,7 +57,7 @@ const fonts = {
     line-height: 170%;
   `,
   title7: css`
-    font-family: 'ABC_ROM_Condensed', 'Noto Sans KR', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     font-weight: 800;
     font-style: normal;
     font-size: 1.5rem;

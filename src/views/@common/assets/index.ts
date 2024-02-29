@@ -8,6 +8,8 @@ import Trial from './trial.svg?react';
 import IcInstagram from './ic_instagram.svg?react';
 import IcHivcd from './ic_hivcd.svg?react';
 import IcMenu from './ic_menu.svg?react';
+import IcChevronBtn from './ic_chevron-back.svg?react';
+import IcExitBlack from './icon_exit-back.svg?react';
 
 import CommiteeBtn from './commitee_btn.svg?react';
 import EventBtn from './event_btn.svg?react';
@@ -26,3 +28,5 @@ export { CommiteeBtn };
 export { EventBtn };
 export { GoodsBtn };
 export { InfoBtn };
+export { IcChevronBtn };
+export { IcExitBlack };

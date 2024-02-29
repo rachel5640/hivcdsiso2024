@@ -151,19 +151,18 @@ const LineBox = styled.div`
 `;
 
 const TitleBox = styled.div`
-  display: flex;
   justify-content: space-between;
   align-items: center;
 
   width: 100%;
-  margin-top: 1.4rem;
+  margin: 1.4rem 0;
 
   & > h1 {
     ${({ theme }) => theme.fonts.title3};
   }
 
   & > h2 {
-    ${({ theme }) => theme.fonts.body1};
+    ${({ theme }) => theme.fonts.body5};
   }
 `;
 
