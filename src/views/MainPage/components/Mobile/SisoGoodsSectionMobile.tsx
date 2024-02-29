@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 import { forwardRef } from 'react';
+import SisoGoodsMobileOne from '../../assets/siso_goods_mobile_1.jpg';
+import SisoGoodsMobileTwo from '../../assets/siso_goods_mobile_2.jpg';
 
 const SisoGoodsSectionMobile = forwardRef<HTMLDivElement>((_props, ref) => {
   return (
     <SisoGoodsSection ref={ref}>
       <h1>2024 SISO Goods</h1>
-      <div>3/3 OPEN!</div>
+      <img src={SisoGoodsMobileOne} alt="Siso Goods Sticker" />
+      <img src={SisoGoodsMobileTwo} alt="Siso Goods " />
     </SisoGoodsSection>
   );
 });
@@ -22,17 +25,17 @@ const SisoGoodsSection = styled.div`
     border-bottom: 1.5px solid black;
   }
 
-  & > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+  & > img {
     width: 100%;
-    height: 20rem;
+    margin-bottom: 1rem;
 
     ${({ theme }) => theme.fonts.title2};
 
     color: ${({ theme }) => theme.colors.grey};
+  }
+
+  & > img:last-child {
+    margin-bottom: 0;
   }
 `;
 
