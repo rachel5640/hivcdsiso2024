@@ -23,7 +23,7 @@ export const LECTURE_DATA = [
     number: 3,
     blacknumber: '❸',
     title: '드로마픽 × 멜트미러',
-    date: '03. 06 (WED) 19:00 - 21:00 | 오프라인',
+    date: '03. 06 (WED) 17:00 - 19:00 | 오프라인',
     description:
       'MELTMIRROR는 2015년부터 서울 중심으로 활동하고 있는 영상작업자 겸 게임개발자이다. 선량한 사람과 결혼을 했고, 두 고양이와 함께 귀여운 삶을 살아가고 있다. 2016년 프랑스의 미디어 페스티벌 《mirage festival 2016》 스크리닝 참가를 기점으로 3D그래픽 기반 뮤직비디오 작업을 시작했고 이후 실사 기반 작업으로 확장. 밴드 실리카겔, 새소년 등의 뮤직비디오 협업과 다수의 상업 영상 작업을 진행했다. 2019년을 기점으로 밴드 실리카겔의 김한주, 의류 브랜드 HALOMINIUM의 이유미, 그래픽 디자인 하우스 SUPERSALADSTUFF의 정해리, 도이만화의 작가 김도이, 영화감독 김정각과 함께 매체를 떠나 게임으로 간주되는 것을 다루는 팀 ‘isvn’을 결성해 게임 개발자로서 활동을 이어가고 있다.',
     instagram: 'https://www.instagram.com/meltmirror?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
@@ -34,7 +34,7 @@ export const LECTURE_DATA = [
     blacknumber: '❹',
 
     title: '애드레날린 × 강우림',
-    date: '03.06 (WED) 17:00 - 19:00 | 오프라인',
+    date: '03.06 (WED) 19:00 - 21:00 | 오프라인',
     description:
       '강우림은 홍익대학교 시각디자인과 출신으로 광고 소모임 애드레날린에서 활동했던 제일기획 소속 아트디렉터다. 2016년 이후로 제작본부 아트디렉터로서 삼성전자, 한국GM 쉐보레, 신한은행, 한샘 등 다양한 기업의 광고를 제작했다. 2024 SISO에서는 광고대행사에서 한 편의 광고를 만드는 과정 및 광고회사 아트디렉터의 업무와 같이 광고계의 실무에 대해 강연하고자 한다.',
     instagram: '',
