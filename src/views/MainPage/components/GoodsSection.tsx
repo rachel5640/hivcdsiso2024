@@ -26,7 +26,6 @@ const Title = styled.h1`
 `;
 
 const ImgBox = styled.div`
-  display: grid;
   gap: 1rem;
 
   & > img {

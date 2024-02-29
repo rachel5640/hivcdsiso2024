@@ -31,7 +31,9 @@ const ExhibitionSection = () => {
 };
 
 const ExhibitionSectionBox = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
   gap: 3rem;
 
   width: 100%;
@@ -42,7 +44,7 @@ const ExhibitionSectionBox = styled.div`
 const PosterImg = styled.img`
   align-self: flex-start;
 
-  width: 50%;
+  max-width: 60rem;
 `;
 
 const ExhibitionInfoBox = styled.div`
