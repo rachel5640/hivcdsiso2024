@@ -53,6 +53,7 @@ const ParticipantBox = styled.div`
 
   width: 100%;
   margin-top: 2.1rem;
+  margin-bottom: 2rem;
   grid-template-columns: 1fr 3fr;
 
   & > h1 {
