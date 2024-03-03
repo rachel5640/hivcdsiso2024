@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import SisoGoodsWeb from '../assets/siso_goods_web.jpg';
 
 const GoodsSection = () => {
   return (
     <GoodsSectionBox>
       <Title>2024 SISO Goods</Title>
       <ImgBox>
-        <div>3/3 OPEN!</div>
+        <img src={SisoGoodsWeb} alt="Siso-Goods-Image" />
       </ImgBox>
     </GoodsSectionBox>
   );
@@ -27,16 +28,8 @@ const Title = styled.h1`
 const ImgBox = styled.div`
   gap: 1rem;
 
-  & > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+  & > img {
     width: 100%;
-    height: 40rem;
-
-    color: ${({ theme }) => theme.colors.grey};
-    ${({ theme }) => theme.fonts.title1};
   }
 `;
 
