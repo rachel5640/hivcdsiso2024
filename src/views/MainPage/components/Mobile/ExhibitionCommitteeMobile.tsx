@@ -34,7 +34,7 @@ const CommiteeMobileBox = styled.div`
 
     width: 100%;
     padding: 0.5rem 0;
-    border-bottom: 1px solid black;
+    border-bottom: 1.5px solid black;
   }
 
   & > div > h1 {
