@@ -9,33 +9,41 @@
 <summary> 📁 폴더 구조 </summary>
 <div markdown="1">
 
+
+```bash
+./src
+├── 📦 pages
+│   ├── 📂 Desktop
+│   	├── ArchivePageDesktop.tsx
+│   	├── ExhibitionPageDesktop.tsx
+│   	├── LecturePageDesktop.tsx
+│   	├── ProjectPageDesktop.tsx
+│   	└── MainPageDesktop.tsx
+│   ├── 📂 Mobile
+│   	├── ArchivePageMobile.tsx
+│   	├── ExhibitionPageMobile.tsx
+│   	├── LecturePageMobile.tsx
+│   	├── ProjectPageMobile.tsx
+│   	└── MainPageMobile.tsx
+├── 📦 views
+│   ├── 📂 @common
+│   	├── 📂 assets
+│   	├── 📂 componenents
+│   	├── 📂 consant
+│   	└── 📂 utils
+│   ├── 📂 ExhibitionPage
+│   ├── 📂 LecturePage
+│   ├── 📂 MainPage
+│   └── 📂 ProjectPage
+├── 📦 styles
+│   ├── GlobalStyle.ts
+│   ├── style.d.ts
+│   └── Theme.ts
+├── App.tsx
+└── main.jsx
 ```
-|-- 📁 node_modules
-|-- 📁 public
-|-- 📁 src
-  |-- 📁 components
-	|-- 📁 pages
-	|-- 📁 libs
-    |-- 📁 hooks
-    |-- 📁 api
-  |-- 📁 constants
-	|-- 📁 assets
-		|-- 📁 icon
-	|-- 📁 style
-		|-- GlobalStyle.ts
-		|-- theme.ts
-    |-- style.d.ts
-	|-- App.jsx
-	|-- main.jsx
-	|-- Router.jsx
-|-- .eslintrc.cjs
-|-- .gitignore
-|-- index.html
-|-- package.json
-|-- README.md
-|-- vite.config.js
-|-- yarn.lock
-```
+
+
 
 </div>
 </details>
