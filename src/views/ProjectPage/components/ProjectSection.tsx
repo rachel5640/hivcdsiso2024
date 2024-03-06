@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Loading from '../../@common/components/Loading';
 import { TEAM_EXHIBITION_INFO } from '../constants/text';
 import { DATA_SETS } from '../../MainPage/constant/ProjectData';
@@ -18,13 +18,26 @@ const ProjectSection = ({ index, navbarheight }: ProjectSectionProps) => {
   const [loading, setLoading] = useState(true);
   const [expandedItemIndex, setExpandedItemIndex] = useState(-1);
   const currentDataSet = DATA_SETS[index] || [];
+  const textAreaRef = useRef<HTMLDivElement>(null);
 
   const handleListItemClick = (index: number) => {
     setExpandedItemIndex(index === expandedItemIndex ? -1 : index);
+    window.scrollTo(0, 0);
   };
 
   useEffect(() => {
-    setExpandedItemIndex(-1);
+    if (textAreaRef.current) {
+      textAreaRef.current.scrollTop = 0;
+    }
+  }, [index, expandedItemIndex]);
+
+  useEffect(() => {
+    setExpandedItemIndex((prevIndex) => {
+      if (prevIndex !== index) {
+        return -1;
+      }
+      return prevIndex;
+    });
   }, [index]);
 
   return (
@@ -47,7 +60,7 @@ const ProjectSection = ({ index, navbarheight }: ProjectSectionProps) => {
       <LineBox>
         <Line />
       </LineBox>
-      <TextArea $isexpanded={expandedItemIndex >= 0}>
+      <TextArea $isexpanded={expandedItemIndex >= 0} ref={textAreaRef}>
         {expandedItemIndex >= 0 && currentDataSet.length > 0 && currentDataSet[expandedItemIndex] ? (
           <>
             <TitleBox>
@@ -104,9 +117,9 @@ const ListItem = styled.div<{ $isdimmed: boolean }>`
   align-items: center;
 
   width: 100%;
-  height: 16rem;
-  padding: 2rem 0;
-  border-bottom: 3px solid black;
+  height: 15rem;
+  padding: 1.5rem 0;
+  border-bottom: 2.5px solid black;
 
   background-color: ${({ $isdimmed, theme }) => ($isdimmed ? theme.colors.grey : theme.colors.white)};
 
@@ -184,6 +197,7 @@ const TextArea = styled.section<{ $isexpanded: boolean }>`
   width: ${({ $isexpanded }) => ($isexpanded ? '58%' : '39%')};
   height: 100%;
   margin-bottom: 2rem;
+  padding-top: 0;
   padding-bottom: 2rem;
   border-top: 3px solid;
 

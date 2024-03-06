@@ -44,7 +44,6 @@ const NavigationBar = ({ page, onChangePage, getNavBarHeight }: NavigationBarPro
         if (height !== navbarHeight) {
           setNavBarHeight(height);
           getNavBarHeight(height);
-          console.log(height);
         }
       }
     };
