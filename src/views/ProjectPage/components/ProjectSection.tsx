@@ -68,7 +68,10 @@ const ProjectSection = ({ index, navbarheight }: ProjectSectionProps) => {
               <h2>{currentDataSet[expandedItemIndex].author}</h2>
             </TitleBox>
             <TextBox>
-              <h3>{currentDataSet[expandedItemIndex].instagram}</h3>
+              {currentDataSet[expandedItemIndex].instagram !== '' && (
+                <h3>{currentDataSet[expandedItemIndex].instagram}</h3>
+              )}
+
               <p>{currentDataSet[expandedItemIndex].text}</p>
             </TextBox>
 
