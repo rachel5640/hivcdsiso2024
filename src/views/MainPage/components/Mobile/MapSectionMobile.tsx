@@ -41,7 +41,7 @@ const MapSectionMobileBox = styled.section`
     margin-top: 2rem;
     margin-bottom: 1.8rem;
     padding-bottom: 1rem;
-    border-bottom: 1.5px solid black;
+    border-bottom: 1.75px solid black;
   }
 `;
 

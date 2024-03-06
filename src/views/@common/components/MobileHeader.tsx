@@ -104,7 +104,7 @@ const MenuItem = styled.section<MobileHeaderProps>`
 
     height: 5.2rem;
     padding: 0 0 0 1.6rem;
-    border-bottom: 1.5px solid black;
+    border-bottom: 1.75px solid black;
 
     background-color: ${({ theme }) => theme.colors.white};
     ${({ theme }) => theme.fonts.label3};
@@ -114,7 +114,7 @@ const MenuItem = styled.section<MobileHeaderProps>`
   }
 
   & > div:first-child {
-    border-top: 1.5px solid black;
+    border-top: 1.75px solid black;
   }
 `;
 

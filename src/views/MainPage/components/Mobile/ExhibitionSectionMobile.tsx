@@ -42,7 +42,7 @@ const Title = styled.h1`
 
   margin-bottom: 0.8rem;
   padding-top: 0.8rem;
-  border-top: 1.5px solid black;
+  border-top: 1.75px solid black;
 `;
 
 const Description = styled.div`
@@ -54,10 +54,10 @@ const Description = styled.div`
 const ExhibitionInfo = styled.div`
   width: 100%;
   padding: 0.8rem 0;
-  border-top: 2px solid black;
+  border-top: 1.75px solid black;
 
   &:last-child {
-    border-bottom: 2px solid black;
+    border-bottom: 1.75px solid black;
   }
 
   & > div {
