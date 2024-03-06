@@ -5,6 +5,7 @@ export const DATA_SETS = [
       thumbnail: 'https://i.imgur.com/lLYBwbh.jpeg',
       title: 'Catching Time',
       author: '허은제',
+      instagram: '@hun.je',
       text: '누구도 흘러가는 시간 속에서 자유로울 수 없다. 그래서 시간을 인지하여 포착하는 것이 중요하다. 달력과 시계는 사람들에게 유의미한 시간을 붙잡게 하여 먼 미래까지 계획할 수 있는 새로운 패러다임을 제시했다.',
       image: [
         'https://i.imgur.com/JPy197i.jpeg',
@@ -18,6 +19,7 @@ export const DATA_SETS = [
       title: 'Catching Time',
       author: '허은제',
       text: '글자설명',
+      instagram: '@hun.je',
       image: ['imageurl2', 'url'],
     },
     {
@@ -25,6 +27,7 @@ export const DATA_SETS = [
       title: 'Catching Time',
       author: '허은제',
       text: '글자설명',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2', 'url'],
     },
     {
@@ -32,6 +35,7 @@ export const DATA_SETS = [
       title: 'Catching Time',
       author: '허은제',
       text: '글자설명',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2', 'url'],
     },
     {
@@ -39,6 +43,7 @@ export const DATA_SETS = [
       title: 'Catching Time',
       author: '허은제',
       text: '글자설명',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2', 'url'],
     },
     {
@@ -46,6 +51,7 @@ export const DATA_SETS = [
       title: 'Catching Time',
       author: '허은제',
       text: '글자설명',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2', 'url'],
     },
     {
@@ -53,6 +59,7 @@ export const DATA_SETS = [
       title: 'Catching Time',
       author: '허은제',
       text: '글자설명',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2', 'url'],
     },
     {
@@ -60,6 +67,7 @@ export const DATA_SETS = [
       title: 'Catching Time',
       author: '허은제',
       text: '글자설명',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2', 'url'],
     },
   ],
@@ -70,6 +78,7 @@ export const DATA_SETS = [
       title: 'Title 1',
       author: 'Author 1',
       text: 'Description 1',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2'],
     },
     {
@@ -77,6 +86,7 @@ export const DATA_SETS = [
       title: 'Title 2',
       author: 'Author 2',
       text: 'Description 2',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2'],
     },
     {
@@ -84,6 +94,7 @@ export const DATA_SETS = [
       title: 'Title 2',
       author: 'Author 2',
       text: 'Description 2',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2'],
     },
     {
@@ -91,6 +102,7 @@ export const DATA_SETS = [
       title: 'Title 2',
       author: 'Author 2',
       text: 'Description 2',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2'],
     },
     {
@@ -98,6 +110,7 @@ export const DATA_SETS = [
       title: 'Title 2',
       author: 'Author 2',
       text: 'Description 2',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2'],
     },
     {
@@ -105,6 +118,7 @@ export const DATA_SETS = [
       title: 'Title 2',
       author: 'Author 2',
       text: 'Description 2',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2'],
     },
     {
@@ -112,6 +126,7 @@ export const DATA_SETS = [
       title: 'Title 2',
       author: 'Author 2',
       text: 'Description 2',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2'],
     },
     {
@@ -119,6 +134,7 @@ export const DATA_SETS = [
       title: 'Title 2',
       author: 'Author 2',
       text: 'Description 2',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2'],
     },
   ],
@@ -129,6 +145,7 @@ export const DATA_SETS = [
       title: '아이레이',
       author: 'Author 1',
       text: 'Description 1',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2'],
     },
     {
@@ -136,6 +153,7 @@ export const DATA_SETS = [
       title: 'Title 2',
       author: 'Author 2',
       text: 'Description 2',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2'],
     },
   ],
@@ -146,6 +164,7 @@ export const DATA_SETS = [
       title: '야즈',
       author: 'Author 1',
       text: 'Description 1',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2'],
     },
     {
@@ -153,6 +172,7 @@ export const DATA_SETS = [
       title: 'Title 2',
       author: 'Author 2',
       text: 'Description 2',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2'],
     },
   ],
@@ -163,6 +183,7 @@ export const DATA_SETS = [
       title: 'Title 1',
       author: 'Author 1',
       text: 'Description 1',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2'],
     },
     {
@@ -170,6 +191,7 @@ export const DATA_SETS = [
       title: 'Title 2',
       author: 'Author 2',
       text: 'Description 2',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2'],
     },
   ],
@@ -180,6 +202,7 @@ export const DATA_SETS = [
       title: 'Title 1',
       author: 'Author 1',
       text: 'Description 1',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2'],
     },
     {
@@ -187,6 +210,7 @@ export const DATA_SETS = [
       title: 'Title 2',
       author: 'Author 2',
       text: 'Description 2',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2'],
     },
   ],
@@ -197,6 +221,7 @@ export const DATA_SETS = [
       title: 'Title 1',
       author: 'Author 1',
       text: 'Description 1',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2'],
     },
     {
@@ -204,6 +229,7 @@ export const DATA_SETS = [
       title: 'Title 2',
       author: 'Author 2',
       text: 'Description 2',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2'],
     },
   ],
@@ -214,6 +240,7 @@ export const DATA_SETS = [
       title: 'Title 1',
       author: 'Author 1',
       text: 'Description 1',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2'],
     },
     {
@@ -221,6 +248,7 @@ export const DATA_SETS = [
       title: 'Title 2',
       author: 'Author 2',
       text: 'Description 2',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2'],
     },
   ],
@@ -232,6 +260,7 @@ export const DATA_SETS = [
       title: 'Title 1',
       author: 'Author 1',
       text: 'Description 1',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2'],
     },
     {
@@ -239,6 +268,7 @@ export const DATA_SETS = [
       title: 'Title 2',
       author: 'Author 2',
       text: 'Description 2',
+      instagram: '@hun.je',
       image: ['imageurl1', 'imageurl2'],
     },
   ],

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { useState, useEffect, useRef } from 'react';
 import Loading from '../../@common/components/Loading';
 import { TEAM_EXHIBITION_INFO } from '../constants/text';
-import { DATA_SETS } from '../../MainPage/constant/ProjectData';
+import { DATA_SETS } from '../../ExhibitionPage/constant/ProjectData';
 
 interface ProjectSectionProps {
   index: number;
@@ -67,7 +67,11 @@ const ProjectSection = ({ index, navbarheight }: ProjectSectionProps) => {
               <h1>{currentDataSet[expandedItemIndex].title}</h1>
               <h2>{currentDataSet[expandedItemIndex].author}</h2>
             </TitleBox>
-            <p>{currentDataSet[expandedItemIndex].text}</p>
+            <TextBox>
+              <h3>{currentDataSet[expandedItemIndex].instagram}</h3>
+              <p>{currentDataSet[expandedItemIndex].text}</p>
+            </TextBox>
+
             {loading && <Loading />}
             {currentDataSet[expandedItemIndex].image.map((url, index) => (
               <img key={index} src={url} alt={`Image ${index + 1}`} onLoad={() => setLoading(false)} />
@@ -173,7 +177,7 @@ const TitleBox = styled.div`
   align-items: center;
 
   width: 100%;
-  margin: 1.4rem 0;
+  margin: 1.4rem 0 0;
 
   & > h1 {
     ${({ theme }) => theme.fonts.title3};
@@ -221,6 +225,28 @@ const TextArea = styled.section<{ $isexpanded: boolean }>`
     word-break: keep-all;
 
     margin-top: 1.5rem;
+  }
+`;
+
+const TextBox = styled.section`
+  display: flex;
+  flex-direction: column;
+
+  & > p {
+    ${({ theme }) => theme.fonts.body5};
+
+    word-break: keep-all;
+
+    margin-top: 1rem;
+  }
+
+  & > h3 {
+    ${({ theme }) => theme.fonts.body7};
+
+    margin: -1.2rem 0 1.8rem;
+
+    color: ${({ theme }) => theme.colors.darkgrey};
+    text-align: right;
   }
 `;
 

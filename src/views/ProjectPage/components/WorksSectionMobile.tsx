@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { forwardRef } from 'react';
 import { useState } from 'react';
 import { IcExitBlack } from '../../@common/assets';
-import { DATA_SETS } from '../../MainPage/constant/ProjectData';
+import { DATA_SETS } from '../../ExhibitionPage/constant/ProjectData';
 import Loading from '../../@common/components/Loading';
 
 interface ModalOverlayProps {
@@ -14,6 +14,7 @@ interface DataProps {
   author: string;
   text: string;
   image: string[];
+  instagram: string;
 }
 
 interface WorksSectionMobileProps {
@@ -55,7 +56,11 @@ const WorksSectionMobile = forwardRef<HTMLDivElement, WorksSectionMobileProps>((
           </button>
         </TitleArea>
         <ModalContent>
-          <h2>{selectedWork?.author}</h2>
+          <div>
+            <h2>{selectedWork?.author}</h2>
+            <h3>{selectedWork?.instagram}</h3>
+          </div>
+
           <p>{selectedWork?.text}</p>
           {loading && <Loading />}
           {selectedWork?.image.map((url, index) => (
@@ -140,12 +145,22 @@ const ModalOverlay = styled.div<ModalOverlayProps>`
 `;
 
 const ModalContent = styled.div`
-  margin-top: 1.8rem;
-
-  & > h2 {
+  & > div > h2 {
     ${({ theme }) => theme.fonts.body8_1}
+  }
 
-    margin-bottom: 1.5rem;
+  & > div > h3 {
+    ${({ theme }) => theme.fonts.body11}
+
+    margin-left: 0.5rem;
+  }
+
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
   }
 
   & > img {
@@ -153,11 +168,15 @@ const ModalContent = styled.div`
     margin-top: 0.5rem;
   }
 
+  & > img:last-child {
+    margin-bottom: 2rem;
+  }
+
   & > p {
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
     word-break: none;
 
-    margin-bottom: 4rem;
+    margin-bottom: 0.7rem;
 
     ${({ theme }) => theme.fonts.body8_1}
   }
