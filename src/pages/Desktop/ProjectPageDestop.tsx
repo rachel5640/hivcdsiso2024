@@ -7,9 +7,17 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { useState } from 'react';
-import DesktopFooter from '../../views/@common/components/DestopFooter';
+
+interface ProjectPageBoxProps {
+  navbarheight: number;
+}
 
 const ProjectPageDesktop = () => {
+  const [navbarheight, setNavBarHeight] = useState<number>(0);
+  const getNavBarHeight = (height: number) => {
+    setNavBarHeight(height);
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -25,21 +33,20 @@ const ProjectPageDesktop = () => {
     <>
       <DesktopHeader />
 
-      <ProjectPageBox>
-        <NavigationBar page={currentPage} onChangePage={handleChangePage} />
-        <ProjectSection index={currentPage} />
+      <ProjectPageBox navbarheight={navbarheight}>
+        <NavigationBar page={currentPage} onChangePage={handleChangePage} getNavBarHeight={getNavBarHeight} />
+        <ProjectSection index={currentPage} navbarheight={navbarheight} />
       </ProjectPageBox>
-
-      <DesktopFooter />
     </>
   );
 };
 
-const ProjectPageBox = styled.section`
-  position: relative;
+const ProjectPageBox = styled.section<ProjectPageBoxProps>`
+  position: fixed;
+  top: 7.6rem;
 
   width: 100vw;
-  margin-top: 7.6rem;
+  margin: 0;
 `;
 
 export default ProjectPageDesktop;

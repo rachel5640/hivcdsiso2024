@@ -6,9 +6,14 @@ import { DATA_SETS } from '../../MainPage/constant/ProjectData';
 
 interface ProjectSectionProps {
   index: number;
+  navbarheight: number;
 }
 
-const ProjectSection = ({ index }: ProjectSectionProps) => {
+interface ProjectSectionWrapperProps {
+  navbarheight: number;
+}
+
+const ProjectSection = ({ index, navbarheight }: ProjectSectionProps) => {
   const exhibitionInfo = TEAM_EXHIBITION_INFO[index];
   const [loading, setLoading] = useState(true);
   const [expandedItemIndex, setExpandedItemIndex] = useState(-1);
@@ -23,7 +28,7 @@ const ProjectSection = ({ index }: ProjectSectionProps) => {
   }, [index]);
 
   return (
-    <ProjectSectionWrapper>
+    <ProjectSectionWrapper navbarheight={navbarheight}>
       <ProjectList $isexpanded={expandedItemIndex >= 0}>
         {currentDataSet.map((item, index) => (
           <ListItem
@@ -74,26 +79,23 @@ const ProjectSection = ({ index }: ProjectSectionProps) => {
   );
 };
 
-const ProjectSectionWrapper = styled.section`
-  display: grid;
-  position: sticky;
-  top: 7.6rem;
+const ProjectSectionWrapper = styled.section<ProjectSectionWrapperProps>`
+  display: flex;
 
   width: 100%;
-  height: 100%;
+  height: calc(100vh - ${({ navbarheight }) => navbarheight}px - 7.6rem);
   margin-top: 2rem;
   padding: 0 8.2rem;
-
-  grid-column-gap: 1rem;
-  grid-template-columns: repeat(36, 1fr);
 `;
 
 const ProjectList = styled.section<{ $isexpanded: boolean }>`
-  min-height: calc(100vh - 16.4rem);
-  border-top: 3px solid;
-  grid-column: ${({ $isexpanded }) => ($isexpanded ? 'span 15' : 'span 20')};
+  overflow: scroll;
 
-  transition: grid-column 0.5s ease-in-out;
+  width: ${({ $isexpanded }) => ($isexpanded ? '39%' : '58%')};
+  height: 100%;
+  border-top: 3px solid;
+
+  transition: width 0.3s ease-in-out;
 `;
 
 const ListItem = styled.div<{ $isdimmed: boolean }>`
@@ -147,10 +149,12 @@ const LineBox = styled.div`
   display: flex;
   justify-content: center;
 
-  grid-column: span 1;
+  width: 3%;
+  height: 100%;
 `;
 
 const TitleBox = styled.div`
+  display: flex;
   justify-content: space-between;
   align-items: center;
 
@@ -162,25 +166,26 @@ const TitleBox = styled.div`
   }
 
   & > h2 {
-    ${({ theme }) => theme.fonts.body5};
+    ${({ theme }) => theme.fonts.body3};
   }
 `;
 
 const Line = styled.div`
   width: 3px;
-  height: 99%;
+  height: 95%;
 
   background-color: black;
 `;
 const TextArea = styled.section<{ $isexpanded: boolean }>`
+  overflow: scroll;
   top: 0;
 
+  width: ${({ $isexpanded }) => ($isexpanded ? '58%' : '39%')};
+  height: 100%;
   margin-bottom: 2rem;
   border-top: 3px solid;
 
-  transition: grid-column 0.5s ease-in-out;
-
-  grid-column: ${({ $isexpanded }) => ($isexpanded ? 'span 20' : 'span 15')};
+  transition: width 0.3s ease-in-out;
 
   & > img {
     width: 100%;
@@ -205,12 +210,11 @@ const TextArea = styled.section<{ $isexpanded: boolean }>`
 
 const ParticipantBox = styled.div`
   display: grid;
-  grid-template-columns: 1fr 3fr;
-
   gap: 10px;
 
   margin-top: 2.1rem;
   margin-bottom: 2rem;
+  grid-template-columns: 1fr 3fr;
 
   & > h1 {
     ${({ theme }) => theme.fonts.body4};
