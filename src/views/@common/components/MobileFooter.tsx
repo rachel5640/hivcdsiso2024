@@ -31,7 +31,7 @@ const MobileFooterBox = styled.div`
   justify-content: space-between;
 
   padding: 0.7rem 0;
-  border-top: 1.5px solid black;
+  border-top: 2px solid black;
 
   background-color: ${({ theme }) => theme.colors.white};
 

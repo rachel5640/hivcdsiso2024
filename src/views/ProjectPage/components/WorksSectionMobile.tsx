@@ -47,24 +47,22 @@ const WorksSectionMobile = forwardRef<HTMLDivElement, WorksSectionMobileProps>((
           </TextArea>
         </List>
       ))}
-      {selectedWork && (
-        <ModalOverlay $ismodalopen={ismodalopen}>
-          <TitleArea>
-            <h1>{selectedWork.title}</h1>
-            <button onClick={handleModalClose} type="button">
-              <IcExitBlack />
-            </button>
-          </TitleArea>
-          <ModalContent>
-            <h2>{selectedWork.author}</h2>
-            {loading && <Loading />}
-            {selectedWork.image.map((url, index) => (
-              <img key={index} src={url} alt={`Image ${index + 1}`} onLoad={() => setLoading(false)} />
-            ))}
-            <p>{selectedWork.text}</p>
-          </ModalContent>
-        </ModalOverlay>
-      )}
+      <ModalOverlay $ismodalopen={ismodalopen}>
+        <TitleArea>
+          <h1>{selectedWork?.title}</h1>
+          <button onClick={handleModalClose} type="button">
+            <IcExitBlack />
+          </button>
+        </TitleArea>
+        <ModalContent>
+          <h2>{selectedWork?.author}</h2>
+          <p>{selectedWork?.text}</p>
+          {loading && <Loading />}
+          {selectedWork?.image.map((url, index) => (
+            <img key={index} src={url} alt={`Image ${index + 1}`} onLoad={() => setLoading(false)} />
+          ))}
+        </ModalContent>
+      </ModalOverlay>
     </WorksSectionLayout>
   );
 });
@@ -81,12 +79,12 @@ const List = styled.div`
   width: 100%;
   height: 11.2rem;
   padding: 0.5rem 0;
-  border-top: 1.5px solid;
+  border-top: 2px solid;
 
   cursor: pointer;
 
   &:last-child {
-    border-bottom: 1.5px solid;
+    border-bottom: 2px solid;
   }
 `;
 

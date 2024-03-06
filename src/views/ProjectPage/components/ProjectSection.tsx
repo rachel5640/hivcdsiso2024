@@ -93,6 +93,7 @@ const ProjectList = styled.section<{ $isexpanded: boolean }>`
 
   width: ${({ $isexpanded }) => ($isexpanded ? '39%' : '58%')};
   height: 100%;
+  padding-bottom: 2rem;
   border-top: 3px solid;
 
   transition: width 0.3s ease-in-out;
@@ -183,6 +184,7 @@ const TextArea = styled.section<{ $isexpanded: boolean }>`
   width: ${({ $isexpanded }) => ($isexpanded ? '58%' : '39%')};
   height: 100%;
   margin-bottom: 2rem;
+  padding-bottom: 2rem;
   border-top: 3px solid;
 
   transition: width 0.3s ease-in-out;
