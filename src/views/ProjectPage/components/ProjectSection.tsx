@@ -19,21 +19,28 @@ const ProjectSection = ({ index, navbarheight }: ProjectSectionProps) => {
   const [expandedItemIndex, setExpandedItemIndex] = useState(-1);
   const currentDataSet = DATA_SETS[index] || [];
   const textAreaRef = useRef<HTMLDivElement>(null);
+  const projectListRef = useRef<HTMLDivElement>(null);
 
+  //클릭시 해당 내용으로 텍스트 변경 및 scroll top
   const handleListItemClick = (index: number) => {
     setExpandedItemIndex(index === expandedItemIndex ? -1 : index);
     window.scrollTo(0, 0);
   };
 
+  //오른쪽 TextArea ScrollTop
   useEffect(() => {
     if (textAreaRef.current) {
       textAreaRef.current.scrollTop = 0;
     }
   }, [index, expandedItemIndex]);
 
+  //왼쪽 List ScrollTop, 기본 전시 정보로 세팅
   useEffect(() => {
     setExpandedItemIndex((prevIndex) => {
       if (prevIndex !== index) {
+        if (projectListRef.current) {
+          projectListRef.current.scrollTop = 0;
+        }
         return -1;
       }
       return prevIndex;
@@ -42,7 +49,7 @@ const ProjectSection = ({ index, navbarheight }: ProjectSectionProps) => {
 
   return (
     <ProjectSectionWrapper navbarheight={navbarheight}>
-      <ProjectList $isexpanded={expandedItemIndex >= 0}>
+      <ProjectList $isexpanded={expandedItemIndex >= 0} ref={projectListRef}>
         {currentDataSet.map((item, index) => (
           <ListItem
             key={index}
