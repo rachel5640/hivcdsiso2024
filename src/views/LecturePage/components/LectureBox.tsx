@@ -84,7 +84,7 @@ const Lecturebox = ({
 
 const LectureBoxWrapper = styled.div<LectureBoxWrapperProps>`
   width: 100%;
-  border-bottom: 2px solid;
+  border-bottom: ${({ $ismobile }) => ($ismobile ? '1.75px solid black' : '2.5px solid black')};
 
   cursor: pointer;
   word-break: keep-all;
