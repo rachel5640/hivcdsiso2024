@@ -94,7 +94,7 @@ const List = styled.div`
 `;
 
 const Thumbnail = styled.img`
-  width: 13.6rem;
+  min-width: 13.6rem;
 
   background-color: grey;
   object-fit: cover;
@@ -117,6 +117,7 @@ const TextArea = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
+  width: calc(100% - 15rem);
   margin-left: 1.5rem;
 
   & > h1 {
@@ -125,6 +126,12 @@ const TextArea = styled.div`
 
   & > h2 {
     ${({ theme }) => theme.fonts.body8_2};
+
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
   }
 `;
 
