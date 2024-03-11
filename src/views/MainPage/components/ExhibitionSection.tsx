@@ -54,7 +54,7 @@ const ExhibitionInfoBox = styled.div`
 `;
 const ExhibitionInfo = styled.div`
   padding: 1rem 0;
-  border-top: 2px solid black;
+  border-top: 2.5px solid black;
 
   & > h1 {
     ${({ theme }) => theme.fonts.title4};
@@ -66,7 +66,7 @@ const ExhibitionInfo = styled.div`
     ${({ theme }) => theme.fonts.body1};
 
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid;
+    border-bottom: 2.5px solid;
     word-break: keep-all;
   }
 
@@ -81,8 +81,8 @@ const ExhibitionInfoList = styled.div`
   display: flex;
 
   padding: 1rem 0;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  border-top: 2.5px solid black;
+  border-bottom: 2.5px solid black;
 `;
 
 export default ExhibitionSection;

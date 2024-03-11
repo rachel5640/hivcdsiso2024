@@ -40,7 +40,7 @@ const EventSectionBox = styled.section`
 
     margin-bottom: 1.8rem;
     padding-bottom: 1rem;
-    border-bottom: 1.5px solid black;
+    border-bottom: 1.75px solid black;
     border-style: solid;
     word-break: keep-all;
   }

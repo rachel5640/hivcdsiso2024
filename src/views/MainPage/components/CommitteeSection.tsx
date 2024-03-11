@@ -28,7 +28,7 @@ const Title = styled.h1`
 
   margin-bottom: 2.4rem;
   padding-bottom: 1.3rem;
-  border-bottom: 2px solid;
+  border-bottom: 2.5px solid;
 `;
 
 const TextBox = styled.div`
@@ -44,7 +44,7 @@ const TextList = styled.div`
   grid-template-columns: repeat(2, 1fr);
 
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid;
+  border-bottom: 2.5px solid;
 
   & > h1 {
     ${({ theme }) => theme.fonts.body1};

@@ -165,8 +165,8 @@ const TimeLineSheet = styled.div<{ $ismobile?: boolean }>`
 
   & > div {
     height: ${({ $ismobile }) => ($ismobile ? '2.4rem' : '4rem')};
-    border-top: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
-    border-color: ${({ theme }) => theme.colors.darkgrey};
+    border-top: ${({ $ismobile }) => ($ismobile ? '1.75px solid ' : '2.5px solid')};
+    border-color: black;
   }
 
   & > div:nth-child(12n-5),
@@ -176,11 +176,11 @@ const TimeLineSheet = styled.div<{ $ismobile?: boolean }>`
   & > div:nth-child(12n-1),
   & > div:nth-child(12n) {
     border-top: 1.5px dashed;
-    border-color: ${({ theme }) => theme.colors.darkgrey};
+    border-color: black;
   }
 
   & > div:nth-child(n + 79):nth-child(-n + 84) {
-    border-bottom: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
+    border-bottom: ${({ $ismobile }) => ($ismobile ? '1.75px solid ' : '2.5px solid')};
   }
 `;
 
@@ -206,8 +206,8 @@ const TimeLineSheetChecked = styled.div<{ $ismobile?: boolean }>`
 
   & > div:nth-child(18) {
     height: ${({ $ismobile }) => ($ismobile ? '9.6rem' : '16rem')};
-    border-top: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
-    border-color: ${({ theme }) => theme.colors.darkgrey};
+    border-top: ${({ $ismobile }) => ($ismobile ? '1.75px solid ' : '2.5px solid')};
+    border-color: black;
 
     background-color: ${({ theme }) => theme.colors.lightgreen};
     grid-row-end: span 4;
@@ -217,8 +217,8 @@ const TimeLineSheetChecked = styled.div<{ $ismobile?: boolean }>`
 
   & > div:nth-child(35) {
     height: ${({ $ismobile }) => ($ismobile ? '9.6rem' : '16rem')};
-    border-top: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
-    border-color: ${({ theme }) => theme.colors.darkgrey};
+    border-top: ${({ $ismobile }) => ($ismobile ? '1.75px solid ' : '2.5px solid')};
+    border-color: black;
 
     background-color: ${({ theme }) => theme.colors.purple};
     grid-row-end: span 4;
@@ -228,8 +228,8 @@ const TimeLineSheetChecked = styled.div<{ $ismobile?: boolean }>`
 
   & > div:nth-child(36) {
     height: ${({ $ismobile }) => ($ismobile ? '9.6rem' : '16rem')};
-    border-top: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
-    border-color: ${({ theme }) => theme.colors.darkgrey};
+    border-top: ${({ $ismobile }) => ($ismobile ? '1.75px solid ' : '2.5px solid')};
+    border-color: black;
 
     background-color: ${({ theme }) => theme.colors.red};
     grid-row-end: span 4;
@@ -239,8 +239,8 @@ const TimeLineSheetChecked = styled.div<{ $ismobile?: boolean }>`
 
   & > div:nth-child(38) {
     height: ${({ $ismobile }) => ($ismobile ? '9.6rem' : '16rem')};
-    border-top: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
-    border-color: ${({ theme }) => theme.colors.darkgrey};
+    border-top: ${({ $ismobile }) => ($ismobile ? '1.75px solid ' : '2.5px solid')};
+    border-color: black;
 
     background-color: ${({ theme }) => theme.colors.yellow};
     grid-row-end: span 4;
@@ -250,9 +250,9 @@ const TimeLineSheetChecked = styled.div<{ $ismobile?: boolean }>`
 
   & > div:nth-child(50) {
     height: ${({ $ismobile }) => ($ismobile ? '9.6rem' : '16rem')};
-    border-top: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
-    border-bottom: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
-    border-color: ${({ theme }) => theme.colors.darkgrey};
+    border-top: ${({ $ismobile }) => ($ismobile ? '1.75px solid ' : '2.5px solid')};
+    border-bottom: ${({ $ismobile }) => ($ismobile ? '1.75px solid ' : '2.5px solid')};
+    border-color: black;
 
     background-color: ${({ theme }) => theme.colors.blue};
     grid-row-end: span 4;
@@ -262,9 +262,9 @@ const TimeLineSheetChecked = styled.div<{ $ismobile?: boolean }>`
 
   & > div:nth-child(51) {
     height: ${({ $ismobile }) => ($ismobile ? '9.6rem' : '16rem')};
-    border-top: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
-    border-bottom: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
-    border-color: ${({ theme }) => theme.colors.darkgrey};
+    border-top: ${({ $ismobile }) => ($ismobile ? '1.75px solid ' : '2.5px solid')};
+    border-bottom: ${({ $ismobile }) => ($ismobile ? '1.75px solid ' : '2.5px solid')};
+    border-color: black;
 
     background-color: ${({ theme }) => theme.colors.orange};
 
@@ -275,9 +275,9 @@ const TimeLineSheetChecked = styled.div<{ $ismobile?: boolean }>`
 
   & > div:nth-child(52) {
     height: ${({ $ismobile }) => ($ismobile ? '9.6rem' : '16rem')};
-    border-top: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
-    border-bottom: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
-    border-color: ${({ theme }) => theme.colors.darkgrey};
+    border-top: ${({ $ismobile }) => ($ismobile ? '1.75px solid ' : '2.5px solid')};
+    border-bottom: ${({ $ismobile }) => ($ismobile ? '1.75px solid ' : '2.5px solid')};
+    border-color: black;
 
     background-color: ${({ theme }) => theme.colors.skyblue};
     grid-row-end: span 4;
@@ -287,9 +287,9 @@ const TimeLineSheetChecked = styled.div<{ $ismobile?: boolean }>`
 
   & > div:nth-child(53) {
     height: ${({ $ismobile }) => ($ismobile ? '9.6rem' : '16rem')};
-    border-top: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
-    border-bottom: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
-    border-color: ${({ theme }) => theme.colors.darkgrey};
+    border-top: ${({ $ismobile }) => ($ismobile ? '1.75px solid ' : '2.5px solid')};
+    border-bottom: ${({ $ismobile }) => ($ismobile ? '1.75px solid ' : '2.5px solid')};
+    border-color: black;
 
     background-color: ${({ theme }) => theme.colors.teal};
     grid-row-end: span 4;
@@ -299,9 +299,9 @@ const TimeLineSheetChecked = styled.div<{ $ismobile?: boolean }>`
 
   & > div:nth-child(54) {
     height: ${({ $ismobile }) => ($ismobile ? '9.6rem' : '16rem')};
-    border-top: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
-    border-bottom: ${({ $ismobile }) => ($ismobile ? '2px solid ' : '2.5px solid')};
-    border-color: ${({ theme }) => theme.colors.darkgrey};
+    border-top: ${({ $ismobile }) => ($ismobile ? '1.75px solid ' : '2.5px solid')};
+    border-bottom: ${({ $ismobile }) => ($ismobile ? '1.75px solid ' : '2.5px solid')};
+    border-color: black;
 
     background-color: ${({ theme }) => theme.colors.pink};
     grid-row-end: span 4;
