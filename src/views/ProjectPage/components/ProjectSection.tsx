@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import Loading from '../../@common/components/Loading';
 import { TEAM_EXHIBITION_INFO } from '../constants/text';
 import { DATA_SETS } from '../../ExhibitionPage/constant/ProjectData';
+import Pagination from 'react-js-pagination';
 
 interface ProjectSectionProps {
   index: number;
@@ -15,16 +16,26 @@ interface ProjectSectionWrapperProps {
 
 const ProjectSection = ({ index, navbarheight }: ProjectSectionProps) => {
   const exhibitionInfo = TEAM_EXHIBITION_INFO[index];
+  const itemsPerPage = 10;
   const [loading, setLoading] = useState(true);
   const [expandedItemIndex, setExpandedItemIndex] = useState(-1);
   const currentDataSet = DATA_SETS[index] || [];
   const textAreaRef = useRef<HTMLDivElement>(null);
   const projectListRef = useRef<HTMLDivElement>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const displayedItems = currentDataSet.slice(startIndex, endIndex);
 
   //클릭시 해당 내용으로 텍스트 변경 및 scroll top
   const handleListItemClick = (index: number) => {
     setExpandedItemIndex(index === expandedItemIndex ? -1 : index);
     window.scrollTo(0, 0);
+  };
+
+  const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
   };
 
   //오른쪽 TextArea ScrollTop
@@ -50,11 +61,11 @@ const ProjectSection = ({ index, navbarheight }: ProjectSectionProps) => {
   return (
     <ProjectSectionWrapper navbarheight={navbarheight}>
       <ProjectList $isexpanded={expandedItemIndex >= 0} ref={projectListRef}>
-        {currentDataSet.map((item, index) => (
+        {displayedItems.map((item, index) => (
           <ListItem
             key={index}
             onClick={() => handleListItemClick(index)}
-            $isdimmed={expandedItemIndex >= 0 && index == expandedItemIndex}>
+            $isdimmed={expandedItemIndex >= 0 && index === expandedItemIndex}>
             <ListImg src={item.thumbnail} alt={item.title} />
             <ProjectText>
               <h1>{item.title}</h1>
@@ -63,6 +74,15 @@ const ProjectSection = ({ index, navbarheight }: ProjectSectionProps) => {
           </ListItem>
         ))}
       </ProjectList>
+      <PageinationBox>
+        <Pagination
+          activePage={currentPage}
+          itemsCountPerPage={itemsPerPage}
+          totalItemsCount={currentDataSet.length}
+          pageRangeDisplayed={5} // 선택 가능한 페이지 수
+          onChange={handlePageChange}
+        />
+      </PageinationBox>
 
       <LineBox>
         <Line />
@@ -195,6 +215,54 @@ const TitleBox = styled.div`
 
   & > h2 {
     ${({ theme }) => theme.fonts.body3};
+  }
+`;
+
+const PageinationBox = styled.div`
+  .pagination {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 15px;
+  }
+
+  ul {
+    list-style: none;
+
+    padding: 0;
+  }
+
+  ul.pagination li {
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 30px;
+    height: 30px;
+  }
+
+  ul.pagination li:first-child {
+    border-radius: 5px 0 0 5px;
+  }
+
+  ul.pagination li:last-child {
+    border-radius: 0 5px 5px 0;
+  }
+
+  ul.pagination li a {
+    ${({ theme }) => theme.fonts.label1};
+
+    text-decoration: none;
+  }
+
+  ul.pagination li.active a {
+    color: black;
+  }
+
+  ul.pagination li a:hover,
+  ul.pagination li a.active {
+    color: black;
   }
 `;
 

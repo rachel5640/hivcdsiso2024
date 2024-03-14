@@ -722,6 +722,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-js-pagination@^3.0.7":
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/@types/react-js-pagination/-/react-js-pagination-3.0.7.tgz#6091facccc45584908a5cc959b784e2d65066a02"
+  integrity sha512-h16F5eFcVaTO5LTT5jJrvK8SxTlxkuv03ZKt/e6L3GPng/0TZTqhEKEyD8F5XksLeKBalsS1tTN2foJLWv/6mA==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-responsive@^8.0.8":
   version "8.0.8"
   resolved "https://registry.yarnpkg.com/@types/react-responsive/-/react-responsive-8.0.8.tgz#e351be7cc4d03bc476075839922bb5f9a3094e76"
