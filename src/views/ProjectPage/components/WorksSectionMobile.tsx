@@ -14,7 +14,8 @@ interface DataProps {
   author: string;
   text: string;
   image: string[];
-  instagram: string;
+  instagram: string[];
+  video: string[];
 }
 
 interface WorksSectionMobileProps {
