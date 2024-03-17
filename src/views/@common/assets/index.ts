@@ -15,6 +15,7 @@ import CommiteeBtn from './commitee_btn.svg?react';
 import EventBtn from './event_btn.svg?react';
 import GoodsBtn from './goods_btn.svg?react';
 import InfoBtn from './info_btn.svg?react';
+import IcLink from './ic_link.svg?react';
 
 export { OurIndexLogo };
 export { ArchiveBtn };
@@ -30,3 +31,4 @@ export { GoodsBtn };
 export { InfoBtn };
 export { IcChevronBtn };
 export { IcExitBlack };
+export { IcLink };
