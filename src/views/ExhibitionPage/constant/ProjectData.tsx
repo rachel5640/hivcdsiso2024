@@ -73,7 +73,7 @@ export const DATA_SETS = [
       instagram: ['soo.a.khy.m'],
       image: [
         'https://imgur.com/atYBY4R.jpg',
-        'https://imgur.com/XBlrWKf.jpg',
+        'https://imgur.com/f3SEW2N.jpg',
         'https://imgur.com/u7XhW9S.jpg',
         'https://imgur.com/23BJivz.jpg',
         'https://imgur.com/axTdSf3.jpg',
