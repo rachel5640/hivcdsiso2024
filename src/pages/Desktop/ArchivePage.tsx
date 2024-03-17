@@ -1,8 +1,8 @@
-import styled from 'styled-components';
 import DesktopHeader from '../../views/@common/components/DesktopHeader';
 import DesktopFooter from '../../views/@common/components/DestopFooter';
 import { useEffect } from 'react';
-
+import styled from 'styled-components';
+import ImageSection from '../../views/ArchivePage/constant/components/components/ImageSection';
 const ArchiveDesktopPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -10,23 +10,24 @@ const ArchiveDesktopPage = () => {
   return (
     <>
       <DesktopHeader />
-      <ArchivePageBox>Comming Soon!</ArchivePageBox>
-      <DesktopFooter $isfixed={true} />
+      <ImageSectionBox>
+        <ImageSection />
+      </ImageSectionBox>
+      <DesktopFooter />
     </>
   );
 };
-const ArchivePageBox = styled.section`
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  width: 100vw;
-  height: 80dvh;
-  padding: 0 8.2rem;
+const ImageSectionBox = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 
-  color: ${({ theme }) => theme.colors.grey};
+  padding: 13rem 8.2rem 3rem;
+  grid-gap: 1.3rem;
 
-  ${({ theme }) => theme.fonts.title1};
+  & > img {
+    width: 100%;
+  }
 `;
 
 export default ArchiveDesktopPage;

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { useEffect } from 'react';
 import MobileHeader from '../../views/@common/components/MobileHeader';
 import MobileFooter from '../../views/@common/components/MobileFooter';
+import ImageSection from '../../views/ArchivePage/constant/components/components/ImageSection';
 
 const ArchivePageMobile = () => {
   useEffect(() => {
@@ -10,23 +11,27 @@ const ArchivePageMobile = () => {
   return (
     <>
       <MobileHeader />
-      <Dummy>Comming Soon!</Dummy>
-      <MobileFooter $isfixed={true} />
+      <ImageBoxMobile>
+        <ImageSection />
+      </ImageBoxMobile>
+      <MobileFooter />
     </>
   );
 };
 
-const Dummy = styled.p`
-  display: flex;
+const ImageBoxMobile = styled.div`
   justify-content: center;
   align-items: center;
 
-  width: 100vw;
-  height: 80vh;
+  width: 100%;
+  padding: 0 1.6rem;
+  padding-top: 5rem;
+  padding-bottom: 1rem;
 
-  color: ${({ theme }) => theme.colors.grey};
-  text-align: center;
-  ${({ theme }) => theme.fonts.title2};
+  & > img {
+    width: 100%;
+    margin-bottom: 0.3rem;
+  }
 `;
 
 export default ArchivePageMobile;

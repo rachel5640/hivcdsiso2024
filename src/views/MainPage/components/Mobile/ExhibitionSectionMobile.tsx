@@ -38,7 +38,7 @@ const Poster = styled.img`
 
 const Title = styled.h1`
   width: 100%;
-  ${({ theme }) => theme.fonts.body6};
+  ${({ theme }) => theme.fonts.body7};
 
   margin-bottom: 0.8rem;
   padding-top: 0.8rem;

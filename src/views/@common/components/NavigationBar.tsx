@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { BUTTON_TEXT } from '../constant/text';
 import TeamInfo from '../../ProjectPage/components/TeamInfo';
+import { useEffect, useRef, useState } from 'react';
 
 type ThemeColorKeys =
   | 'orange'
@@ -25,15 +26,38 @@ interface TeamButtonProps {
 interface NavigationBarProps {
   page: number;
   onChangePage: (page: number) => void;
+  getNavBarHeight: (height: number) => void;
 }
 
-const NavigationBar = ({ page, onChangePage }: NavigationBarProps) => {
+const NavigationBar = ({ page, onChangePage, getNavBarHeight }: NavigationBarProps) => {
+  const [navbarHeight, setNavBarHeight] = useState(0);
   const handleClick = (index: number) => {
     onChangePage(index);
   };
 
+  const navigationBarRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (navigationBarRef.current) {
+        const height = navigationBarRef.current.clientHeight;
+        if (height !== navbarHeight) {
+          setNavBarHeight(height);
+          getNavBarHeight(height);
+        }
+      }
+    };
+
+    handleResize(); // 초기 높이 설정
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [navigationBarRef, navbarHeight, getNavBarHeight]);
+
   return (
-    <FixedBar>
+    <FixedBar ref={navigationBarRef}>
       <NavigationBarBox>
         {BUTTON_TEXT.map((button, index) => (
           <TeamButton

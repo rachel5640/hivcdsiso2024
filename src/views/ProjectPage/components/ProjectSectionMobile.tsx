@@ -1,16 +1,17 @@
 import styled from 'styled-components';
 import { useState } from 'react';
+import { forwardRef } from 'react';
 import { TEAM_EXHIBITION_INFO } from '../constants/text';
 import Loading from '../../@common/components/Loading';
 interface ProjectSectionMobileProps {
   index: number;
 }
 
-const ProjectSectionMobile = ({ index }: ProjectSectionMobileProps) => {
+const ProjectSectionMobile = forwardRef<HTMLDivElement, ProjectSectionMobileProps>(({ index }, ref) => {
   const [loading, setLoading] = useState(true);
   const exhibitionInfo = TEAM_EXHIBITION_INFO[index];
   return (
-    <div>
+    <div ref={ref}>
       {loading && <Loading />}
       <Poster src={exhibitionInfo.image} alt={exhibitionInfo.Title} onLoad={() => setLoading(false)} />
       <TextArea>
@@ -25,11 +26,11 @@ const ProjectSectionMobile = ({ index }: ProjectSectionMobileProps) => {
       </TextArea>
     </div>
   );
-};
+});
 
 const Poster = styled.img`
   width: 100%;
-  margin-top: 6.7rem;
+  padding-top: 8.8rem;
 `;
 const TextArea = styled.section`
   margin-top: 2rem;
@@ -53,7 +54,6 @@ const ParticipantBox = styled.div`
 
   width: 100%;
   margin-top: 2.1rem;
-  margin-bottom: 2rem;
   grid-template-columns: 1fr 3fr;
 
   & > h1 {

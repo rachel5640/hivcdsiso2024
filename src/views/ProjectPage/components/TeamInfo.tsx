@@ -24,7 +24,7 @@ const TeamInfoBox = styled.div`
 `;
 
 const TeamExplanationBox = styled.div`
-  ${({ theme }) => theme.fonts.body5};
+  ${({ theme }) => theme.fonts.body6};
 
   margin-right: 5.7rem;
   word-break: keep-all;

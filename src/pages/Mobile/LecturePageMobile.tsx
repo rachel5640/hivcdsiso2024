@@ -53,6 +53,6 @@ const LecturePageMobileSection = styled.section`
 
 const LectureBoxWrapper = styled.section`
   width: 100%;
-  margin-top: 5rem;
+  padding-top: 5rem;
 `;
 export default LecturePageMobile;
