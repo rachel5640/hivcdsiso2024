@@ -77,6 +77,7 @@ const WorksSectionMobile = forwardRef<HTMLDivElement, WorksSectionMobileProps>((
           {selectedWork?.image.map((url, index) => (
             <img key={index} src={url} alt={`Image ${index + 1}`} onLoad={() => setLoading(false)} />
           ))}
+          {selectedWork?.video.map((url, index) => <iframe key={index} src={url} />)}
         </ModalContent>
       </ModalOverlay>
     </WorksSectionLayout>
@@ -204,6 +205,11 @@ const ModalContent = styled.div`
     margin-bottom: 0.7rem;
 
     ${({ theme }) => theme.fonts.body8_1}
+  }
+
+  & > iframe {
+    width: 100%;
+    height: 20rem;
   }
 `;
 
