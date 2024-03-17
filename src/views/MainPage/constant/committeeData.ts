@@ -8,4 +8,5 @@ export const COMMITTEE_DATA = [
   { category: '연사초청팀', members: '이일여, 박서연' },
   { category: '예산팀', members: '김주현, 정우성, 이주아' },
   { category: '웹팀', members: '강민서' },
+  { category: '포토팀', members: '김지원, 양정원' },
 ];

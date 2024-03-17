@@ -31,6 +31,7 @@ const ProjectSection = ({ index, navbarheight }: ProjectSectionProps) => {
 
   //클릭시 해당 내용으로 텍스트 변경 및 scroll top
   const handleListItemClick = (index: number) => {
+    setProjectLoading(true);
     const dataIndex = startIndex + index;
     setExpandedItemIndex(dataIndex === expandedItemIndex ? -1 : dataIndex);
     window.scrollTo(0, 0);
@@ -41,11 +42,11 @@ const ProjectSection = ({ index, navbarheight }: ProjectSectionProps) => {
     setCurrentPage(pageNumber);
     if (projectListRef.current) {
       projectListRef.current.scrollTop = 0;
+      setProjectLoading(true);
     }
     window.scrollTo(0, 0);
   };
 
-  //오른쪽 TextArea ScrollTop
   useEffect(() => {
     if (textAreaRef.current) {
       textAreaRef.current.scrollTop = 0;
@@ -66,6 +67,32 @@ const ProjectSection = ({ index, navbarheight }: ProjectSectionProps) => {
     setCurrentPage(1);
   }, [index]);
 
+  useEffect(() => {
+    if (expandedItemIndex >= 0 && expandedItemIndex < currentDataSet.length) {
+      const images = currentDataSet[expandedItemIndex]?.image || [];
+      if (images.length === 0) {
+        setProjectLoading(false); // 이미지가 없는 경우에도 로딩 상태 해제
+      } else {
+        let loadedCount = 0; // 각 이미지의 로딩 상태를 추적하기 위한 변수
+        images.forEach((url) => {
+          const img = new Image();
+          img.src = url;
+          img.onload = () => {
+            loadedCount++;
+            if (loadedCount === images.length) {
+              setProjectLoading(false); // 모든 이미지가 로딩된 후에 로딩 상태 해제
+            }
+          };
+          img.onerror = () => {
+            setProjectLoading(false); // 이미지 로딩 실패 시에도 로딩 상태 해제
+          };
+        });
+      }
+    } else {
+      setProjectLoading(false); // 확장된 아이템이 없는 경우에도 로딩 상태 해제
+    }
+  }, [expandedItemIndex, currentDataSet]);
+
   return (
     <ProjectSectionWrapper navbarheight={navbarheight}>
       <ProjectList $isexpanded={expandedItemIndex >= 0} ref={projectListRef}>
@@ -81,64 +108,82 @@ const ProjectSection = ({ index, navbarheight }: ProjectSectionProps) => {
             </ProjectText>
           </ListItem>
         ))}
-        <PageinationBox>
-          <Pagination
-            activePage={currentPage}
-            itemsCountPerPage={itemsPerPage}
-            totalItemsCount={currentDataSet.length}
-            pageRangeDisplayed={5} // 선택 가능한 페이지 수
-            prevPageText={''}
-            nextPageText={''}
-            firstPageText={''}
-            lastPageText={''}
-            onChange={handlePageChange}
-          />
-        </PageinationBox>
+        {currentDataSet.length > itemsPerPage && (
+          <PageinationBox>
+            <Pagination
+              activePage={currentPage}
+              itemsCountPerPage={itemsPerPage}
+              totalItemsCount={currentDataSet.length}
+              pageRangeDisplayed={5} // 선택 가능한 페이지 수
+              prevPageText={''}
+              nextPageText={''}
+              firstPageText={''}
+              lastPageText={''}
+              onChange={handlePageChange}
+            />
+          </PageinationBox>
+        )}
       </ProjectList>
 
       <LineBox>
         <Line />
       </LineBox>
       <TextArea $isexpanded={expandedItemIndex >= 0} ref={textAreaRef}>
-        {expandedItemIndex >= 0 && currentDataSet.length > 0 && currentDataSet[expandedItemIndex] ? (
-          <>
-            <TitleBox>
-              <h1>{currentDataSet[expandedItemIndex].title}</h1>
-              <h2>{currentDataSet[expandedItemIndex].author}</h2>
-            </TitleBox>
-            <TextBox>
-              {currentDataSet[expandedItemIndex].instagram.length !== 0 && (
-                <h3>{currentDataSet[expandedItemIndex].instagram}</h3>
-              )}
-
-              <p>{currentDataSet[expandedItemIndex].text}</p>
-            </TextBox>
-
-            {projectloading && <Loading />}
-            <ImageBox>
-              {currentDataSet[expandedItemIndex].image.map((url, index) => (
-                <img key={index} src={url} alt={`Image ${index + 1}`} onLoad={() => setProjectLoading(false)} />
-              ))}
-            </ImageBox>
-            <VideoBox>
-              {currentDataSet[expandedItemIndex].video.map((url, index) => (
-                <iframe key={index} src={url} />
-              ))}
-            </VideoBox>
-          </>
+        {expandedItemIndex >= 0 && projectloading ? (
+          <Loading />
         ) : (
           <>
-            <h1>{exhibitionInfo.Title}</h1>
-            <p>{exhibitionInfo.text}</p>
-            <ParticipantBox>
-              <h1>아트디렉터</h1>
-              <h2>{exhibitionInfo.artdirector}</h2>
-              <h1>참여자</h1>
-              <h2>{exhibitionInfo.participant}</h2>
-            </ParticipantBox>
-            {loading && <Loading />}
+            {expandedItemIndex >= 0 && currentDataSet.length > 0 && currentDataSet[expandedItemIndex] ? (
+              <>
+                <TitleBox>
+                  <h1>{currentDataSet[expandedItemIndex].title}</h1>
+                  {index !== 1 && <h2>{currentDataSet[expandedItemIndex].author}</h2>}
+                </TitleBox>
+                <TextBox>
+                  {currentDataSet[expandedItemIndex].instagram.length !== 0 && (
+                    <div>
+                      {currentDataSet[expandedItemIndex].instagram.map((username, index) => (
+                        <div>
+                          <a href={`https://www.instagram.com/${username}`} target="_blank">
+                            @{username}
+                          </a>
+                          {index !== currentDataSet[expandedItemIndex].instagram.length - 1 && <span>, </span>}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  <p>{currentDataSet[expandedItemIndex].text}</p>
+                </TextBox>
 
-            <img src={exhibitionInfo.image} alt={exhibitionInfo.Title} onLoad={() => setLoading(false)} />
+                {projectloading && <Loading />}
+                <ImageBox>
+                  <div>
+                    {currentDataSet[expandedItemIndex].image.map((url, index) => (
+                      <img key={index} src={url} alt={`Image ${index + 1}`} onLoad={() => setProjectLoading(false)} />
+                    ))}
+                  </div>
+                </ImageBox>
+                <VideoBox>
+                  {currentDataSet[expandedItemIndex].video.map((url, index) => (
+                    <iframe key={index} src={url} />
+                  ))}
+                </VideoBox>
+              </>
+            ) : (
+              <>
+                <h1>{exhibitionInfo.Title}</h1>
+                <p>{exhibitionInfo.text}</p>
+                <ParticipantBox>
+                  <h1>아트디렉터</h1>
+                  <h2>{exhibitionInfo.artdirector}</h2>
+                  <h1>참여자</h1>
+                  <h2>{exhibitionInfo.participant}</h2>
+                </ParticipantBox>
+                {loading && <Loading />}
+
+                <img src={exhibitionInfo.image} alt={exhibitionInfo.Title} onLoad={() => setLoading(false)} />
+              </>
+            )}
           </>
         )}
       </TextArea>
@@ -159,7 +204,7 @@ const ProjectList = styled.section<{ $isexpanded: boolean }>`
   overflow: scroll;
   scroll-behavior: smooth;
 
-  width: ${({ $isexpanded }) => ($isexpanded ? '39%' : '58%')};
+  width: ${({ $isexpanded }) => ($isexpanded ? '42%' : '51%')};
   height: 100%;
   padding-bottom: 2rem;
   border-top: 3px solid;
@@ -242,15 +287,16 @@ const TitleBox = styled.div`
 `;
 
 const ImageBox = styled.div`
-  display: grid;
+  display: flex;
 
   width: 100%;
   margin-top: 2rem;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
 
-  & > img {
+  & > div > img {
+    flex-basis: auto;
+
     width: 100%;
+    margin-bottom: 0.3rem;
   }
 `;
 
@@ -259,8 +305,8 @@ const VideoBox = styled.div`
 
   & > iframe {
     width: 100%;
-    height: 55rem;
-    margin-top: 2rem;
+    height: 50rem;
+    margin-top: 0.3rem;
   }
 `;
 
@@ -329,7 +375,7 @@ const TextArea = styled.section<{ $isexpanded: boolean }>`
   overflow: scroll;
   top: 0;
 
-  width: ${({ $isexpanded }) => ($isexpanded ? '58%' : '39%')};
+  width: ${({ $isexpanded }) => ($isexpanded ? '51%' : '42%')};
   height: 100%;
   margin-bottom: 2rem;
   padding-top: 0;
@@ -373,13 +419,33 @@ const TextBox = styled.section`
     white-space: pre-wrap;
   }
 
-  & > h3 {
+  & > div {
+    display: flex;
+    justify-content: flex-end;
+
+    width: 100%;
+    margin-top: -1rem;
+  }
+
+  & > div > div {
+    align-items: right;
+    float: right;
+    right: 0;
+  }
+
+  & > div > div > a {
+    margin-left: 0.5rem;
     ${({ theme }) => theme.fonts.body7};
 
-    margin: -1.2rem 0 1.8rem;
+    color: ${({ theme }) => theme.colors.darkgrey};
+
+    cursor: pointer;
+  }
+
+  & > div > div > span {
+    ${({ theme }) => theme.fonts.body7};
 
     color: ${({ theme }) => theme.colors.darkgrey};
-    text-align: right;
   }
 `;
 

@@ -59,7 +59,17 @@ const WorksSectionMobile = forwardRef<HTMLDivElement, WorksSectionMobileProps>((
         <ModalContent>
           <div>
             <h2>{selectedWork?.author}</h2>
-            <h3>{selectedWork?.instagram}</h3>
+            {selectedWork?.instagram.length !== 0 && (
+              <div>
+                {selectedWork?.instagram.map((username, index) => (
+                  <div>
+                    <a href={`https://www.instagram.com/${username}`} target="_blank" key={index}>
+                      @{username}
+                    </a>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           <p>{selectedWork?.text}</p>
@@ -157,7 +167,15 @@ const ModalContent = styled.div`
     ${({ theme }) => theme.fonts.body8_1}
   }
 
-  & > div > h3 {
+  & > div > div > div > a {
+    ${({ theme }) => theme.fonts.body11}
+
+    margin-left: 0.5rem;
+
+    color: black;
+  }
+
+  & > div > div > div > span {
     ${({ theme }) => theme.fonts.body11}
 
     margin-left: 0.5rem;
@@ -166,7 +184,6 @@ const ModalContent = styled.div`
   & > div {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 
     width: 100%;
   }
@@ -181,7 +198,7 @@ const ModalContent = styled.div`
   }
 
   & > p {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     word-break: none;
 
     margin-bottom: 0.7rem;
