@@ -152,6 +152,7 @@ const ProjectSection = ({ index, navbarheight }: ProjectSectionProps) => {
                       ))}
                     </div>
                   )}
+                  <LineWidth />
                   <p>{currentDataSet[expandedItemIndex].text}</p>
                 </TextBox>
 
@@ -421,20 +422,27 @@ const TextBox = styled.section`
 
   & > div {
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
 
     width: 100%;
-    margin-top: -1rem;
+    margin-top: -0.8rem;
   }
 
   & > div > div {
     align-items: right;
     float: right;
     right: 0;
+
+    width: 100%;
+    margin-top: -0.4rem;
+
+    text-align: right;
   }
 
   & > div > div > a {
-    margin-left: 0.5rem;
+    width: 100%;
+
     ${({ theme }) => theme.fonts.body7};
 
     color: ${({ theme }) => theme.colors.darkgrey};
@@ -449,6 +457,11 @@ const TextBox = styled.section`
   }
 `;
 
+const LineWidth = styled.div`
+  width: 100%;
+  padding-top: 1.5rem;
+  border-bottom: 2.5px solid;
+`;
 const ParticipantBox = styled.div`
   display: grid;
   gap: 10px;
