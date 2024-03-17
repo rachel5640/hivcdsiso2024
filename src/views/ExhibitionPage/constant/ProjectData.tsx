@@ -67,7 +67,9 @@ export const DATA_SETS = [
         'https://imgur.com/eh3CehH.jpg',
       ],
       video: [],
-      link: [],
+      link: [
+        'https://www.figma.com/proto/7nJ4AC0tKelAjujmcWmxgy/UWW?page-id=0%3A1&type=design&node-id=13-116&viewport=12%2C7%2C0.07&t=0OAcpDkHsm1kxWoE-1&scaling=contain&starting-point-node-id=13%3A116',
+      ],
     },
     {
       thumbnail: 'https://imgur.com/VupPff6.jpg',
@@ -84,6 +86,7 @@ export const DATA_SETS = [
         'https://imgur.com/RV9m2no.jpg',
       ],
       video: ['https://www.youtube.com/embed/uId97Qz3Jfs?si=pnf8BM2B-3rlvf1B'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/bLzXKjL.jpg',
@@ -155,7 +158,7 @@ export const DATA_SETS = [
         'https://imgur.com/DWq15ab.jpg',
       ],
       video: [],
-      link: [],
+      link: ['https://smore.im/quiz/h02nr2m9DS'],
     },
     {
       thumbnail: 'https://imgur.com/3KLoZe9.jpg',
@@ -249,6 +252,7 @@ export const DATA_SETS = [
         'https://imgur.com/CEDkDi7.jpg',
       ],
       video: ['https://www.youtube.com/embed/hOuLFsYohdM?si=8xDugjzTX_nXyj0o'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/y5ZTh5M.jpg',
@@ -286,6 +290,7 @@ export const DATA_SETS = [
         'https://imgur.com/8oIgEfU.jpg',
       ],
       video: ['https://www.youtube.com/embed/iyj9D2249xU?si=DNqjgU9vFXPcyvlF'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/ZRubcjD.jpg',
@@ -343,6 +348,7 @@ export const DATA_SETS = [
         'https://imgur.com/QlK1HsX.jpg',
       ],
       video: ['https://www.youtube.com/embed/DmTyrAGV0z0?si=m6V3dq4u8XO4rocF'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/Ga4fYcb.jpg',
@@ -442,6 +448,7 @@ export const DATA_SETS = [
       instagram: ['mmockkingjay'],
       image: ['https://imgur.com/OxspG33.jpg', 'https://imgur.com/GVp7K5G.jpg'],
       video: ['https://player.vimeo.com/video/902037245?h=0260e25fc8'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/wuoqd2e.jpg',
@@ -451,6 +458,7 @@ export const DATA_SETS = [
       instagram: ['mmockkingjay'],
       image: ['https://imgur.com/21yp0y4.jpg', 'https://imgur.com/1592Dc6.jpg'],
       video: ['https://player.vimeo.com/video/902036368?h=fc3635f7f2'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/OCxbcIc.jpg',
@@ -467,6 +475,7 @@ export const DATA_SETS = [
         'https://imgur.com/pVJVk1S.jpg',
       ],
       video: ['https://www.youtube.com/embed/JUM0iANC-FA?si=rqRFGSk1GpKa63BP'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/3Aw5ajD.jpg',
@@ -487,6 +496,7 @@ export const DATA_SETS = [
         'https://imgur.com/EXJr18S.jpg',
       ],
       video: ['https://www.youtube.com/embed/1CWFl0FNNEM?si=etTRCacF0lkuEqyD'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/SmfUoTq.jpg',
@@ -505,6 +515,7 @@ export const DATA_SETS = [
         'https://imgur.com/UjDudLK.jpg',
       ],
       video: ['https://www.youtube.com/embed/0bnj-SuNkhQ?si=FZHHesTyaIbnBjbp.jpg'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/UvLbmi4.jpg',
@@ -514,6 +525,7 @@ export const DATA_SETS = [
       instagram: ['dvonhong'],
       image: ['https://imgur.com/U4bi8PM.jpg', 'https://imgur.com/o0HIbP9.jpg', 'https://imgur.com/UvLbmi4.jpg'],
       video: ['https://www.youtube.com/embed/zgJGUo6gvXA?si=P8NSGDWURF8Mmurm'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/GwCHIai.jpg',
@@ -524,6 +536,7 @@ export const DATA_SETS = [
       instagram: ['dvonhong', 'violetmoviewave'],
       image: ['https://imgur.com/JyaXBz8.jpg', 'https://imgur.com/GwCHIai.jpg', 'https://imgur.com/gNpbLv5.jpg'],
       video: ['https://www.youtube.com/embed/E462KLVfYnQ?si=MoiZBkUX07snyoHV'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/uCx9oSb.jpg',
@@ -557,6 +570,7 @@ export const DATA_SETS = [
         'https://imgur.com/o66rlnT.jpg',
       ],
       video: ['https://www.youtube.com/embed/pXAThH5BIkM?si=njewzqs0TDiux99S'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/2IQRA61.jpg',
@@ -572,6 +586,7 @@ export const DATA_SETS = [
         'https://imgur.com/IpVZi5w.jpg',
       ],
       video: ['https://www.youtube.com/embed/1r-7Wl0HJuY?si=IDzYU_sbXOItMllB'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/qyIKusV.jpg',
@@ -581,6 +596,7 @@ export const DATA_SETS = [
       instagram: ['ashkm237'],
       image: ['https://imgur.com/JvxAM7D.jpg', 'https://imgur.com/FEstAHP.jpg'],
       video: ['https://player.vimeo.com/video/918672968?h=09f906c537'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/gwKXAXQ.jpg',
@@ -590,6 +606,7 @@ export const DATA_SETS = [
       instagram: [],
       image: ['https://imgur.com/902iyaL.jpg', 'https://imgur.com/bDAJDWW.jpg'],
       video: ['https://www.youtube.com/embed/HR7sAxAGpDs?si=DAZOJADezLAMXOSs'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/LjivI6y.jpg',
@@ -599,6 +616,7 @@ export const DATA_SETS = [
       instagram: [],
       image: ['https://imgur.com/b1gLkB3.jpg', 'https://imgur.com/Y7qewLc.jpg'],
       video: ['https://www.youtube.com/embed/gG2hbKQZ4vA?si=b4N6UtWLj9q-ahRvs'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/45dTKOS.jpg',
@@ -608,6 +626,7 @@ export const DATA_SETS = [
       instagram: [],
       image: ['https://imgur.com/OqRPzOp.jpg', 'https://imgur.com/Irbxdrm.jpg'],
       video: ['https://www.youtube.com/embed/sxGpWdwRZYE?si=dcsw1OCVl5KBQZaN'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/RLmM5bV.jpg',
@@ -617,6 +636,7 @@ export const DATA_SETS = [
       instagram: ['k1rk1v'],
       image: ['https://imgur.com/RlVPBuV.jpg', 'https://imgur.com/Q0WtlPl.jpg'],
       video: ['https://www.youtube.com/embed/obPJVdUY6qo?si=-mrglIDKaCom_Zsj'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/gRI4gPk.jpg',
@@ -626,6 +646,7 @@ export const DATA_SETS = [
       instagram: [],
       image: ['https://imgur.com/fmBjmfp.jpg', 'https://imgur.com/8E66RRa.jpg'],
       video: ['https://www.youtube.com/embed/1Xmmr4LEECs?si=Lut-_D8Drk-GEqmh'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/yCBOWPU.jpg',
@@ -635,6 +656,7 @@ export const DATA_SETS = [
       instagram: [],
       image: ['https://imgur.com/EvafVVq.jpg', 'https://imgur.com/EvafVVq.jpg'],
       video: ['https://www.youtube.com/embed/9v2qvuFQwcg?si=mwZyAi-co3NJEOHm'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/zdsvOqc.jpg',
@@ -644,6 +666,7 @@ export const DATA_SETS = [
       instagram: [],
       image: ['https://imgur.com/3NCek92.jpg', 'https://imgur.com/ppgFN2Q.jpg'],
       video: ['https://www.youtube.com/embed/djt4PWgvUIU?si=Ae3MH7OiHsAwvz7z'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/DShiDyX.jpg',
@@ -653,6 +676,7 @@ export const DATA_SETS = [
       instagram: [],
       image: ['https://imgur.com/JG6Uqu6.jpg', 'https://imgur.com/QftKULc.jpg'],
       video: ['https://www.youtube.com/embed/R0ArrTLC_aI?si=v4Ty3A0TF6s6VmQW'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/jcUMMHe.jpg',
@@ -707,6 +731,7 @@ export const DATA_SETS = [
         'https://imgur.com/0JM9Y6d.jpg',
       ],
       video: ['https://www.youtube.com/embed/hRttvzLv-Ng?si=XtC3mmjN-663ttpv'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/ebbwP4P.jpg',
@@ -722,6 +747,7 @@ export const DATA_SETS = [
         'https://imgur.com/10z0Ov2.jpg',
       ],
       video: ['https://www.youtube.com/embed/X-WdlvMbNoY?si=g6kxA9nt749J0x6F'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/OEjAzvp.jpg',
@@ -778,6 +804,7 @@ export const DATA_SETS = [
         'https://imgur.com/OhUPkYB.jpg',
       ],
       video: ['https://www.youtube.com/embed/la6S6brUpak?si=XiGyVSTYHeVej6ZUs'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/gFyRA7R.jpg',
@@ -872,7 +899,7 @@ export const DATA_SETS = [
         'https://imgur.com/XioRCHr.jpg',
       ],
       video: [],
-      link: [],
+      link: ['https://drive.google.com/file/d/1hjYQIbXnxGDkykPQXXEXDgOS-4MDi3Dx/view?usp=share_link'],
     },
     {
       thumbnail: 'https://imgur.com/eMSdkgC.jpg',
@@ -887,7 +914,7 @@ export const DATA_SETS = [
         'https://imgur.com/vL1SqcM.jpg',
       ],
       video: [],
-      link: [],
+      link: ['https://readymag.website/u4090134160/4652766/'],
     },
     {
       thumbnail: 'https://imgur.com/F3rxoAP.jpg',
@@ -925,7 +952,7 @@ export const DATA_SETS = [
         'https://imgur.com/S4jrGA3.jpg',
       ],
       video: [],
-      link: [],
+      link: ['https://drive.google.com/file/d/1Y-6GLf2xJK1kBzSgexY94cVEoRHro2Hx/view?usp=sharing'],
     },
     {
       thumbnail: 'https://imgur.com/UGjZspq.jpg',
@@ -935,6 +962,7 @@ export const DATA_SETS = [
       instagram: ['swinreflect_art'],
       image: ['https://imgur.com/5f3a2fX.jpg', 'https://imgur.com/PmN1Xj8.jpg'],
       video: ['https://www.youtube.com/embed/vb8k70dWEuI?si=fcYNPZQ3asKjdkbP'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/ZX9PWKf.jpg',
@@ -988,6 +1016,7 @@ export const DATA_SETS = [
         'https://imgur.com/zPhOkxG.jpg',
       ],
       video: ['https://www.youtube.com/embed/yqlMt5sGPsg?si=t2dKOtediElwon6_'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/Mjc1gpF.jpg',
@@ -1095,6 +1124,7 @@ export const DATA_SETS = [
       instagram: ['seo__jason'],
       image: ['https://imgur.com/c6BCiyx.jpg', 'https://imgur.com/tWUV3Nj.jpg'],
       video: ['https://www.youtube.com/embed/NCndUwquEXk?si=uhQw_1J28GYL-XjE'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/kZGzI0Q.jpg',
@@ -1104,6 +1134,7 @@ export const DATA_SETS = [
       instagram: ['yunha_painting'],
       image: ['https://imgur.com/TJCKaWI.jpg'],
       video: ['https://www.youtube.com/embed/oV5p3H5v9LE?si=RClvXl621C4OTKvm'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/jEtebLq.jpg',
@@ -1161,7 +1192,7 @@ export const DATA_SETS = [
         'https://imgur.com/PZ3aBOA.jpg',
       ],
       video: [],
-      link: [],
+      link: ['https://posty.pe/qmt6eq'],
     },
     {
       thumbnail: 'https://imgur.com/LGtTMb8.jpg',
@@ -1181,7 +1212,7 @@ export const DATA_SETS = [
         'https://imgur.com/ICYMOlV.jpg',
       ],
       video: [],
-      link: [],
+      link: ['https://drive.google.com/drive/folders/1l-a2jOH6gY6lRgEhSfcPwFAVstZ0pegP'],
     },
     {
       thumbnail: 'https://imgur.com/UtEs2cy.jpg',
@@ -1294,7 +1325,7 @@ export const DATA_SETS = [
       thumbnail: 'https://imgur.com/RXp3L5n.jpg',
       image: ['https://imgur.com/U0RL78S.jpg', 'https://imgur.com/RH28ASf.jpg', 'https://imgur.com/IHUSGBa.jpg'],
       video: [],
-      link: [],
+      link: ['https://4rc-enciel3-48888.waveon.me/pages/22'],
     },
     {
       title: "Beard Papa's",
@@ -1311,7 +1342,7 @@ export const DATA_SETS = [
         'https://imgur.com/UUh1p1N.jpg',
       ],
       video: [],
-      link: [],
+      link: ['https://www.behance.net/gallery/193614081/_'],
     },
     {
       title: 'Colorize Kodak',
@@ -1358,6 +1389,7 @@ export const DATA_SETS = [
         'https://imgur.com/K99eN2u.jpg',
       ],
       video: ['https://www.youtube.com/embed/sKt5XihkBHs?si=6MNprjq2UwCrHqYe'],
+      link: [],
     },
     {
       title: '공연 산책을 위한 최고의 공원, 인터파크!',
@@ -1378,7 +1410,9 @@ export const DATA_SETS = [
         'https://imgur.com/n4OXpli.jpg',
       ],
       video: [],
-      link: [],
+      link: [
+        'https://www.figma.com/proto/tvPkAezrEzz8y3CFUh5QjC/%EC%9D%B8%ED%84%B0%ED%8C%8C%ED%81%AC%ED%8B%B0%EC%BC%93?node-id=0-1',
+      ],
     },
     {
       title: '香饗 ; [香(향기 향) / 饗(잔치할 향)]',
@@ -1438,7 +1472,9 @@ export const DATA_SETS = [
         'https://imgur.com/zgENkda.jpg',
       ],
       video: [],
-      link: [],
+      link: [
+        'https://www.figma.com/proto/PgSC6uBuUq5rq3G9jPVUUn/we-eat-with-weeat?page-id=0%3A1&type=design&node-id=1-4&viewport=825%2C376%2C0.45&t=TjaBas2ihH7gpuJW-1&scaling=scale-down-width&starting-point-node-id=1%3A4&mode=design',
+      ],
     },
     {
       title: '에이쁠 와쁠',
@@ -1509,7 +1545,7 @@ export const DATA_SETS = [
         'https://imgur.com/ZH81cCm.jpg',
       ],
       video: [],
-      link: [],
+      link: ['https://kimseeunse.github.io/Chrysalis/'],
       instagram: ['kimseeunse', 'meungse'],
     },
     {
@@ -1529,7 +1565,7 @@ export const DATA_SETS = [
       author: '배은환, 정나명',
       image: ['https://imgur.com/UcwfBiM.jpg'],
       video: [],
-      link: [],
+      link: ['https://www.behance.net/gallery/193007043/MOTI-Chat-driven-finance-management-service'],
       instagram: ['ring17ring', 'hnmy_ii'],
     },
 
@@ -1545,7 +1581,7 @@ export const DATA_SETS = [
         'https://imgur.com/qlkz9Hv.jpg',
       ],
       video: [],
-      link: [],
+      link: ['https://readymag.website/u3929919061/welcometothebodyshop/'],
       instagram: ['nuttellawaffle', 'yyyouannn'],
     },
     {
@@ -1562,6 +1598,7 @@ export const DATA_SETS = [
       ],
       video: ['https://www.youtube.com/embed/XijI73P1mrE?si=F3jr-Rzmo1P32a8h'],
       instagram: ['yoozeany'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/x0vut87.jpg',
@@ -1632,7 +1669,7 @@ export const DATA_SETS = [
         'https://imgur.com/FkEAP3R.jpg',
       ],
       video: [],
-      link: [],
+      link: ['https://soomandsoom.github.io/banner/'],
       instagram: ['s0omie', 'smywrkng'],
     },
     {
@@ -1643,6 +1680,7 @@ export const DATA_SETS = [
       image: ['https://imgur.com/CfinLmc.jpg'],
       video: ['https://www.youtube.com/embed/4p1iSBh68kA?si=m_YbGy4rri8ojeaK'],
       instagram: ['atzzil_yoon'],
+      link: [],
     },
     {
       thumbnail: 'https://imgur.com/xxKD3AX.jpg',
@@ -1673,6 +1711,7 @@ export const DATA_SETS = [
       ],
       video: ['https://www.youtube.com/embed/uHzbwMc0CFU?si=F3oWLUtl8K-8erlg'],
       instagram: ['0esign_', 'delay_.j'],
+      link: [],
     },
 
     {
@@ -1734,7 +1773,7 @@ export const DATA_SETS = [
         'https://imgur.com/rS8ZhMx.jpg',
       ],
       video: [],
-      link: [],
+      link: ['https://www.behance.net/gallery/192897763/Vinear'],
     },
     {
       thumbnail: 'https://imgur.com/hv3D1jj.jpg',
@@ -1861,6 +1900,7 @@ export const DATA_SETS = [
         'https://imgur.com/M5NALT1.jpg',
       ],
       video: ['https://player.vimeo.com/video/923634735?h=bf1060f3c1'],
+      link: [],
     },
   ],
   [

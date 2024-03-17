@@ -4,6 +4,7 @@ import Loading from '../../@common/components/Loading';
 import { TEAM_EXHIBITION_INFO } from '../constants/text';
 import { DATA_SETS } from '../../ExhibitionPage/constant/ProjectData';
 import Pagination from 'react-js-pagination';
+import { IcLink } from '../../@common/assets';
 
 interface ProjectSectionProps {
   index: number;
@@ -136,7 +137,16 @@ const ProjectSection = ({ index, navbarheight }: ProjectSectionProps) => {
             {expandedItemIndex >= 0 && currentDataSet.length > 0 && currentDataSet[expandedItemIndex] ? (
               <>
                 <TitleBox>
-                  <h1>{currentDataSet[expandedItemIndex].title}</h1>
+                  <div>
+                    <h1>{currentDataSet[expandedItemIndex].title}</h1>
+                    <span>
+                      {currentDataSet[expandedItemIndex].link.length !== 0 && (
+                        <a href={currentDataSet[expandedItemIndex].link[0]} target="_blank">
+                          <IcLink />
+                        </a>
+                      )}
+                    </span>
+                  </div>
                   {index !== 1 && <h2>{currentDataSet[expandedItemIndex].author}</h2>}
                 </TitleBox>
                 <TextBox>
@@ -273,17 +283,40 @@ const LineBox = styled.div`
 const TitleBox = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
 
   width: 100%;
   margin: 1.4rem 0 0;
 
-  & > h1 {
+  & > div > h1 {
     ${({ theme }) => theme.fonts.title3};
+
+    word-break: keep-all;
+  }
+
+  & > div {
+    display: flex;
+    align-items: center;
+  }
+
+  & > h1 > span > a {
+    margin-left: 0.4rem;
+
+    color: black;
+    text-decoration: none; /* 밑줄 제거 */
+
+    cursor: pointer;
+
+    ${({ theme }) => theme.fonts.title3};
+  }
+
+  & > h1 > span > svg {
+    width: 3rem;
   }
 
   & > h2 {
     ${({ theme }) => theme.fonts.body3};
+
+    padding-top: 0.8rem;
   }
 `;
 
@@ -418,6 +451,12 @@ const TextBox = styled.section`
     margin-top: 1rem;
 
     white-space: pre-wrap;
+  }
+
+  & > span > a {
+    ${({ theme }) => theme.fonts.body5};
+
+    text-decoration-line: underline;
   }
 
   & > div {
