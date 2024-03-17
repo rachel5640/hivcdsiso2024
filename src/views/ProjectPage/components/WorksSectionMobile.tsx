@@ -155,7 +155,7 @@ const ModalOverlay = styled.div<ModalOverlayProps>`
   z-index: 400;
 
   width: 100%;
-  height: calc(100vh - 4.8rem);
+  height: calc(100dvh - 4.8rem);
   padding: 0 1.6rem;
 
   background-color: ${({ theme }) => theme.colors.white};
