@@ -897,7 +897,7 @@ export const DATA_SETS = [
       text: '그 가게에서 훔치라고 했잖아!! 그게 뭐 어때서?!! 답 없는 ZERO와 이상한 PLUSHIE 의 만남 그리고 결과',
       instagram: ['swinreflect_art'],
       image: ['https://imgur.com/5f3a2fX.jpg', 'https://imgur.com/PmN1Xj8.jpg'],
-      video: [],
+      video: ['https://www.youtube.com/embed/vb8k70dWEuI?si=fcYNPZQ3asKjdkbP'],
     },
     {
       thumbnail: 'https://imgur.com/ZX9PWKf.jpg',
@@ -1296,7 +1296,7 @@ export const DATA_SETS = [
         'https://imgur.com/j3ERk6n.jpg',
         'https://imgur.com/K99eN2u.jpg',
       ],
-      video: [],
+      video: ['https://www.youtube.com/embed/sKt5XihkBHs?si=6MNprjq2UwCrHqYe'],
     },
     {
       title: '공연 산책을 위한 최고의 공원, 인터파크!',
@@ -1486,7 +1486,7 @@ export const DATA_SETS = [
         'https://imgur.com/POjZYr8.jpg',
         'https://imgur.com/HUBT1gC.jpg',
       ],
-      video: [],
+      video: ['https://www.youtube.com/embed/XijI73P1mrE?si=F3jr-Rzmo1P32a8h'],
       instagram: ['yoozeany'],
     },
     {
@@ -1562,7 +1562,7 @@ export const DATA_SETS = [
       text: '〈Parrotmeter〉는 아동 교육 프로그램으로, 사용자는 자연적인 진화와 인공적인 변화 사이의 차이를 통한 인간 욕망에 대한 결과를 마주합니다. 이를 통해, 자연 법칙에서 벗어나 인간의 유희로 만들어진 애완동물에 대한 고민과 성찰을 경험할 수 있습니다.',
       author: '이지윤',
       image: ['https://imgur.com/CfinLmc.jpg'],
-      video: [],
+      video: ['https://www.youtube.com/embed/4p1iSBh68kA?si=m_YbGy4rri8ojeaK'],
       instagram: ['atzzil_yoon'],
     },
     {
@@ -1591,7 +1591,7 @@ export const DATA_SETS = [
         'https://imgur.com/sphllQ8.jpg',
         'https://imgur.com/tlhLhCM.jpg',
       ],
-      video: [],
+      video: ['https://www.youtube.com/embed/uHzbwMc0CFU?si=F3oWLUtl8K-8erlg'],
       instagram: ['0esign_', 'delay_.j'],
     },
 
