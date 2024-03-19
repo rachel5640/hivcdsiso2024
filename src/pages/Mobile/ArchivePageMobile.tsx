@@ -54,6 +54,10 @@ const ImageBoxMobile = styled.div`
     margin-bottom: 0.3rem;
   }
 
+  & > div > div > img {
+    width: 100%;
+  }
+
   & > div > div {
     margin-bottom: 0.3rem;
 

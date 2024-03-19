@@ -27,7 +27,7 @@ const ProjectPageMobile = () => {
 
   return (
     <>
-      <MobileHeader isnavigate>
+      <MobileHeader isnavigate={true}>
         <Navigation>
           <div onClick={onExhibitionClick}>
             <ExhibitionBtnSmall />

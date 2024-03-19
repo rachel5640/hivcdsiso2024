@@ -41,6 +41,7 @@ const ProjectSection = ({ index, navbarheight }: ProjectSectionProps) => {
   //10개씩 자르기
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
+    setExpandedItemIndex(-1);
     if (projectListRef.current) {
       projectListRef.current.scrollTop = 0;
       setProjectLoading(true);
@@ -101,7 +102,7 @@ const ProjectSection = ({ index, navbarheight }: ProjectSectionProps) => {
           <ListItem
             key={index}
             onClick={() => handleListItemClick(index)}
-            $isdimmed={expandedItemIndex >= 0 && index === expandedItemIndex}>
+            $isdimmed={expandedItemIndex >= 0 && startIndex + index === expandedItemIndex}>
             <ListImg src={item.thumbnail} alt={item.title} />
             <ProjectText>
               <h1>{item.title}</h1>

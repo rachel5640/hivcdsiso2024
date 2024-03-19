@@ -6,7 +6,7 @@ import ImageSection from '../../views/ArchivePage/constant/components/components
 import ViewSection from '../../views/ArchivePage/constant/components/components/ViewSection';
 
 interface CategoryBtnProps {
-  isactive: boolean;
+  $isactive: boolean;
 }
 const ArchiveDesktopPage = () => {
   const [currentSection, setCurrentSection] = useState('view');
@@ -24,10 +24,10 @@ const ArchiveDesktopPage = () => {
             onClick={() => {
               setCurrentSection('view');
             }}
-            isactive={currentSection === 'view'}>
+            $isactive={currentSection === 'view'}>
             전시 전경
           </CategoryBtn>
-          <CategoryBtn type="button" onClick={() => setCurrentSection('image')} isactive={currentSection === 'image'}>
+          <CategoryBtn type="button" onClick={() => setCurrentSection('image')} $isactive={currentSection === 'image'}>
             소모임별 현장사진
           </CategoryBtn>
         </TextBox>
@@ -71,7 +71,7 @@ const CategoryBtn = styled.button<CategoryBtnProps>`
   border: 3px solid;
   border-radius: 36px;
 
-  background-color: ${({ isactive, theme }) => (isactive ? theme.colors.grey : theme.colors.white)};
+  background-color: ${({ $isactive, theme }) => ($isactive ? theme.colors.grey : theme.colors.white)};
 
   color: black;
 
