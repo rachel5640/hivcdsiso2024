@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import { forwardRef } from 'react';
 import ViewAdrenalinOne from '../assets/view_adrenalin_1.jpg';
 import ViewAdrenalinTwo from '../assets/view_adrenalin_2.jpg';
 import ViewDromapicOne from '../assets/view_dromapic_1.jpg';
@@ -17,9 +19,10 @@ import ViewIrayTwo from '../assets/view_iray_2.jpg';
 import ViewYadzOne from '../assets/view_yadz_1.jpg';
 import ViewYadzTwo from '../assets/view_yadz_2.jpg';
 
-const ImageSection = () => {
+const ImageSection = forwardRef<HTMLDivElement>((_props, ref) => {
+  const innerRef = ref || useRef(null);
   return (
-    <>
+    <div ref={innerRef}>
       <img src={ViewGreenbeeOne} alt="Greenbee View" />
       <img src={ViewGreenbeeTwo} alt="Greenbee View" />
       <img src={ViewDromapicOne} alt="Dromapic View" />
@@ -38,8 +41,8 @@ const ImageSection = () => {
       <img src={ViewHangulggolTwo} alt="Hangulggol View" />
       <img src={ViewHipsOne} alt="Hips View" />
       <img src={ViewHipsTwo} alt="Hips View" />
-    </>
+    </div>
   );
-};
+});
 
 export default ImageSection;
