@@ -276,7 +276,7 @@ export const DATA_SETS = [
       link: [],
     },
     {
-      thumbnail: 'https://hivcdsiso2024.s3.ap-northeast-2.amazonaws.com/greenbee_thumbnail_jeonjiwon_1.jpg',
+      thumbnail: 'https://hivcdsiso2024.s3.ap-northeast-2.amazonaws.com/greenbee_thumbnail_jeonjiwon.jpg',
       title: 'ememi',
       author: '전지원',
       text: 'ememi(egg me my identity)는 독보적인 커스터마이징 젤리를 선사합니다. 개성이 퇴색되며 표준화된 세상에서, 독특한 정체성을 존중함과 동시에 당신만의 개성을 성장시키는 ememi와 함께 특별하고 독창적인 존재로 거듭나세요.',
@@ -374,7 +374,7 @@ export const DATA_SETS = [
       link: [],
     },
     {
-      thumbnail: 'https://hivcdsiso2024.s3.ap-northeast-2.amazonaws.com/greenbee_thumbnail_hasumin.JPG',
+      thumbnail: 'https://hivcdsiso2024.s3.ap-northeast-2.amazonaws.com/greenbee_thumbnail_hasumin.jpg',
       title: '옅어져 사라진다',
       author: '하수민',
       text: '겨울엔 동백나무가, 봄엔 벚꽃이 아름답게 피어나 세상을 오색찬란한 빛으로 물들인다. 다채로운 색채로 자연을 가꾸어 주던 꽃잎들은 표준화된 기준에 자신을 맞추려 본래의 색을 서서히 잊어간다. 선명히 옅어져가는 꽃잎들 속에서 우리는 어떤 색의 꽃을 피워내고 싶은가.',

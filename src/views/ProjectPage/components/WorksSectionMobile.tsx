@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { forwardRef } from 'react';
 import { useState } from 'react';
-import { IcExitBlack } from '../../@common/assets';
+import { IcExitBlack, IcLinkBold } from '../../@common/assets';
 import { DATA_SETS } from '../../ExhibitionPage/constant/ProjectData';
 import Loading from '../../@common/components/Loading';
 
@@ -16,6 +16,7 @@ interface DataProps {
   image: string[];
   instagram: string[];
   video: string[];
+  link: string[];
 }
 
 interface WorksSectionMobileProps {
@@ -42,7 +43,9 @@ const WorksSectionMobile = forwardRef<HTMLDivElement, WorksSectionMobileProps>((
     <WorksSectionLayout ref={ref}>
       {dataSet.map((work: DataProps, id: number) => (
         <List key={id} onClick={() => handleModal(work)}>
-          <Thumbnail src={work.thumbnail} alt={work.title} />
+          <ThumbnailBox>
+            <Thumbnail src={work.thumbnail} alt={work.title} />
+          </ThumbnailBox>
           <TextArea>
             <h1>{work.title}</h1>
             <h2>{work.author}</h2>
@@ -51,14 +54,22 @@ const WorksSectionMobile = forwardRef<HTMLDivElement, WorksSectionMobileProps>((
       ))}
       <ModalOverlay $ismodalopen={ismodalopen}>
         <TitleArea>
-          <h1>{selectedWork?.title}</h1>
+          <div>
+            {selectedWork?.title}
+            {selectedWork?.link.length !== 0 && (
+              <a href={selectedWork?.link[0]} target="_blank">
+                <IcLinkBold />
+              </a>
+            )}
+          </div>
           <button onClick={handleModalClose} type="button">
             <IcExitBlack />
           </button>
         </TitleArea>
         <ModalContent>
           <div>
-            <h2>{selectedWork?.author}</h2>
+            {index !== 1 && <h2>{selectedWork?.author}</h2>}
+
             {selectedWork?.instagram.length !== 0 && (
               <div>
                 {selectedWork?.instagram.map((username, index) => (
@@ -105,10 +116,17 @@ const List = styled.div`
   }
 `;
 
-const Thumbnail = styled.img`
-  min-width: 13.6rem;
+const ThumbnailBox = styled.div`
+  width: 13.6rem;
+  height: 10.2rem;
 
   background-color: grey;
+`;
+
+const Thumbnail = styled.img`
+  width: 100%;
+  height: 100%;
+
   object-fit: cover;
 `;
 
@@ -119,8 +137,30 @@ const TitleArea = styled.div`
 
   margin-top: 1.7rem;
 
-  & > h1 {
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     ${({ theme }) => theme.fonts.title6};
+  }
+
+  & > div > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 2.3rem;
+    height: 2.3rem;
+    margin-left: 0.3rem;
+
+    color: black;
+
+    cursor: pointer;
+  }
+
+  & > div > a > svg {
+    margin-bottom: 0.3rem;
   }
 `;
 
@@ -165,7 +205,9 @@ const ModalOverlay = styled.div<ModalOverlayProps>`
 
 const ModalContent = styled.div`
   & > div > h2 {
-    ${({ theme }) => theme.fonts.body8_1}
+    ${({ theme }) => theme.fonts.body8_1};
+
+    word-break: keep-all;
   }
 
   & > div > div > div > a {
@@ -203,6 +245,8 @@ const ModalContent = styled.div`
     word-break: none;
 
     margin-bottom: 0.7rem;
+
+    white-space: pre-line;
 
     ${({ theme }) => theme.fonts.body8_1}
   }
