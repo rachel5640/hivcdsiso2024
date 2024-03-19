@@ -1341,8 +1341,8 @@ export const DATA_SETS = [
       instagram: ['yoonsuuuu'],
       thumbnail: 'https://hivcdsiso2024.s3.ap-northeast-2.amazonaws.com/adrenalin_thumbnail_KimYoonsu.jpg',
       image: [
-        'https://hivcdsiso2024.s3.ap-northeast-2.amazonaws.com/adrenalin_KimYoonsu_1.jpg',
-        'https://hivcdsiso2024.s3.ap-northeast-2.amazonaws.com/adrenalin_KimYoonsu_2.jpg',
+        'https://hivcdsiso2024.s3.ap-northeast-2.amazonaws.com/adrenalin_KimYoonsu_1.jpeg',
+        'https://hivcdsiso2024.s3.ap-northeast-2.amazonaws.com/adrenalin_KimYoonsu_2.jpeg',
         'https://hivcdsiso2024.s3.ap-northeast-2.amazonaws.com/adrenalin_KimYoonsu_3.jpg',
         'https://hivcdsiso2024.s3.ap-northeast-2.amazonaws.com/adrenalin_KimYoonsu_4.jpg',
         'https://hivcdsiso2024.s3.ap-northeast-2.amazonaws.com/adrenalin_KimYoonsu_5.jpg',
@@ -1358,9 +1358,9 @@ export const DATA_SETS = [
       instagram: ['ribbemee'],
       thumbnail: 'https://hivcdsiso2024.s3.ap-northeast-2.amazonaws.com/adrenalin_thumbnail_parksejin.jpg',
       image: [
-        'https://hivcdsiso2024.s3.ap-northeast-2.amazonaws.com/adrenalin_parksegin_1.jpg',
-        'https://hivcdsiso2024.s3.ap-northeast-2.amazonaws.com/adrenalin_parksegin_2.jpg',
-        'https://hivcdsiso2024.s3.ap-northeast-2.amazonaws.com/adrenalin_parksegin_3.jpg',
+        'https://hivcdsiso2024.s3.ap-northeast-2.amazonaws.com/adrenalin_parksejin_1.jpg',
+        'https://hivcdsiso2024.s3.ap-northeast-2.amazonaws.com/adrenalin_parksejin_2.jpg',
+        'https://hivcdsiso2024.s3.ap-northeast-2.amazonaws.com/adrenalin_parksejin_3.jpg',
       ],
       video: [],
       link: [],
