@@ -3,6 +3,7 @@ import MainPage from './pages/MainPage';
 import LecturePage from './pages/LecturePage';
 import ExhibitionPage from './pages/ExhibitionPage';
 import ArchivePage from './pages/ArchivePage';
+import ErrorPage from './pages/ErrorPage';
 
 import GlobalStyle from './styles/GlobalStyle';
 import theme from './styles/Theme';
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
   { path: '/Exhibition', element: <ExhibitionPage /> },
   { path: '/Archive', element: <ArchivePage /> },
   { path: '/Exhibition/Projects', element: <ProjectPage /> },
+  { path: '/*', element: <ErrorPage /> },
 ]);
 
 const App = () => {
