@@ -2004,7 +2004,7 @@ export const DATA_SETS = [
       text: '글자는 자신의 형태를 유연하게 변화시켜 주어진 환경과 매체에 적응하고, 살아남아, 번영한다. 이는 생명체의 진화(Evolution) 과정과 닮았으며 가변 글꼴이라는 매체를 통해 진화하는 글자의 모습을 표현했다.',
       instagram: ['jbprc'],
       image: [
-        'https://hivcdsiso2024.s3.ap-northeast-2.amazonaws.com/hangulggol_parkjungbin_1.gif',
+        'https://hivcdsiso2024.s3.ap-northeast-2.amazonaws.com/hangulggol_parcjungbin_1.gif',
         'https://imgur.com/EMf7VHf.jpg',
       ],
       video: [],
