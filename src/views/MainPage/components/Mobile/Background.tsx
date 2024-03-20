@@ -97,7 +97,7 @@ const LeftTop = styled.div`
   top: 0;
   left: 0;
 
-  width: 20vw;
+  width: 23vw;
   min-height: 30vh;
 
   & > svg {
@@ -126,7 +126,7 @@ const LeftTop = styled.div`
 `;
 const MiddleTop = styled.div`
   top: 0;
-  left: 26vw;
+  left: 28vw;
 
   width: 47vw;
   height: 50rem;
@@ -186,13 +186,13 @@ const LeftBottom = styled.div`
   bottom: 0;
   left: 0;
 
-  width: 35vw;
+  width: 40vw;
 
   & > svg {
     bottom: 0;
     left: 0;
 
-    width: 35vw;
+    width: 40vw;
     height: auto;
   }
 
@@ -228,7 +228,7 @@ const RightBottom = styled.div`
     right: 0;
     bottom: 0;
 
-    width: 50vw;
+    width: 60vw;
     height: auto;
   }
 
