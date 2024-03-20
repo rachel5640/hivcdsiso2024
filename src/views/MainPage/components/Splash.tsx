@@ -122,7 +122,7 @@ const LogoBox = styled.div`
   justify-content: center;
   align-items: center;
 
-  min-width: 57rem;
+  min-width: 60rem;
   max-width: 48vw;
 
   & > svg {
