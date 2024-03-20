@@ -14,10 +14,13 @@ const ArchivePageMobile = () => {
   const Clubref = useRef<HTMLDivElement>(null);
 
   const onExhibitionClick = () => {
-    Exhibitionref.current?.scrollIntoView({ behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   const onClubClick = () => {
-    Clubref.current?.scrollIntoView({ behavior: 'smooth' });
+    if (Clubref.current) {
+      const { top } = Clubref.current.getBoundingClientRect();
+      window.scrollTo({ top: window.scrollY + top + -5 * 16, behavior: 'smooth' });
+    }
   };
   return (
     <>

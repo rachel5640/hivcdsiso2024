@@ -296,7 +296,10 @@ const TitleBox = styled.div`
 
   & > div {
     display: flex;
-    align-items: center;
+  }
+
+  & > div > span {
+    margin-top: 0.3rem;
   }
 
   & > h1 > span > a {
@@ -311,13 +314,16 @@ const TitleBox = styled.div`
   }
 
   & > h1 > span > svg {
-    width: 3rem;
+    background-color: pink;
   }
 
   & > h2 {
     ${({ theme }) => theme.fonts.body3};
 
-    padding-top: 0.8rem;
+    margin-top: 0.8rem;
+    padding-top: 0.5rem;
+
+    word-break: keep-all;
   }
 `;
 
