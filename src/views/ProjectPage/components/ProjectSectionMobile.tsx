@@ -39,6 +39,7 @@ const TextArea = styled.section`
     ${({ theme }) => theme.fonts.title5};
 
     margin-bottom: 0.4rem;
+    word-break: keep-all;
   }
 
   & > p {
