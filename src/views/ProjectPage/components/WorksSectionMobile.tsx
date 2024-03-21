@@ -174,6 +174,8 @@ const TextArea = styled.div`
 
   & > h1 {
     ${({ theme }) => theme.fonts.title7};
+
+    word-break: keep-all;
   }
 
   & > h2 {
@@ -183,7 +185,7 @@ const TextArea = styled.div`
 
     white-space: nowrap;
     text-overflow: ellipsis;
-    word-break: break-all;
+    word-break: keep-all;
   }
 `;
 
@@ -242,7 +244,7 @@ const ModalContent = styled.div`
 
   & > p {
     margin-top: 2rem;
-    word-break: none;
+    word-break: keep-all;
 
     margin-bottom: 0.7rem;
 
