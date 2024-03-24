@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { forwardRef } from 'react';
 import { useState } from 'react';
-import { IcExitBlack, IcLinkBold } from '../../@common/assets';
 import { DATA_SETS } from '../../ExhibitionPage/constant/ProjectData';
-import Loading from '../../@common/components/Loading';
+import ModalContent from './ModalContent';
 
-interface ModalOverlayProps {
-  $ismodalopen: boolean;
+interface WorksSectionMobileProps {
+  index: number;
 }
+
 interface DataProps {
   thumbnail: string;
   title: string;
@@ -17,10 +17,6 @@ interface DataProps {
   instagram: string[];
   video: string[];
   link: string[];
-}
-
-interface WorksSectionMobileProps {
-  index: number;
 }
 
 const WorksSectionMobile = forwardRef<HTMLDivElement, WorksSectionMobileProps>(({ index }, ref) => {
@@ -75,45 +71,14 @@ const WorksSectionMobile = forwardRef<HTMLDivElement, WorksSectionMobileProps>((
           </TextArea>
         </List>
       ))}
-      <ModalOverlay $ismodalopen={ismodalopen}>
-        <TitleArea>
-          <div>
-            {selectedWork?.title}
-            {selectedWork?.link.length !== 0 && (
-              <a href={selectedWork?.link[0]} target="_blank">
-                <IcLinkBold />
-              </a>
-            )}
-          </div>
-          <button onClick={handleModalClose} type="button">
-            <IcExitBlack />
-          </button>
-        </TitleArea>
-        <ModalContent>
-          <div>
-            {index !== 1 && <h2>{selectedWork?.author}</h2>}
-
-            {selectedWork?.instagram.length !== 0 && (
-              <div>
-                {selectedWork?.instagram.map((username, index) => (
-                  <div>
-                    <a href={`https://www.instagram.com/${username}`} target="_blank" key={index}>
-                      @{username}
-                    </a>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <p>{selectedWork?.text}</p>
-          <LoadingBox>{imgLoading && <Loading />}</LoadingBox>
-          {selectedWork?.image.map((url, index) => (
-            <img key={index} src={url} alt={`Image ${index + 1}`} onLoad={handleImgLoading} />
-          ))}
-          {selectedWork?.video.map((url, index) => <iframe key={index} src={url} />)}
-        </ModalContent>
-      </ModalOverlay>
+      <ModalContent
+        isModalOpen={ismodalopen}
+        selectedWork={selectedWork}
+        onCloseModal={handleModalClose}
+        index={index}
+        handleImgLoading={handleImgLoading}
+        imgLoading={imgLoading}
+      />
     </WorksSectionLayout>
   );
 });
@@ -122,13 +87,6 @@ const WorksSectionLayout = styled.div`
   width: 100%;
   margin-bottom: 5rem;
   padding-top: 8.8rem;
-`;
-
-const LoadingBox = styled.div`
-  display: flex;
-  align-items: center;
-
-  width: 100%;
 `;
 
 const List = styled.div`
@@ -160,40 +118,6 @@ const Thumbnail = styled.img`
   object-fit: cover;
 `;
 
-const TitleArea = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  margin-top: 1.7rem;
-
-  & > div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    ${({ theme }) => theme.fonts.title6};
-  }
-
-  & > div > a {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    width: 2.3rem;
-    height: 2.3rem;
-    margin-left: 0.3rem;
-
-    color: black;
-
-    cursor: pointer;
-  }
-
-  & > div > a > svg {
-    margin-bottom: 0.3rem;
-  }
-`;
-
 const TextArea = styled.div`
   display: flex;
   flex-direction: column;
@@ -216,76 +140,6 @@ const TextArea = styled.div`
     white-space: nowrap;
     text-overflow: ellipsis;
     word-break: keep-all;
-  }
-`;
-
-const ModalOverlay = styled.div<ModalOverlayProps>`
-  overflow-y: scroll;
-  position: fixed;
-  top: ${({ $ismodalopen }) => ($ismodalopen ? '4.8rem' : '200dvh')};
-  left: 0;
-  z-index: 400;
-
-  width: 100%;
-  height: calc(100dvh - 4.8rem);
-  padding: 0 1.6rem;
-
-  background-color: ${({ theme }) => theme.colors.white};
-
-  transition: top 0.5s ease;
-`;
-
-const ModalContent = styled.div`
-  & > div > h2 {
-    ${({ theme }) => theme.fonts.body8_1};
-
-    word-break: keep-all;
-  }
-
-  & > div > div > div > a {
-    ${({ theme }) => theme.fonts.body11}
-
-    margin-left: 0.5rem;
-
-    color: black;
-  }
-
-  & > div > div > div > span {
-    ${({ theme }) => theme.fonts.body11}
-
-    margin-left: 0.5rem;
-  }
-
-  & > div {
-    display: flex;
-    justify-content: space-between;
-
-    width: 100%;
-  }
-
-  & > img {
-    width: 100%;
-    margin-top: 0.5rem;
-  }
-
-  & > img:last-child {
-    margin-bottom: 2rem;
-  }
-
-  & > p {
-    margin-top: 2rem;
-    word-break: keep-all;
-
-    margin-bottom: 0.7rem;
-
-    white-space: pre-line;
-
-    ${({ theme }) => theme.fonts.body8_1}
-  }
-
-  & > iframe {
-    width: 100%;
-    height: 20rem;
   }
 `;
 
