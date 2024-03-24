@@ -22,7 +22,6 @@ interface DataProps {
 const WorksSectionMobile = forwardRef<HTMLDivElement, WorksSectionMobileProps>(({ index }, ref) => {
   const [selectedWork, setSelectedWork] = useState<DataProps | null>(null);
   const [ismodalopen, setIsModal] = useState(false);
-  const [imgLoading, setImgLoading] = useState(true);
 
   const handleModal = (work: DataProps) => {
     setIsModal(true);
@@ -31,29 +30,6 @@ const WorksSectionMobile = forwardRef<HTMLDivElement, WorksSectionMobileProps>((
 
   const handleModalClose = () => {
     setIsModal(false);
-  };
-
-  const handleImgLoading = () => {
-    const images = selectedWork?.image || [];
-    if (images.length === 0) {
-      setImgLoading(false);
-    } else {
-      let loadedCount = 0;
-      images.forEach((url) => {
-        const img = new Image();
-        img.src = url;
-        img.onload = () => {
-          loadedCount++;
-          if (loadedCount === images.length) {
-            setImgLoading(false);
-          }
-        };
-        img.onerror = () => {
-          setImgLoading(false);
-        };
-      });
-    }
-    setImgLoading(false);
   };
 
   const dataSet: DataProps[] = DATA_SETS[index] || [];
@@ -76,8 +52,6 @@ const WorksSectionMobile = forwardRef<HTMLDivElement, WorksSectionMobileProps>((
         selectedWork={selectedWork}
         onCloseModal={handleModalClose}
         index={index}
-        handleImgLoading={handleImgLoading}
-        imgLoading={imgLoading}
       />
     </WorksSectionLayout>
   );
