@@ -26,7 +26,7 @@ interface WorksSectionMobileProps {
 const WorksSectionMobile = forwardRef<HTMLDivElement, WorksSectionMobileProps>(({ index }, ref) => {
   const [selectedWork, setSelectedWork] = useState<DataProps | null>(null);
   const [ismodalopen, setIsModal] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [imgLoading, setImgLoading] = useState(true);
 
   const handleModal = (work: DataProps) => {
     setIsModal(true);
@@ -35,6 +35,29 @@ const WorksSectionMobile = forwardRef<HTMLDivElement, WorksSectionMobileProps>((
 
   const handleModalClose = () => {
     setIsModal(false);
+  };
+
+  const handleImgLoading = () => {
+    const images = selectedWork?.image || [];
+    if (images.length === 0) {
+      setImgLoading(false);
+    } else {
+      let loadedCount = 0;
+      images.forEach((url) => {
+        const img = new Image();
+        img.src = url;
+        img.onload = () => {
+          loadedCount++;
+          if (loadedCount === images.length) {
+            setImgLoading(false);
+          }
+        };
+        img.onerror = () => {
+          setImgLoading(false);
+        };
+      });
+    }
+    setImgLoading(false);
   };
 
   const dataSet: DataProps[] = DATA_SETS[index] || [];
@@ -84,9 +107,9 @@ const WorksSectionMobile = forwardRef<HTMLDivElement, WorksSectionMobileProps>((
           </div>
 
           <p>{selectedWork?.text}</p>
-          {loading && <Loading />}
+          <LoadingBox>{imgLoading && <Loading />}</LoadingBox>
           {selectedWork?.image.map((url, index) => (
-            <img key={index} src={url} alt={`Image ${index + 1}`} onLoad={() => setLoading(false)} />
+            <img key={index} src={url} alt={`Image ${index + 1}`} onLoad={handleImgLoading} />
           ))}
           {selectedWork?.video.map((url, index) => <iframe key={index} src={url} />)}
         </ModalContent>
@@ -99,6 +122,13 @@ const WorksSectionLayout = styled.div`
   width: 100%;
   margin-bottom: 5rem;
   padding-top: 8.8rem;
+`;
+
+const LoadingBox = styled.div`
+  display: flex;
+  align-items: center;
+
+  width: 100%;
 `;
 
 const List = styled.div`
