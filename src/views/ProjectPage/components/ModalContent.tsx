@@ -1,15 +1,12 @@
 import styled from 'styled-components';
 import Loading from '../../@common/components/Loading';
 import { IcExitBlack, IcLinkBold } from '../../@common/assets';
-import { useEffect } from 'react';
-import { useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 interface ModalContentProps {
   isModalOpen: boolean;
   selectedWork: DataProps | null;
   onCloseModal: () => void;
-  imgLoading: boolean;
-  handleImgLoading: () => void;
   index: number;
 }
 
@@ -28,18 +25,35 @@ interface ModalOverlayProps {
   $ismodalopen: boolean;
 }
 
-const ModalContent = ({
-  isModalOpen,
-  selectedWork,
-  index,
-  onCloseModal,
-  handleImgLoading,
-  imgLoading,
-}: ModalContentProps) => {
+const ModalContent = ({ isModalOpen, selectedWork, index, onCloseModal }: ModalContentProps) => {
   const handleModalClose = () => {
     onCloseModal();
   };
   const modalContentRef = useRef<HTMLDivElement>(null);
+  const [imgLoading, setImgLoading] = useState(true);
+
+  const handleImgLoading = () => {
+    const images = selectedWork?.image || [];
+    if (images.length === 0) {
+      setImgLoading(true);
+    } else {
+      let loadedCount = 0;
+      images.forEach((url) => {
+        const img = new Image();
+        img.src = url;
+        img.onload = () => {
+          loadedCount++;
+          if (loadedCount === images.length) {
+            setImgLoading(false);
+          }
+        };
+        img.onerror = () => {
+          setImgLoading(true);
+        };
+      });
+    }
+    setImgLoading(true);
+  };
 
   useEffect(() => {
     // ModalContent가 열릴 때 내부 스크롤을 맨 위로 이동
@@ -47,6 +61,10 @@ const ModalContent = ({
       modalContentRef.current.scrollTop = 0;
     }
   }, [isModalOpen]);
+
+  useEffect(() => {
+    handleImgLoading;
+  }, [selectedWork]);
 
   return (
     <ModalOverlay $ismodalopen={isModalOpen} ref={modalContentRef}>
@@ -211,7 +229,7 @@ const ModalTextContent = styled.div`
   & > iframe {
     width: 100%;
     height: 20rem;
-    margin-bottom: 5rem;
+    margin: 1rem 0 5rem;
   }
 `;
 
