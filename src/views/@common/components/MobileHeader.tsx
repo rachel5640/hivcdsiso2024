@@ -65,8 +65,6 @@ const MobileHeaderBox = styled.section`
 `;
 
 const OurIndexLogoBox = styled.div`
-  flex-grow: 1;
-
   & > svg {
     width: auto;
     height: 2.4rem;
