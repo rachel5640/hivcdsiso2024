@@ -15,6 +15,8 @@
     "react-custom-scrollbars": "^4.2.1",
     "react-custom-scrollbars-2": "^4.5.0",
     "react-dom": "^18.2.0",
+    "react-ga": "^3.3.1",
+    "react-ga4": "^2.1.0",
     "react-js-pagination": "^3.0.3",
     "react-responsive": "^9.0.2",
     "react-router-dom": "^6.22.0",
@@ -23,6 +25,7 @@
   },
   "devDependencies": {
     "@stylelint/postcss-css-in-js": "^0.38.0",
+    "@types/node": "^20.11.30",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@types/react-js-pagination": "^3.0.7",
