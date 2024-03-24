@@ -204,6 +204,7 @@ const ModalTextContent = styled.div`
     justify-content: space-between;
 
     width: 100%;
+    margin-top: 4rem;
   }
 
   & > img {
