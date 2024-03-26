@@ -1906,6 +1906,7 @@ export const DATA_SETS = [
         'https://imgur.com/b4n1crw.jpg',
         'https://imgur.com/B1CEQeT.jpg',
         'https://imgur.com/fwoETkt.jpg',
+        'https://imgur.com/KowrThE.jpg',
         'https://imgur.com/Y6CcVl7.jpg',
         'https://imgur.com/M5NALT1.jpg',
       ],
